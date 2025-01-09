@@ -3,7 +3,7 @@ import { FaSignInAlt, FaUserPlus } from 'react-icons/fa';
 import { FaPlus } from 'react-icons/fa';
 import Logo from '../Images/logo.png';
 import Hero from '../Images/Hero.png';
-
+import { Link } from 'react-router-dom';
 function App() {
   return (
     <div className="bg-white min-h-screen font-sans">
@@ -18,7 +18,9 @@ function App() {
             <img src={Logo} alt="Logo" className="h-10 w-auto md:h-100px md:w-99.7px" />
           </div>
           <ul className="flex space-x-4 md:space-x-6">
+            <Link to='/'>
             <li className="text-gray-700 hover:text-red-600 text-bold cursor-pointer">Home</li>
+            </Link>
             <li className="text-red-700 text-bold text-xl cursor-pointer">AI NFT Generation</li>
           </ul>
           <div className="flex space-x-2">

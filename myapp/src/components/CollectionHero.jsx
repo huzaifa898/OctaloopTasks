@@ -10,9 +10,9 @@ const HeroSection = () => {
   };
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-gray-100">
       {/* Navbar */}
-      <nav className="flex justify-between items-center px-4 py-2 bg-white md:px-8">
+      <nav className="flex justify-between items-center px-4 py-2 bg-white shadow-md md:px-8">
         <div className="flex items-center space-x-2">
           <img src={logo} alt="Logo" className="h-8 w-auto md:h-20" />
         </div>
@@ -39,7 +39,7 @@ const HeroSection = () => {
 
       {/* Dropdown Menu */}
       {isOpen && (
-        <div className="md:hidden bg-white px-4 py-4 space-y-4">
+        <div className="md:hidden bg-white px-4 py-4 space-y-4 shadow-md">
           <ul className="space-y-2 text-gray-800 font-medium">
             <li className="hover:text-red-500 cursor-pointer">Home</li>
             <li className="hover:text-red-500 cursor-pointer">
