@@ -53,9 +53,9 @@ const cardsData = [
 
 function PromptExamples() {
   return (
-    <div className="bg-gradient-to-r from-white via-pink-50 to-white py-16 px-6">
-      <h2 className="text-3xl font-bold text-start ml-80 mb-12">PROMPT EXAMPLES</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 max-w-6xl mx-auto">
+    <div className="bg-gradient-to-r from-white via-pink-50 to-white py-16 px-4 md:px-6">
+      <h2 className="text-3xl font-bold text-start ml-4 mb-12 md:ml-80">PROMPT EXAMPLES</h2>
+      <div className="grid grid-cols-1 gap-6 max-w-6xl mx-auto md:grid-cols-2 lg:grid-cols-2">
         {cardsData.map((card, index) => (
           <div
             key={index}

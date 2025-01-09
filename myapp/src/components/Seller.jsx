@@ -60,18 +60,18 @@ const sellers = [
 
 const TopSeller = () => {
   return (
-    <div className="container max-w-6xl mx-auto">
+    <div className="container max-w-6xl mx-auto px-4">
       {/* Header Section */}
-      <div className="flex justify-between items-center ">
+      <div className="flex justify-between items-center mb-4">
         <h2 className="text-2xl font-bold">TOP SELLER</h2>
         <a href="#" className="text-red-500 font-medium">View All</a>
       </div>
       {/* Sellers Grid */}
-      <div className="grid grid-cols-4 gap-6 mt-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {sellers.map((seller) => (
           <div
             key={seller.id}
-            className="flex items-center p-4 shadow-md rounded-lg"
+            className="flex items-center p-4 shadow-md rounded-lg bg-white"
           >
             {/* Icon */}
             <img

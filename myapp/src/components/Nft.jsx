@@ -4,11 +4,10 @@ import Cards from './Cards'
 import Footer from './Footer'
 function Nft() {
   return (
-    <div>
+    <div className="container mx-auto px-4">
         <Hero/>
         <Cards/>
         <Footer/>
-
     </div>
   )
 }

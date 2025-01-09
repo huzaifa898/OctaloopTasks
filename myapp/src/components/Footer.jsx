@@ -3,9 +3,9 @@ import { FaTelegram } from "react-icons/fa";
 import Logo  from '../Images/logo.png'
 function Footer() {
   return (
-    <div className="">
+    <div className="bg-gray-50">
       {/* Email Section */}
-      <div className="  py-12 text-center">
+      <div className="bg-gradient-to-r from-white via-pink-50 to-white py-12 text-center">
         <h2 className="text-2xl font-bold mb-6">Ready for Next NFT Drop?</h2>
         <div className="relative max-w-lg mx-auto">
           <input
@@ -23,8 +23,8 @@ function Footer() {
       </div>
 
       {/* Footer Section */}
-      <div className="bg-gradient-to-r from-red-500 to-red-600  text-white py-10">
-        <div className="max-w-6xl mx-auto px-6">
+      <div className="bg-gradient-to-r from-red-500 to-red-600 text-white py-10">
+        <div className="max-w-6xl mx-auto px-4 md:px-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
             {/* Left Section */}
             <div className="text-center md:text-left">

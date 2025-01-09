@@ -5,9 +5,10 @@ import sell2 from '../Images/sell2.png';
 import sell3 from '../Images/sell3.png';
 import sell4 from '../Images/sell4.png';
 import { Link } from "react-router-dom";
+
 const CollectionCard = ({ title, creator, creatorImage, images }) => {
   return (
-    <div className="border rounded-lg shadow-lg p-4 w-full max-w-sm">
+    <div className="border rounded-lg shadow-lg p-4 w-full max-w-sm mx-auto">
       <div className="grid grid-cols-2 gap-2 mb-4">
         {images.slice(0, 2).map((image, index) => (
           <img
@@ -88,17 +89,16 @@ const TopCollections = () => {
   ];
 
   return (
-    <div className="container mx-auto max-w-6xl">
+    <div className="container mx-auto max-w-6xl px-4">
       <div className="flex justify-between items-center mb-8">
-       
         <h2 className="text-2xl font-bold">Top Collections</h2>
         <Link to='/veiwcollection'>
-        <h2 className="text-blue-600 font-medium hover:underline">
-          View More Collection
-        </h2>
+          <h2 className="text-blue-600 font-medium hover:underline">
+            View More Collection
+          </h2>
         </Link>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {collections.map((collection, index) => (
           <CollectionCard
             key={index}

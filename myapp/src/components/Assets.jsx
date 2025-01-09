@@ -16,7 +16,7 @@ function App() {
 
         {/* Images */}
         {/* Left Side Images */}
-        <div className="absolute top-12 left-[-100px]">
+        <div className="absolute top-12 left-[-100px] hidden lg:block">
           <img
             src={Ass4}
             alt="Left 1"
@@ -44,7 +44,7 @@ function App() {
           <input
             type="text"
             placeholder="Fantasy Creature holding a sword..."
-            className="w-96 p-4 border rounded-full shadow focus:outline-none focus:ring focus:ring-blue-500"
+            className="w-full lg:w-96 p-4 border rounded-full shadow focus:outline-none focus:ring focus:ring-blue-500"
           />
           <button
             className="absolute right-2 top-2.5 px-6 py-2 bg-red-500 text-white rounded-full shadow-lg hover:bg-red-600"
@@ -54,7 +54,7 @@ function App() {
         </div>
 
         {/* Right Side Images */}
-        <div className="absolute top-12 right-[-100px]">
+        <div className="absolute top-12 right-[-100px] hidden lg:block">
           <img
             src={Ass3}
             alt="Right 1"

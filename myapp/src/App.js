@@ -5,8 +5,6 @@ import Nft from './components/Nft';
 import VeiwCollection from './components/VeiwCollection';
 function App() {
   return (
-
-     // <Home/>
    <Router>
      <Routes>
        <Route path="/" element={<Home />} />

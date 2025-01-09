@@ -8,18 +8,18 @@ function App() {
   return (
     <div className="bg-white min-h-screen font-sans">
       {/* Hero Section */}
-      <div className="px-6 py-4">
+      <div className="px-4 py-4 md:px-6 md:py-4">
         {/* Navbar */}
         <nav
-          className="flex items-center justify-evenly space-x-80 py-3"
-          style={{ width: '1320px', height: '100px', margin: '0 auto' }}
+          className="flex items-center justify-between py-3 md:justify-evenly md:space-x-80"
+          style={{ width: '100%', margin: '0 auto' }}
         >
           <div className="text-xl font-bold text-red-600">
-            <img src={Logo} alt="Logo" className="h-100px w-99.7px" />
+            <img src={Logo} alt="Logo" className="h-10 w-auto md:h-100px md:w-99.7px" />
           </div>
-          <ul className="flex space-x-6">
-            <li  className="text-gray-700 hover:text-red-600 text-bold  cursor-pointer"  >Home</li>
-            <li className="text-red-700 text-bold text-xl   cursor-pointer">AI NFT Generation</li>
+          <ul className="flex space-x-4 md:space-x-6">
+            <li className="text-gray-700 hover:text-red-600 text-bold cursor-pointer">Home</li>
+            <li className="text-red-700 text-bold text-xl cursor-pointer">AI NFT Generation</li>
           </ul>
           <div className="flex space-x-2">
             <FaSignInAlt className="text-gray-700 hover:text-red-600 text-xl cursor-pointer" />
@@ -30,9 +30,9 @@ function App() {
         {/* Tagline */}
         <div
           className="text-center mt-8"
-          style={{ width: '1102px', height: '98.5px', margin: '0 auto' }}
+          style={{ width: '100%', margin: '0 auto' }}
         >
-          <h1 className="text-4xl font-bold text-gray-800">
+          <h1 className="text-2xl font-bold text-gray-800 md:text-4xl">
             CREATE YOUR OWN <span className="text-red-600">MASTERPIECE</span>
           </h1>
         </div>
@@ -40,17 +40,17 @@ function App() {
         {/* Centered Image */}
         <div
           className="flex justify-center mt-6"
-          style={{ width: '1320px', height: '496px', margin: '0 auto' }}
+          style={{ width: '100%', margin: '0 auto' }}
         >
-          <img className="rounded-lg shadow-md w-full h-full object-cover" src={Hero} alt="NFT" />
+          <img className="rounded-lg shadow-md w-full h-auto object-cover md:w-1320 md:h-496" src={Hero} alt="NFT" />
         </div>
         <div className="text-center mt-4">Get OnBoard And Earn Money Like Pro</div>
       </div>
 
       {/* Search Bar */}
       <div
-        className="mt-8 px-6"
-        style={{ width: '1002px', height: '70px', margin: '0 auto' }}
+        className="mt-8 px-4 md:px-6"
+        style={{ width: '100%', margin: '0 auto' }}
       >
         <div className="bg-gray-100 rounded-lg flex items-center p-4 shadow-md h-full">
           <input
@@ -67,8 +67,8 @@ function App() {
       {/* Dropdowns and Add Styles Button */}
       <br />
       <div
-        className="flex justify-evenly items-center  space-x-4"
-        style={{ width: '1002px', margin: '0 auto' }}
+        className="flex justify-evenly items-center space-x-4"
+        style={{ width: '100%', margin: '0 auto' }}
       >
         {/* Single NFT Dropdown */}
         <div className="bg-gray-100 rounded-lg p-2 shadow-md">
