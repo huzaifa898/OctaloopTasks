@@ -6,7 +6,6 @@ import Auc4 from '../Images/Auc4.png';
 import Auc6 from '../Images/Auc6.png';
 import Auc7 from '../Images/Auc7.png';
 import Auc8 from '../Images/Auc8.png';
-import { Link } from "react-router-dom";
 import icon from "../Images/icon.png";
 
 const TrendingNFTs = () => {
@@ -67,6 +66,34 @@ const TrendingNFTs = () => {
       image: Auc8,
       price: "42.02",
     },
+    {
+        id: 8,
+        title: "Stella Nova",
+        username: "@stellanova",
+        image: Auc8,
+        price: "42.02",
+      },
+      {
+        id: 7,
+        title: "Stella Nova",
+        username: "@stellanova",
+        image: Auc7,
+        price: "42.02",
+      },
+      {
+        id: 6,
+        title: "Stella Nova",
+        username: "@stellanova",
+        image: Auc6,
+        price: "42.02",
+      },
+      {
+        id: 6,
+        title: "Stella Nova",
+        username: "@stellanova",
+        image: Auc6,
+        price: "42.02",
+      },
   ];
 
   return (
@@ -74,7 +101,7 @@ const TrendingNFTs = () => {
       <div className="container max-w-6xl mx-auto">
         {/* Heading */}
         <h1 style={{ marginLeft: "16px" }} className="text-4xl font-extrabold text-gray-800 mb-8">
-          Auctions
+          LIVE AUCTIONS
         </h1>
         {/* Cards Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -123,11 +150,7 @@ const TrendingNFTs = () => {
         </div>
         {/* Explore Button */}
         <div className="flex justify-center items-center mt-10">
-          <Link to="/auctionpage">
-          <button className="bg-red-500 text-white px-8 py-3 rounded-lg hover:bg-red-600 transition">
-            Explore
-          </button>
-          </Link>
+         
         </div>
       </div>
     </div>
