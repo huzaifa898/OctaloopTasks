@@ -1,11 +1,9 @@
 import React from "react";
 import Auc from '../Images/Auc.png';
-import Auc2 from '../Images/Auc2.png';
-import Auc3 from '../Images/Auc3.png';
+
+
 import Auc4 from '../Images/Auc4.png';
 import Auc6 from '../Images/Auc6.png';
-import Auc7 from '../Images/Auc7.png';
-import Auc8 from '../Images/Auc8.png';
 import { Link } from "react-router-dom";
 import icon from "../Images/icon.png";
 
@@ -22,14 +20,14 @@ const TrendingNFTs = () => {
       id: 2,
       title: "Stella Nova",
       username: "@stellanova",
-      image: Auc2,
+      image: Auc,
       price: "42.02",
     },
     {
       id: 3,
       title: "Stella Nova",
       username: "@stellanova",
-      image: Auc3,
+      image: Auc,
       price: "42.02",
     },
     {
@@ -57,14 +55,14 @@ const TrendingNFTs = () => {
       id: 7,
       title: "Stella Nova",
       username: "@stellanova",
-      image: Auc7,
+      image: Auc4,
       price: "42.02",
     },
     {
       id: 8,
       title: "Stella Nova",
       username: "@stellanova",
-      image: Auc8,
+      image: Auc6,
       price: "42.02",
     },
   ];
@@ -95,38 +93,40 @@ const TrendingNFTs = () => {
                 </div>
                 {/* Text */}
                 <div>
-                  <h2 className="text-lg font-semibold text-gray-800">
-                    {nft.title}
-                  </h2>
+                  <h2 className="text-lg font-semibold text-gray-800">{nft.title}</h2>
                   <p className="text-sm text-gray-500">{nft.username}</p>
                 </div>
               </div>
               {/* Image Section */}
-              <div className="relative">
+              <div className="relative group">
                 <img
                   src={nft.image}
                   alt={nft.title}
                   className="w-full h-56 object-cover"
                 />
-                {/* Buttons on the Image */}
-                <div className="absolute inset-0 flex items-end justify-between p-4 bg-gradient-to-t from-black/50 to-transparent">
-                  <button className="bg-red-500 text-white text-sm px-4 py-2 rounded-full hover:bg-red-600 transition">
-                    Buy
-                  </button>
-                  <p className="text-sm text-white font-medium bg-black/50 px-3 py-1 rounded-full">
-                    ${nft.price}
-                  </p>
+                {/* Time Display (Center by Default) */}
+                <div
+                  className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white text-black px-4 py-2 rounded-md shadow-lg opacity-100 group-hover:opacity-0 transition-opacity duration-500"
+                >
+                  12:34:34:54
                 </div>
+                {/* "Bid Now" Button (Appears and Animates to Exact Center on Hover) */}
+                <button
+                  className="absolute left-1/2 top-1/2 transform -translate-x-1/2 translate-y-full group-hover:translate-y-[-50%] bg-red-600 text-white px-6 py-2 rounded-md shadow-lg opacity-0 group-hover:opacity-100 transition-all duration-500"
+                >
+                  Bid Now
+                </button>
               </div>
             </div>
           ))}
         </div>
+
         {/* Explore Button */}
         <div className="flex justify-center items-center mt-10">
           <Link to="/auctionpage">
-          <button className="bg-red-500 text-white px-8 py-3 rounded-lg hover:bg-red-600 transition">
-            Explore
-          </button>
+            <button className="bg-red-500 text-white px-8 py-3 rounded-lg hover:bg-red-600 transition">
+              Explore
+            </button>
           </Link>
         </div>
       </div>
