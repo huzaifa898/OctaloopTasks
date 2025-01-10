@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Collection from "../Images/collections.png";
+import  SellerTop from '../Images/SellerTop.png'
 import logo from "../Images/logo.png";
 
 const HeroSection = () => {
@@ -141,9 +141,9 @@ const HeroSection = () => {
             marginTop: "20px", // Added margin to tagline
           }}
         >
-          <h1 className="text-3xl md:text-6xl font-bold text-red-600 mb-4">
-            NFT <br />
-            <span className="text-4xl md:text-5xl">COLLECTIONS</span>
+          <h1 className="text-3xl md:text-4xl font-bold text-red-600 mb-4">
+            TOP <br />
+            <span className="text-6xl width-700px md:text-5xl">SELLER</span>
           </h1>
         </div>
 
@@ -157,7 +157,7 @@ const HeroSection = () => {
           }}
         >
           <img
-            src={Collection}
+            src={SellerTop}
             alt="NFT Collection"
             className="w-full h-full object-contain"
           />

@@ -5,60 +5,107 @@ import logo from '../Images/logo.png';
 import { Link } from 'react-router-dom';
 
 const HeroSection = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
+  // Function to open the modal
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  // Function to close the modal
+  const closeModal = () => {
+    setIsModalOpen(false);
   };
 
   return (
     <div className="relative overflow-hidden h-screen">
       {/* Navbar */}
-      <nav className="flex justify-between items-center px-4 py-4 bg-white md:px-8">
-        <div className={`flex items-center space-x-2 ${isOpen ? 'hidden' : 'flex'}`}>
-          <img src={logo} alt="Logo" className="h-8 w-auto md:h-20" />
-        </div>
-        <ul className="hidden md:flex space-x-4 text-gray-800 font-medium md:space-x-8">
-          <li className="hover:text-red-500 cursor-pointer">Home</li>
-          <Link to={'/nft'}>
-            <li className="hover:text-red-500 cursor-pointer">
-              AI NFT Generation
-            </li>
-          </Link>
-        </ul>
-        <div className="hidden md:flex space-x-2 md:space-x-4">
-          <button className="bg-red-500 text-white px-2 py-1 rounded-md hover:bg-red-600 md:px-4 md:py-2">
-            Connect Wallet
-          </button>
-          <button className="border border-red-500 text-red-500 px-2 py-1 rounded-md hover:bg-red-500 hover:text-white md:px-4 md:py-2">
-            Create NFT
-          </button>
-        </div>
-        <button className="md:hidden text-gray-800" onClick={toggleMenu}>
-          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-          </svg>
-        </button>
-      </nav>
+      <div className="absolute top-5 left-0 w-full z-20">
+        <nav className="flex justify-between items-center px-4 py-2 mx-auto w-[1320px] h-[100px]">
+          {/* Logo */}
+          <div className="flex items-center">
+            <img
+              src={logo}
+              alt="Logo"
+              className="w-[65px] h-[100px] object-contain"
+            />
+          </div>
 
-      {/* Dropdown Menu */}
-      {isOpen && (
-        <div className="md:hidden bg-white px-4 py-4 space-y-4">
-          <ul className="space-y-2 text-gray-800 font-medium">
-            <li className="hover:text-red-500 cursor-pointer">Home</li>
+          {/* Navigation Links */}
+          <ul className="hidden md:flex space-x-8 text-gray-800 font-medium">
+            <li className="hover:text-red-500 text-bold text-red-600 underline cursor-pointer">
+              Home
+            </li>
             <Link to={'/nft'}>
               <li className="hover:text-red-500 cursor-pointer">
                 AI NFT Generation
               </li>
             </Link>
           </ul>
-          <div className="space-y-2">
-            <button className="w-full bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-600">
+
+          {/* Buttons */}
+          <div className="hidden md:flex space-x-4">
+            <button
+              className="bg-red-500 text-white w-[200px] h-[50px] rounded-md hover:bg-red-600"
+              onClick={openModal}
+            >
               Connect Wallet
             </button>
-            <button className="w-full border border-red-500 text-red-500 px-4 py-2 rounded-md hover:bg-red-500 hover:text-white">
+            <button className="border border-red-500 text-red-500 w-[200px] h-[50px] rounded-md hover:bg-red-500 hover:text-white">
               Create NFT
             </button>
+          </div>
+
+          {/* Mobile Menu Toggle */}
+          <button className="md:hidden text-gray-800">
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M4 6h16M4 12h16m-7 6h7"
+              ></path>
+            </svg>
+          </button>
+        </nav>
+      </div>
+
+      {/* Modal */}
+      {isModalOpen && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+          <div className="bg-white rounded-lg shadow-lg p-6 w-80 relative">
+            {/* Close Button */}
+            <button
+              className="absolute top-3 right-3 text-gray-500 hover:text-gray-700"
+              onClick={closeModal}
+            >
+              ✖
+            </button>
+
+            {/* Modal Content */}
+            <h1 className="text-lg font-bold mb-4 text-center">
+              CONNECT YOUR WALLET
+            </h1>
+            <div className="space-y-3">
+              <button className="w-full flex items-center border-2 border-red-500 rounded-lg py-2 px-4 hover:bg-red-50">
+                <span className="ml-2">Pera</span>
+              </button>
+              <button className="w-full flex items-center border-2 border-red-500 rounded-lg py-2 px-4 hover:bg-red-50">
+                <span className="ml-2">Defly</span>
+              </button>
+              <button className="w-full flex items-center border-2 border-red-500 rounded-lg py-2 px-4 hover:bg-red-50">
+                <span className="ml-2">Daffi</span>
+              </button>
+              <button className="w-full flex items-center border-2 border-red-500 rounded-lg py-2 px-4 hover:bg-red-50">
+                <span className="ml-2">WalletConnect</span>
+              </button>
+            </div>
           </div>
         </div>
       )}
@@ -69,7 +116,8 @@ const HeroSection = () => {
           DISCOVER, CREATE & SELL ARTWORKS.
         </h1>
         <p className="text-base text-gray-700 mb-8 md:text-lg md:mb-8">
-          Discover and trade unique digital art pieces on our NFT website, where creativity meets blockchain technology.
+          Discover and trade unique digital art pieces on our NFT website, where
+          creativity meets blockchain technology.
         </p>
 
         {/* Single Image with Embedded Background */}

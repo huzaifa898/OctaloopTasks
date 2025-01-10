@@ -6,7 +6,7 @@ import sub4 from '../Images/sub4.png'
 import sub6 from '../Images/sub6.png'
 import sub8 from '../Images/sub8.png'
 import sub7 from '../Images/sub7.png'
-
+import { Link } from "react-router-dom";
 const sellers = [
   {
     id: 1,
@@ -64,7 +64,9 @@ const TopSeller = () => {
       {/* Header Section */}
       <div className="flex justify-between items-center mb-4">
         <h2 className="text-2xl font-bold">TOP SELLER</h2>
-        <a href="#" className="text-red-500 font-medium">View All</a>
+        <Link to='/viewallseller'>
+        <h3 className="text-red-500 font-medium">View All</h3>
+        </Link>
       </div>
       {/* Sellers Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">

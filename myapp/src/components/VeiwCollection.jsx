@@ -4,7 +4,7 @@ import TopCollections from './TopCollections'
 import Footer from './Footer'
 function VeiwCollection() {
   return (
-    <div className='bg-gradient-to-b from-white to-pink-100'>
+    <div className='bg-gradient-to-b from-gray-100 to-pink-200'>
          <CollectionHero/> 
          <TopCollections/>
          <Footer/>
