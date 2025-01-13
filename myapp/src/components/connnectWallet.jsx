@@ -16,7 +16,7 @@ const ConnectWallet = ({ onClose }) => {
 
         {/* Header */}
         <div className="text-center">
-          <h1 className="text-lg font-bold mb-2">CONNECT YOUR WALLET</h1>
+          <h1 className="text-lg font-bold mb-2">CONNECT YOUR WALLET 1</h1>
           <div className="flex items-center justify-center  mb-4">
             <img src={logo} alt="Fry Networks Logo" className="h-12" />
           </div>
@@ -27,7 +27,7 @@ const ConnectWallet = ({ onClose }) => {
         <div className="mt-6 space-y-3">
           <button className="flex items-center w-full border-2 border-red-500 rounded-lg py-2 px-4 hover:bg-red-50">
             <img src={icon1} alt="Pera Logo" className="h-6 mr-2" />
-            <span>Pera</span>
+            <span>Pera 1</span>
           </button>
 
           <button className="flex items-center w-full border-2 border-red-500 rounded-lg py-2 px-4 hover:bg-red-50">

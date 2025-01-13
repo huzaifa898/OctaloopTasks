@@ -1,21 +1,21 @@
 import React from 'react'
 import HomeHero from './HomeHero'
 import Collection from './Collection'
-import Trending from './Trending'
-import Seller from './Seller'
-import Aucations from './Aucations'
-import TopCollection from './TopCollection'
-import Sold from './Sold'
-import Assets from './Assets'
-import Bost from './Bost'
-import Faq from './Faq'
-import Footer from './Footer'
+// import Trending from './Trending'
+// import Seller from './Seller'
+// import Aucations from './Aucations'
+// import TopCollection from './TopCollection'
+// import Sold from './Sold'
+// import Assets from './Assets'
+// import Bost from './Bost'
+// import Faq from './Faq'
+// import Footer from './Footer'
 function Home() {
   return (
     <div className='bg-gradient-to-b from-white to-pink-100'>
         <HomeHero/>
-        <Collection/>
-        <Trending/>
+       <Collection/>
+         {/* <Trending/>
         <Seller/>
         <Aucations/>
         <TopCollection/>
@@ -23,7 +23,7 @@ function Home() {
         <Assets/>
         <Bost/>
         <Faq/>
-        <Footer/>
+        <Footer/> */}
     </div>
   )
 }
