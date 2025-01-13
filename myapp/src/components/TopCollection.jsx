@@ -8,7 +8,8 @@ import { Link } from "react-router-dom";
 
 const CollectionCard = ({ title, creator, creatorImage, images }) => {
   return (
-    <div className="border rounded-lg shadow-lg p-4 w-full max-w-sm mx-auto">
+    <div className="border rounded-lg shadow-lg p-4 w-full max-w-sm mx-auto transition-transform hover:scale-105">
+      {/* Large Images Grid */}
       <div className="grid grid-cols-2 gap-2 mb-4">
         {images.slice(0, 2).map((image, index) => (
           <img
@@ -19,6 +20,7 @@ const CollectionCard = ({ title, creator, creatorImage, images }) => {
           />
         ))}
       </div>
+      {/* Small Images Grid */}
       <div className="grid grid-cols-4 gap-2 mb-4">
         {images.slice(2, 6).map((image, index) => (
           <img
@@ -29,6 +31,7 @@ const CollectionCard = ({ title, creator, creatorImage, images }) => {
           />
         ))}
       </div>
+      {/* Creator Info */}
       <div className="flex items-center gap-4">
         <img
           src={creatorImage}
@@ -50,55 +53,35 @@ const TopCollections = () => {
       title: "WONDERFUL ARTWORK",
       creator: "Jacob Jones",
       creatorImage: sell,
-      images: [
-        sell,
-        sell1,
-        sell2,
-        sell3,
-        sell4,
-        sell4,
-      ],
+      images: [sell, sell1, sell2, sell3, sell4, sell4],
     },
     {
       title: "AMAZING CREATIONS",
       creator: "Emily Smith",
       creatorImage: sell1,
-      images: [
-        sell1,
-        sell,
-        sell2,
-        sell3,
-        sell4,
-        sell2,
-      ],
+      images: [sell1, sell, sell2, sell3, sell4, sell2],
     },
     {
       title: "FANTASTIC DESIGNS",
       creator: "Michael Brown",
       creatorImage: sell2,
-      images: [
-        sell2,
-        sell3,
-        sell4,
-        sell,
-        sell1,
-        sell3,
-      ],
+      images: [sell2, sell3, sell4, sell, sell1, sell3],
     },
-    // Add more collections here
   ];
 
   return (
-    <div className="container mx-auto max-w-6xl px-4">
-      <div className="flex justify-between items-center mb-8">
-        <h2 className="text-2xl font-apex">Top Collections</h2>
-        <Link to='/veiwcollection'>
-          <h2 className="text-blue-600 font-apex hover:underline">
+    <div className="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-10">
+      {/* Header Section */}
+      <div className="flex flex-col sm:flex-row justify-between items-center mb-8 text-center sm:text-left">
+        <h2 className="text-2xl sm:text-3xl font-bold text-gray-800">Top Collections</h2>
+        <Link to="/veiwcollection" className="mt-2 sm:mt-0">
+          <h2 className="text-blue-600 font-medium hover:underline text-lg">
             View More Collection
           </h2>
         </Link>
       </div>
-      <div className="grid grid-cols-1 font-apex sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      {/* Collection Cards */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {collections.map((collection, index) => (
           <CollectionCard
             key={index}

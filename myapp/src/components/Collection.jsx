@@ -3,7 +3,7 @@ import Mask1 from '../Images/mask1.png';
 import Mask2 from '../Images/Mask2.png';
 import Mask3 from '../Images/Mask3.png';
 import Mask4 from '../Images/Mask4.png';
-import image7 from '../Images/images7.png';    
+import image7 from '../Images/images7.png';
 
 const FeaturedCollection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -34,16 +34,16 @@ const FeaturedCollection = () => {
   };
 
   return (
-    <div className="py-10 px-5">
-      <div className="relative max-w-6xl mx-auto">
+    <div className="py-10 px-4 sm:px-6 lg:px-8">
+      <div className="container mx-auto max-w-7xl">
         {/* Title and Subtext */}
         <div className="flex flex-col md:flex-row justify-between items-center mb-5">
           <div>
-            <h2 className="text-3xl font-apex ml-4 md:ml-0">
+            <h2 className="text-2xl sm:text-3xl font-apex">
               Featured Collection
             </h2>
-            <p className="text-gray-500 font-apex ml-4 md:ml-0">
-              Explore our exclusive featured collection, showcasing innovative.
+            <p className="text-gray-500 font-apex text-sm sm:text-base">
+              Explore our exclusive featured collection, showcasing innovative designs.
             </p>
           </div>
 
@@ -65,20 +65,22 @@ const FeaturedCollection = () => {
         </div>
 
         {/* Slider */}
-        <div className="flex flex-wrap justify-center md:justify-start space-x-0 md:space-x-4 overflow-hidden">
+        <div className="flex flex-wrap justify-center gap-x-6 gap-y-8">
           {cards.slice(currentIndex, currentIndex + cardsPerSlide).map((card) => (
             <div
               key={card.id}
-              className="relative w-full md:w-[270px] mx-2 mb-4 md:mb-0 p-4 bg-white rounded-lg shadow-lg transition-all duration-500 ease-in-out transform scale-100"
+              className="relative w-full sm:w-[48%] md:w-[22%] bg-white rounded-lg shadow-lg p-4 transition-transform duration-500 ease-in-out"
             >
-              {/* Profile Section at the Top */}
+              {/* Profile Section */}
               <div className="flex items-center space-x-3 mb-3">
                 <div className="w-10 h-10 bg-gray-300 rounded-full flex items-center justify-center text-gray-700 font-bold">
-                  {card.name.charAt(0)} {/* Placeholder for an icon */}
+                  {card.name.charAt(0)}
                 </div>
                 <div>
-                  <p className="text-gray-800 font-semibold">{card.name}</p>
-                  <p className="text-gray-500 text-sm">{card.description}</p>
+                  <p className="text-gray-800 font-semibold text-sm">
+                    {card.name}
+                  </p>
+                  <p className="text-gray-500 text-xs">{card.description}</p>
                 </div>
               </div>
 
@@ -87,15 +89,14 @@ const FeaturedCollection = () => {
                 <img
                   src={card.image}
                   alt={card.title}
-                  className="rounded-lg object-cover w-full h-[200px]"
-                  style={{ objectFit: 'cover' }}
+                  className="rounded-lg object-cover w-full h-[180px] sm:h-[200px]"
                 />
-                {/* Buttons on the bottom of the image */}
-                <div className="absolute inset-x-0 bottom-0 flex justify-between p-2">
-                  <button className="bg-red-500 font-apex text-white px-4 py-2 text-sm rounded-lg hover:bg-red-600">
+                {/* Buttons at Bottom */}
+                <div className="absolute inset-x-0 bottom-0 flex justify-between p-2 bg-gradient-to-t from-black/70 to-transparent">
+                  <button className="bg-red-500 text-white px-3 py-1 text-xs rounded hover:bg-red-600">
                     Buy
                   </button>
-                  <p className="bg-white font-apex bg-opacity-75 text-gray-800 font-bold px-3 py-2 rounded-lg">
+                  <p className="bg-white bg-opacity-75 text-gray-800 text-xs px-2 py-1 rounded font-semibold">
                     Price: {card.price}
                   </p>
                 </div>
