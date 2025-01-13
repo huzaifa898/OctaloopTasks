@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Collection from "../Images/collections.png";
 import logo from "../Images/logo.png";
-
+import { Link } from "react-router-dom";
 const HeroSection = () => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -96,14 +96,16 @@ const HeroSection = () => {
           style={{ marginTop: "-10px" }}
         >
           <ul className="space-y-2 text-gray-800 font-medium">
-            <li className="hover:text-red-500 cursor-pointer">Home</li>
-            <li className="hover:text-red-500 cursor-pointer">
+            <Link to='/'>
+            <li className="hover:text-red-500 font-apex cursor-pointer">Home</li>
+            </Link>
+            <li className="hover:text-red-500 font-apex cursor-pointer">
               AI NFT Generation
             </li>
           </ul>
           <div className="space-y-2">
             <button
-              className="w-full text-white px-4 py-2 rounded-md hover:bg-red-600"
+              className="w-full text-black px-4 py-2 rounded-md hover:bg-red-600"
               style={{
                 border: "2px solid red",
                 background: "transparent",

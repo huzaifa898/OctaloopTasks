@@ -7,7 +7,6 @@ import { Link } from 'react-router-dom';
 const HeroSection = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-
   const openModal = () => {
     setIsModalOpen(true);
   };
@@ -20,7 +19,7 @@ const HeroSection = () => {
     <div className="relative overflow-hidden h-screen">
       {/* Navbar */}
       <div className="absolute top-5 left-0 w-full z-20">
-        <nav className="flex justify-between items-center px-4 py-2 mx-auto w-[1320px] h-[100px]">
+        <nav className="flex justify-between items-center px-4 py-2 mx-auto w-full max-w-screen-xl">
           {/* Logo */}
           <div className="flex items-center">
             <img
@@ -50,9 +49,11 @@ const HeroSection = () => {
             >
               Connect Wallet
             </button>
+            <Link to='/nft'>
             <button className="border font-apex border-red-500 text-red-500 w-[200px] h-[50px] rounded-md hover:bg-red-500 hover:text-white">
               Create NFT
             </button>
+            </Link>
           </div>
 
           {/* Mobile Menu Toggle */}

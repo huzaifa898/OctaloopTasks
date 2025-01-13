@@ -1,5 +1,5 @@
 import React from "react";
-import IconImage from "../Images/icon.png"; // Replace with your actual icon image
+import IconImage from "../Images/icon.png";
 import col from '../Images/col.png'
 import col1 from '../Images/col1.png'
 import col2 from '../Images/col2.png'
@@ -56,7 +56,6 @@ const ExploreCollections = () => {
         items: "1.2k",
         image: col2,
       },
-    // Add more card objects here...
   ];
 
   return (
@@ -107,7 +106,7 @@ const ExploreCollections = () => {
               />
               <div>
                 <h3 className="text-lg font-semibold">{card.title}</h3>
-                <p className="text-sm text-gray-500">Created by {card.creator}</p>
+                <p className="text-sm font-apex  text-gray-500">Created by {card.creator}</p>
               </div>
             </div>
 
