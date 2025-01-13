@@ -63,9 +63,9 @@ const TopSeller = () => {
     <div className="container max-w-6xl mx-auto px-4">
       {/* Header Section */}
       <div className="flex justify-between items-center mb-4">
-        <h2 className="text-2xl font-bold">TOP SELLER</h2>
+        <h2 className="text-2xl font-apex">TOP SELLER</h2>
         <Link to='/viewallseller'>
-        <h3 className="text-red-500 font-medium">View All</h3>
+        <h3 className="text-red-500 font-apex font-medium">View All</h3>
         </Link>
       </div>
       {/* Sellers Grid */}
@@ -83,8 +83,8 @@ const TopSeller = () => {
             />
             {/* Text Section */}
             <div className="ml-4">
-              <h3 className="text-lg font-semibold">{seller.name}</h3>
-              <p className="text-sm text-gray-500">{seller.price}</p>
+              <h3 className="text-lg font-apex">{seller.name}</h3>
+              <p className="text-sm font-apex text-gray-500">{seller.price}</p>
             </div>
           </div>
         ))}

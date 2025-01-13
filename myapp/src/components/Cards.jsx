@@ -53,8 +53,8 @@ const cardsData = [
 
 function PromptExamples() {
   return (
-    <div className="bg-gradient-to-r from-white via-pink-50 to-white py-16 px-4 md:px-6">
-      <h2 className="text-3xl font-bold text-start ml-4 mb-12 md:ml-80">PROMPT EXAMPLES</h2>
+    <div className="py-16 px-4 md:px-6">
+      <h2 className="text-3xl font-apex text-start ml-4 mb-12 md:ml-80">PROMPT EXAMPLES</h2>
       <div className="grid grid-cols-1 gap-6 max-w-6xl mx-auto md:grid-cols-2 lg:grid-cols-2">
         {cardsData.map((card, index) => (
           <div
@@ -69,14 +69,14 @@ function PromptExamples() {
                 className="absolute top-1/2 right-0 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-md hover:shadow-lg"
                 aria-label="Copy"
               >
-                <FaRegCopy className="text-red-600 text-xl" />
+                <FaRegCopy className="text-red-600  text-xl" />
               </button>
             </div>
 
             {/* Text Section */}
             <div className="p-4 w-2/3">
-              <h3 className="text-lg font-semibold text-gray-800">{card.title}</h3>
-              <p className="text-sm text-gray-600 mt-2">{card.description}</p>
+              <h3 className="text-lg font-apex text-gray-800">{card.title}</h3>
+              <p className="text-sm font-apex text-gray-600 mt-2">{card.description}</p>
             </div>
           </div>
         ))}

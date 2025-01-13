@@ -41,25 +41,25 @@ const HeroSection = () => {
             gap: "40px", // Reduce the gap between the links
           }}
         >
-          <li className="hover:text-red-500 text-bolder text-red-800 cursor-pointer">Home</li>
+          <li className="hover:text-red-500 font-apex text-bolder font-apex text-red-800 cursor-pointer">Home</li>
           <li className="hover:text-red-500 cursor-pointer">
             AI NFT Generation
           </li>
         </ul>
         <div className="hidden md:flex space-x-2 md:space-x-4">
           <button
-            className="text-white rounded-md hover:bg-red-600"
+            className="text-white font-apex rounded-md hover:bg-red-600"
             style={{
               width: "200px",
               height: "58px",
               border: "2px solid red",
-              background: "red",
+              background: "red-500",
             }}
           >
             Connect Wallet
           </button>
           <button
-            className="text-red-500 rounded-md hover:bg-red-500 hover:text-white"
+            className="text-red-500 font-apex rounded-md hover:bg-red-500 hover:text-white"
             style={{
               width: "200px",
               height: "58px",
@@ -141,7 +141,7 @@ const HeroSection = () => {
             marginTop: "20px", // Added margin to tagline
           }}
         >
-          <h1 className="text-3xl md:text-4xl font-bold text-red-600 mb-4">
+          <h1 className="text-3xl font-apex md:text-4xl font-bold text-red-600 mb-4">
             TOP <br />
             <span className="text-6xl width-700px md:text-5xl">SELLER</span>
           </h1>

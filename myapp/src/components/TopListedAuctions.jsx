@@ -4,7 +4,6 @@ import Auc from '../Images/Auc.png';
 
 import Auc4 from '../Images/Auc4.png';
 import Auc6 from '../Images/Auc6.png';
-import { Link } from "react-router-dom";
 import icon from "../Images/icon.png";
 
 const TrendingNFTs = () => {
@@ -71,15 +70,15 @@ const TrendingNFTs = () => {
     <div className="py-10 px-5">
       <div className="container max-w-6xl mx-auto">
         {/* Heading */}
-        <h1 style={{ marginLeft: "16px" }} className="text-4xl font-extrabold text-gray-800 mb-8">
-          Auctions
+        <h1 style={{ marginLeft: "16px" }} className="text-4xl font-apex text-gray-800 mb-8">
+           Top Listed Auctions
         </h1>
         {/* Cards Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {nfts.map((nft) => (
             <div
               key={nft.id}
-              className="bg-white rounded-lg shadow-lg overflow-hidden hover:scale-105 transform transition duration-300 relative border border-gray-200"
+              className="bg-white font-apex rounded-lg shadow-lg overflow-hidden hover:scale-105 transform transition duration-300 relative border border-gray-200"
             >
               {/* Top Section with Icon and Name */}
               <div className="flex items-center gap-4 p-4">
@@ -93,8 +92,8 @@ const TrendingNFTs = () => {
                 </div>
                 {/* Text */}
                 <div>
-                  <h2 className="text-lg font-semibold text-gray-800">{nft.title}</h2>
-                  <p className="text-sm text-gray-500">{nft.username}</p>
+                  <h2 className="text-lg font-apex text-gray-800">{nft.title}</h2>
+                  <p className="text-sm font-apex text-gray-500">{nft.username}</p>
                 </div>
               </div>
               {/* Image Section */}
@@ -123,11 +122,7 @@ const TrendingNFTs = () => {
 
         {/* Explore Button */}
         <div className="flex justify-center items-center mt-10">
-          <Link to="/auctionpage">
-            <button className="bg-red-500 text-white px-8 py-3 rounded-lg hover:bg-red-600 transition">
-              Explore
-            </button>
-          </Link>
+          
         </div>
       </div>
     </div>

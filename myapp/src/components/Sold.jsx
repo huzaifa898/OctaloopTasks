@@ -71,7 +71,7 @@ const TrendingNFTs = () => {
     <div className="py-10  px-5">
       <div className="container max-w-6xl mx-auto">
         {/* Heading */}
-        <h1 style={{ marginLeft: "16px" }} className="text-4xl font-extrabold text-gray-800 mb-8" >
+        <h1 style={{ marginLeft: "16px" }} className="text-4xl font-extrabold font-apex text-gray-800 mb-8" >
           Recently Sold
         </h1>
         {/* Cards Grid */}
@@ -108,10 +108,10 @@ const TrendingNFTs = () => {
                 />
                 {/* Buttons on the Image */}
                 <div className="absolute inset-0 flex items-end justify-between p-4 bg-gradient-to-t from-black/50 to-transparent">
-                  <button className="bg-red-500 text-white text-sm px-4 py-2 rounded-full hover:bg-red-600 transition">
+                  <button className="bg-red-500 font-apex text-white text-sm px-4 py-2 rounded-full hover:bg-red-600 transition">
                     Buy
                   </button>
-                  <p className="text-sm text-white font-medium bg-black/50 px-3 py-1 rounded-full">
+                  <p className="text-sm text-white font-apex bg-black/50 px-3 py-1 rounded-full">
                     ${nft.price}
                   </p>
                 </div>

@@ -39,10 +39,10 @@ const FeaturedCollection = () => {
         {/* Title and Subtext */}
         <div className="flex flex-col md:flex-row justify-between items-center mb-5">
           <div>
-            <h2 className="text-3xl font-bold ml-4 md:ml-0">
+            <h2 className="text-3xl font-apex ml-4 md:ml-0">
               Featured Collection
             </h2>
-            <p className="text-gray-500 ml-4 md:ml-0">
+            <p className="text-gray-500 font-apex ml-4 md:ml-0">
               Explore our exclusive featured collection, showcasing innovative.
             </p>
           </div>
@@ -92,10 +92,10 @@ const FeaturedCollection = () => {
                 />
                 {/* Buttons on the bottom of the image */}
                 <div className="absolute inset-x-0 bottom-0 flex justify-between p-2">
-                  <button className="bg-red-500 text-white px-4 py-2 text-sm rounded-lg hover:bg-red-600">
+                  <button className="bg-red-500 font-apex text-white px-4 py-2 text-sm rounded-lg hover:bg-red-600">
                     Buy
                   </button>
-                  <p className="bg-white bg-opacity-75 text-gray-800 font-bold px-3 py-2 rounded-lg">
+                  <p className="bg-white font-apex bg-opacity-75 text-gray-800 font-bold px-3 py-2 rounded-lg">
                     Price: {card.price}
                   </p>
                 </div>

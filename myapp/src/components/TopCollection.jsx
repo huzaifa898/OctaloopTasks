@@ -91,14 +91,14 @@ const TopCollections = () => {
   return (
     <div className="container mx-auto max-w-6xl px-4">
       <div className="flex justify-between items-center mb-8">
-        <h2 className="text-2xl font-bold">Top Collections</h2>
+        <h2 className="text-2xl font-apex">Top Collections</h2>
         <Link to='/veiwcollection'>
-          <h2 className="text-blue-600 font-medium hover:underline">
+          <h2 className="text-blue-600 font-apex hover:underline">
             View More Collection
           </h2>
         </Link>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 font-apex sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {collections.map((collection, index) => (
           <CollectionCard
             key={index}

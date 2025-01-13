@@ -32,11 +32,11 @@ const HeroSection = () => {
 
           {/* Navigation Links */}
           <ul className="hidden md:flex space-x-8 text-gray-800 font-medium">
-            <li className="hover:text-red-500 text-bold text-red-600 underline cursor-pointer">
+            <li className="hover:text-red-500 font-apex text-bold text-red-600 underline cursor-pointer">
               Home
             </li>
             <Link to={'/nft'}>
-              <li className="hover:text-red-500 cursor-pointer">
+              <li className="hover:text-red-500 font-apex cursor-pointer">
                 AI NFT Generation
               </li>
             </Link>
@@ -45,12 +45,12 @@ const HeroSection = () => {
           {/* Buttons */}
           <div className="hidden md:flex space-x-4">
             <button
-              className="bg-red-500 text-white w-[200px] h-[50px] rounded-md hover:bg-red-600"
+              className="bg-red-500 text-white w-[200px] h-[50px] rounded-md font-apex hover:bg-red-600"
               onClick={openModal}
             >
               Connect Wallet
             </button>
-            <button className="border border-red-500 text-red-500 w-[200px] h-[50px] rounded-md hover:bg-red-500 hover:text-white">
+            <button className="border font-apex border-red-500 text-red-500 w-[200px] h-[50px] rounded-md hover:bg-red-500 hover:text-white">
               Create NFT
             </button>
           </div>
@@ -111,10 +111,10 @@ const HeroSection = () => {
 
       {/* Hero Section */}
       <div className="flex flex-col items-center justify-center text-center px-4 py-8 h-full relative md:px-6 md:py-16">
-        <h1 className="text-2xl font-extrabold text-gray-900 mb-4 md:text-4xl md:mb-4">
+        <h1 className="text-2xl font-apex text-gray-900 mb-4 md:text-4xl md:mb-4">
           DISCOVER, CREATE & SELL ARTWORKS.
         </h1>
-        <p className="text-base text-gray-700 mb-8 md:text-lg md:mb-8">
+        <p className="text-base font-apex text-gray-700 mb-8 md:text-lg md:mb-8">
           Discover and trade unique digital art pieces on our NFT website, where
           creativity meets blockchain technology.
         </p>

@@ -12,7 +12,7 @@ function App() {
     <div className="min-h-screen  flex items-center justify-center p-4 relative">
       <div className="w-full max-w-4xl text-center mb-96 relative">
         {/* Tagline */}
-        <h1 className="text-3xl font-bold mb-44">TURN YOUR IMAGINATION <br /> INTO DIGITAL ASSET</h1>
+        <h1 className="text-3xl font-apex mb-44">TURN YOUR IMAGINATION <br /> INTO DIGITAL ASSET</h1>
 
         {/* Images */}
         {/* Left Side Images */}
@@ -47,7 +47,7 @@ function App() {
             className="w-full lg:w-96 p-4 border rounded-full shadow focus:outline-none focus:ring focus:ring-blue-500"
           />
           <button
-            className="absolute right-2 top-2.5 px-6 py-2 bg-red-500 text-white rounded-full shadow-lg hover:bg-red-600"
+            className="absolute right-2 font-apex top-2.5 px-6 py-2 bg-red-500 text-white rounded-full shadow-lg hover:bg-red-600"
           >
             Generate
           </button>

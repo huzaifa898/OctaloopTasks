@@ -63,7 +63,7 @@ const ExploreCollections = () => {
     <div className="min-h-screen px-6 lg:px-20 py-10">
       {/* Section Heading */}
       <h2
-        className="text-4xl md:text-5xl font-bold text-gray-800 mb-10"
+        className="text-4xl md:text-5xl font-apex  text-gray-800 mb-10"
         style={{ marginLeft: "2%" }}
       >
         EXPLORE OUR COLLECTIONS

@@ -197,20 +197,20 @@ const TopSellers = () => {
                 gap: "10px", // Ensure spacing between columns if necessary
               }}
             >
-              <div className="font-semibold">ID</div>
-              <div className="font-semibold">Name</div>
-              <div className="font-semibold">Volume</div>
-              <div className="font-semibold">Followers</div>
-              <div className="font-semibold">Percent</div>
-              <div className="font-semibold">Floor Price</div>
-              <div className="font-semibold">Items</div>
+              <div className="font-apex">ID</div>
+              <div className="font-apex">Name</div>
+              <div className="font-apex">Volume</div>
+              <div className="font-apex">Followers</div>
+              <div className="font-apex">Percent</div>
+              <div className="font-apex">Floor Price</div>
+              <div className="font-apex">Items</div>
             </div>
 
             {/* Data rows */}
             {sellers.map((seller, index) => (
               <div
                 key={index}
-                className="w-full bg-white shadow-md rounded-lg p-4 flex items-center justify-between"
+                className="w-full font-apex bg-white shadow-md rounded-lg p-4 flex items-center justify-between"
                 style={{
                   height: "80px", // Uniform height for each row
                   gap: "10px", // Ensure spacing between columns if necessary

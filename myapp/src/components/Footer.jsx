@@ -13,9 +13,9 @@ function Footer() {
           paddingBottom: "48px",
         }}
       >
-        <h2 className="text-3xl font-bold mb-6">Ready for the Next NFT Drop?</h2>
+        <h2 className="text-3xl font-apex mb-6">Ready for the Next NFT Drop?</h2>
         <div
-          className="relative mx-auto"
+          className="relative mx-auto font-apex"
           style={{ width: "680px", height: "96px" }}
         >
           <input
@@ -63,8 +63,8 @@ function Footer() {
 
           {/* Column 2: Description & Social Media Links */}
           <div className="text-center">
-            <h3 className="text-xl font-bold mb-4">Fry Networks</h3>
-            <p className="text-sm mb-4">
+            <h3 className="text-xl font-apex mb-4">Fry Networks</h3>
+            <p className="text-sm font-apex mb-4">
               NFT ALGO is the world's leading NFTs marketplace where you can <br />
               discover, sell and bid NFTs and get rich.
             </p>
@@ -95,25 +95,25 @@ function Footer() {
 
           {/* Column 3: Navigation Links */}
           <div className="text-center">
-            <h4 className="text-lg font-bold mb-2">About</h4>
+            <h4 className="text-lg font-apex mb-2">About</h4>
             <ul className="text-sm space-y-2">
               <li>
-                <a href="#" className="hover:underline">
+                <a href="#" className="hover:underline   font-apex">
                   About NFT
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:underline">
+                <a href="#" className="hover:underline font-apex">
                   Live Auctions
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:underline">
+                <a href="#" className="hover:underline font-apex">
                   Collection
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:underline">
+                <a href="#" className="hover:underline font-apex">
                   Activity
                 </a>
               </li>

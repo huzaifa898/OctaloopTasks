@@ -21,13 +21,13 @@ const FAQ = () => {
   return (
     <div className=" text-white  flex items-center justify-center p-6">
       <div className="w-full max-w-xl">
-        <h1 className="text-3xl text-black font-bold mb-6 text-center">FREQUENTLY ASKED QUESTIONS</h1>
+        <h1 className="text-3xl text-black font-apex mb-6 text-center">FREQUENTLY ASKED QUESTIONS</h1>
         {faqs.map((faq) => (
           <div
             key={faq.question}
             className={`border ${
               open === faq.question ? "border-red-500" : "border-gray-700"
-            } rounded-md mb-4 overflow-hidden`}
+            } rounded-md mb-4 font-apex overflow-hidden`}
           >
             <div
               className={`flex justify-between text-black items-center p-4 cursor-pointer ${

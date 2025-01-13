@@ -4,7 +4,7 @@ import Cards from './Cards'
 import Footer from './Footer'
 function Nft() {
   return (
-    <div className="container mx-auto px-4">
+    <div className=" bg-gradient-to-b from-white to-pink-200">
         <Hero/>
         <Cards/>
         <Footer/>
