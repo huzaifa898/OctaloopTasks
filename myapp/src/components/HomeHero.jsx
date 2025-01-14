@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
-import main from '../Images/main.png';
+import hero1 from '../Images/hero1.png';
+import heroimg2 from '../Images/heroimg2.png';
+import heroimg3 from '../Images/heroimg3.png';
+import heroimg4 from '../Images/heroimg4.png';
+import heroimg5 from '../Images/heroimg5.png';
 import hands from '../Images/hands.png';
 import logo from '../Images/logo.png';
 import { Link } from 'react-router-dom';
@@ -7,6 +11,7 @@ import icon1 from "../Images/icon1.png";
 import icon2 from "../Images/icon2.png";
 import icon3 from "../Images/icon3.png";
 import icon4 from "../Images/icon4.png";
+import './HomeHero.css'; // Import the CSS file
 
 const HeroSection = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -149,19 +154,56 @@ const HeroSection = () => {
       </div>
 
       {/* Hero Section */}
-      <div className="flex flex-col items-center justify-center text-center px-4 py-6 h-full relative md:px-6 lg:px-8">
-        <h1 className="text-xl font-apex text-gray-900 mb-4 sm:text-2xl lg:text-3xl xl:text-4xl lg:mb-4">
-          DISCOVER, CREATE & SELL ARTWORKS.
-        </h1>
-        <p className="text-sm font-apex text-gray-700 mb-6 sm:text-base lg:text-lg lg:mb-8">
-          Discover and trade unique digital art pieces on our NFT website, where
-          creativity meets blockchain technology.
-        </p>
-        <div className="relative flex items-center justify-center w-full max-w-md sm:max-w-lg lg:max-w-xl mx-auto">
+      <div
+        className="absolute flex items-center justify-center"
+        style={{
+          width: "921.14px",
+          height: "410.96px",
+          top: "50%",
+          left: "50%",
+          transform: "translate(-50%, -50%)",
+          gap: "0px",
+          opacity: "0px",
+        }}
+      >
+        <div className="absolute transform -rotate-4 left-[-60px] top-[42px] w-[225.69px] h-[300.71px] animate-left-right">
           <img
-            src={main}
-            alt="Main Art"
-            className="relative z-10 rounded-lg shadow-lg w-full h-auto"
+            src={heroimg3}
+            alt="Hero Image 3"
+            className="relative z-10 rounded-lg w-full h-full"
+          />
+        </div>
+        <div className="absolute transform -rotate-4 left-[80px] top-[19.04px] w-[266.67px] h-[355.31px] animate-left-right">
+          <img
+            src={heroimg4}
+            alt="Hero Image 4"
+            className="relative z-10 rounded-lg w-full h-full"
+          />
+        </div>
+        <img
+          src={hero1}
+          alt="Hero Image 1"
+          className="relative z-20 rounded-lg w-[308.36px] h-[410.96px] animate-up-down"
+          style={{
+            left: "0px",
+            gap: "0px",
+            opacity: "0px",
+            marginLeft: "-40px",
+            marginRight: "-40px",
+          }}
+        />
+        <div className="absolute transform rotate-4 right-[70px] top-[19.04px] w-[266.67px] h-[355.31px] z-10 animate-right-left">
+          <img
+            src={heroimg2}
+            alt="Hero Image 2"
+            className="relative z-10 rounded-lg w-full h-full"
+          />
+        </div>
+        <div className="absolute transform rotate-4 right-[-90px] top-[42px] w-[225.69px] h-[300.71px] z-0 animate-right-left">
+          <img
+            src={heroimg5}
+            alt="Hero Image 5"
+            className="relative z-10 rounded-lg w-full h-full"
           />
         </div>
       </div>
@@ -176,7 +218,7 @@ const HeroSection = () => {
       {/* Modal */}
       {isModalOpen && (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-          <div className="bg-white rounded-lg shadow-lg p-6 w-80 relative">
+          <div className="bg-white rounded-lg p-6 w-80 relative">
             <button
               className="absolute top-3 right-3 text-gray-500 hover:text-gray-700"
               onClick={closeModal}
