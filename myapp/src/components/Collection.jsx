@@ -37,12 +37,12 @@ const FeaturedCollection = () => {
     <div className="py-10 px-4 sm:px-6 lg:px-8">
       <div className="container mx-auto max-w-7xl">
         {/* Title and Subtext */}
-        <div className="flex flex-col md:flex-row justify-between items-center mb-5">
-          <div>
-            <h2 className="text-2xl sm:text-3xl font-apex">
+        <div className="flex flex-col md:flex-row justify-between items-center mb-5 px-4">
+          <div className="text-left w-full md:w-auto">
+            <h2 style={{ marginLeft: "16px" }}  className="font-apex text-[64px] font-normal leading-[76.8px] tracking-[0.04em] text-left decoration-skip-ink">
               Featured Collection
             </h2>
-            <p className="text-gray-500 font-apex text-sm sm:text-base">
+            <p style={{ marginLeft: "16px" }}  className="font-apex text-[18px] font-light leading-[21.09px] tracking-[0.03em] text-left decoration-skip-ink">
               Explore our exclusive featured collection, showcasing innovative designs.
             </p>
           </div>
@@ -65,7 +65,7 @@ const FeaturedCollection = () => {
         </div>
 
         {/* Slider */}
-        <div className="flex flex-wrap justify-center gap-x-6 gap-y-8">
+        <div className="flex flex-wrap justify-center gap-x-12 gap-y-8 px-4">
           {cards.slice(currentIndex, currentIndex + cardsPerSlide).map((card) => (
             <div
               key={card.id}

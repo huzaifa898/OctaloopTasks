@@ -60,10 +60,10 @@ const sellers = [
 
 const TopSeller = () => {
   return (
-    <div className="container max-w-6xl mx-auto px-4">
+    <div className="container max-w-7xl mx-auto px-4">
       {/* Header Section */}
       <div className="flex justify-between items-center mb-4">
-        <h2 className="text-2xl font-apex">TOP SELLER</h2>
+        <h2 className="font-apex text-[64px] font-normal leading-[76.8px] tracking-[0.04em] text-left  decoration-skip-ink">TOP SELLER</h2>
         <Link to='/viewallseller'>
         <h3 className="text-red-500 font-apex font-medium">View All</h3>
         </Link>

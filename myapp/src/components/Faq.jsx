@@ -21,7 +21,7 @@ const FAQ = () => {
   return (
     <div className=" text-white  flex items-center justify-center p-6">
       <div className="w-full max-w-xl">
-        <h1 className="text-3xl text-black font-apex mb-6 text-center">FREQUENTLY ASKED QUESTIONS</h1>
+        <h1 className="text-3xl text-black font-apex mb-6 text-center leading-[76.8px] tracking-[0.03em] ">FREQUENTLY ASKED QUESTIONS</h1>
         {faqs.map((faq) => (
           <div
             key={faq.question}

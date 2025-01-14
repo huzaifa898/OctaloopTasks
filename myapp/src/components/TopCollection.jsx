@@ -70,10 +70,10 @@ const TopCollections = () => {
   ];
 
   return (
-    <div className="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-10">
+    <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10">
       {/* Header Section */}
       <div className="flex flex-col sm:flex-row justify-between items-center mb-8 text-center sm:text-left">
-        <h2 className="text-2xl sm:text-3xl font-bold text-gray-800">Top Collections</h2>
+        <h2 className="font-apex text-[64px] font-normal leading-[76.8px] tracking-[0.04em] text-left  decoration-skip-ink">Top Collections</h2>
         <Link to="/veiwcollection" className="mt-2 sm:mt-0">
           <h2 className="text-blue-600 font-medium hover:underline text-lg">
             View More Collection
@@ -81,7 +81,7 @@ const TopCollections = () => {
         </Link>
       </div>
       {/* Collection Cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-16">
         {collections.map((collection, index) => (
           <CollectionCard
             key={index}

@@ -69,9 +69,9 @@ const TrendingNFTs = () => {
 
   return (
     <div className="py-10 px-5">
-      <div className="container max-w-6xl mx-auto">
+      <div className="container max-w-7xl mx-auto">
         {/* Heading */}
-        <h1 style={{ marginLeft: "16px" }} className="text-4xl font-apex text-gray-800 mb-8">
+        <h1 style={{ marginLeft: "16px" }} className="font-apex text-[64px] font-normal leading-[76.8px] tracking-[0.04em] text-left  decoration-skip-ink">
           Auctions
         </h1>
         {/* Cards Grid */}
