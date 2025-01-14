@@ -6,7 +6,6 @@ import Seller from './Seller'
 import Aucations from './Aucations'
 import TopCollection from './TopCollection'
 import Sold from './Sold'
-//import Assets from './Assets'
  import Bost from './Bost'
  import Faq from './Faq'
 import Footer from './Footer'
@@ -20,8 +19,8 @@ function Home() {
          <Aucations/>
          <TopCollection/>
         <Sold/>
-        {/* <Assets/> 
-          <Bost/> */}
+        
+        <Bost/> 
         <Faq/>
         <Footer/>
     </div>

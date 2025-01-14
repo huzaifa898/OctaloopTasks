@@ -39,10 +39,10 @@ const FeaturedCollection = () => {
         {/* Title and Subtext */}
         <div className="flex flex-col md:flex-row justify-between items-center mb-5 px-4">
           <div className="text-left w-full md:w-auto">
-            <h2 style={{ marginLeft: "16px" }}  className="font-apex text-[64px] font-normal leading-[76.8px] tracking-[0.04em] text-left decoration-skip-ink">
+            <h2 className="font-apex text-[64px] font-normal leading-[76.8px] tracking-[0.04em] text-left decoration-skip-ink">
               Featured Collection
             </h2>
-            <p style={{ marginLeft: "16px" }}  className="font-apex text-[18px] font-light leading-[21.09px] tracking-[0.03em] text-left decoration-skip-ink">
+            <p className="font-apex text-[18px] font-light leading-[21.09px] tracking-[0.03em] text-left decoration-skip-ink">
               Explore our exclusive featured collection, showcasing innovative designs.
             </p>
           </div>

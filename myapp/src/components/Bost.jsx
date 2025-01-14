@@ -8,7 +8,7 @@ function BoostNFTSection() {
       <div className="w-full max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-16">
         {/* Left Side: Text and Button */}
         <div className="text-white flex flex-col justify-center">
-          <h1 className="text-3xl md:text-5xl text-black font-apex leading-snug mb-4 md:mb-6">
+          <h1 className="font-apex text-[64px] font-normal leading-[76.8px] tracking-[0.03em] text-left  underline-offset-[from-font] decoration-skip-ink-none md:text-5xl text-black font-apex leading-snug mb-4 md:mb-6">
             BOOST YOUR NFTs: <br /> ENHANCE VISIBILITY <br /> AND VALUE
           </h1>
           <p className="text-base md:text-lg font-apex text-black mb-4 md:mb-8">

@@ -12,9 +12,9 @@ import Logo from "../Images/logo.png";
 
 function Footer() {
   return (
-    <div className="">
+    <div className="flex flex-col items-center justify-center ">
       {/* Email Section */}
-      <div className="text-center py-12 px-4">
+      <div className="text-center py-12 px-4 ">
         <h2 className="text-2xl md:text-3xl font-apex mb-6">
           Ready for the Next NFT Drop?
         </h2>
@@ -34,7 +34,7 @@ function Footer() {
       </div>
 
       {/* Footer Section */}
-      <div className="bg-gradient-to-r from-red-500 to-red-600 text-white py-10">
+      <div className="bg-gradient-to-r from-red-500 to-red-600 text-white py-10 rounded mb-2">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-10">
           {/* Column 1: Logo */}
           <div className="flex flex-col items-center">

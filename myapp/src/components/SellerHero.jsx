@@ -121,11 +121,11 @@ const HeroSection = () => {
       <div className="flex flex-col lg:flex-row items-center justify-between w-full px-4 md:px-6 lg:px-8 py-20 mt-32 lg:mt-0">
         {/* Tagline */}
         <div className="text-center lg:text-left lg:w-1/2 mb-8 lg:mb-0 px-4">
-          <h1 className="text-4xl md:text-5xl font-bold text-red-600 mb-4">
+          <h1 className="text-4xl md:text-5xl ml-80 font-bold text-red-600 mb-4">
             TOP <br />
             <span className="text-6xl">SELLER</span>
           </h1>
-          <p className="text-gray-700 text-lg md:text-xl mt-4">
+          <p className="text-gray-700 text-lg md:text-xl ml-80 mt-4">
             Explore the best NFT collections with seamless wallet integration
             and creative options for creating your own digital assets.
           </p>
