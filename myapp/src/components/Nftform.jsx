@@ -182,12 +182,14 @@ function Nftform() {
 
             {/* Submit Button */}
             <div className="mt-6 flex justify-end">
+              <Link to='/profile'>
               <button
                 type="submit"
                 className="bg-red-600 text-white font-apex px-4 py-2 rounded-lg hover:bg-red-700"
               >
                 Mint NFT
               </button>
+              </Link>
             </div>
           </form>
         </div>

@@ -8,6 +8,7 @@ import AuctionPage from './components/AuctionPage';
 import Mntnft from './components/Mntnft';
 import Nftform from './components/Nftform';
 import Chosecollection from './components/Chosecollection';
+import Profile from './components/Porfile'
 function App() {
   return (
    <Router>
@@ -20,6 +21,7 @@ function App() {
        <Route path="/mntnft" element={<Mntnft />} />
        <Route path="/nftform" element={<Nftform />} />
        <Route path="/choosecollection" element={<Chosecollection />} />
+       <Route path="/profile" element={<Profile />} />
      </Routes>
    </Router>
   );
