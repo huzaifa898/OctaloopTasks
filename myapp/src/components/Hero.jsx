@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FaSignInAlt, FaUserPlus } from 'react-icons/fa';
 import { FaPlus } from 'react-icons/fa';
 import Logo from '../Images/logo.png';
@@ -6,8 +6,18 @@ import Hero from '../Images/Hero.png';
 import { Link } from 'react-router-dom';
 
 function App() {
+  const [showForm, setShowForm] = useState(false);
+
+  const handleGenerateClick = () => {
+    setShowForm(true);
+  };
+
+  const handleCloseClick = () => {
+    setShowForm(false);
+  };
+
   return (
-    <div className="min-h-screen font-apex">
+    <div className="min-h-screen font-apex relative">
       {/* Hero Section */}
       <div className="px-4 py-4 md:px-6 md:py-4">
         {/* Navbar */}
@@ -54,7 +64,10 @@ function App() {
             placeholder="Fantasy Creature holding a sword..."
             className="flex-grow bg-transparent outline-none text-gray-700"
           />
-          <button className="bg-red-600 text-white font-apex px-4 py-2 rounded-lg hover:bg-red-700">
+          <button
+            className="bg-red-600 text-white font-apex px-4 py-2 rounded-lg hover:bg-red-700"
+            onClick={handleGenerateClick}
+          >
             Generate
           </button>
         </div>
@@ -87,6 +100,56 @@ function App() {
           <FaPlus className="text-gray-700" />
         </button>
       </div>
+
+      {/* Form Modal */}
+      {showForm && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+          <div className="bg-white p-8 rounded-lg shadow-lg relative" style={{ width: '353px', gap: '0px', borderRadius: '8px', opacity: '1' }}>
+            <button
+              className="absolute top-2 right-2 text-gray-700 hover:text-red-600"
+              onClick={handleCloseClick}
+            >
+              &times;
+            </button>
+            <h2 className="text-2xl text-center font-apex mb-4">Generate NFT</h2>
+            <form>
+              <div className="mb-4">
+                <label className="block text-gray-700 font-apex mb-2">Type</label>
+                <select className="w-full p-2 border border-gray-300 rounded-lg">
+                  <option>Single NFT</option>
+                  <option>Option 2</option>
+                  <option>Option 3</option>
+                </select>
+              </div>
+              <div className="mb-4">
+                <label className="block text-gray-700 font-apex mb-2">Prompt</label>
+                <textarea
+                  className="w-full p-2 border border-gray-300 rounded-lg"
+                  style={{ height: '140px', borderRadius: '8px' }}
+                ></textarea>
+              </div>
+              <div className="mt-4 p-4 bg-gray-100 rounded-lg" style={{ width: '100%', height: '91px', padding: '14px 25px', gap: '10px', borderRadius: '8px', opacity: '1' }}>
+                <h3 className="text-gray-700 font-apex mb-2">Payment Methods</h3>
+                <div className="flex gap-2">
+                  <img src="/path/to/payment-method1.png" alt="Payment Method 1" className="w-8 h-8" />
+                  <img src="/path/to/payment-method2.png" alt="Payment Method 2" className="w-8 h-8" />
+                  <img src="/path/to/payment-method3.png" alt="Payment Method 3" className="w-8 h-8" />
+                </div>
+              </div>
+              <div className="flex justify-end mt-4">
+                <Link to='/mntnft'>
+                <button
+                  type="submit"
+                  className="bg-red-600 text-white font-apex px-4 py-2 rounded-lg hover:bg-red-700"
+                >
+                  Confirm
+                </button>
+                </Link>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

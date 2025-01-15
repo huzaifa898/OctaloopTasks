@@ -5,6 +5,9 @@ import Nft from './components/Nft';
 import VeiwCollection from './components/VeiwCollection';
 import ViewAllSeller from './components/ViewAllSeller';
 import AuctionPage from './components/AuctionPage';
+import Mntnft from './components/Mntnft';
+import Nftform from './components/Nftform';
+import Chosecollection from './components/Chosecollection';
 function App() {
   return (
    <Router>
@@ -14,6 +17,9 @@ function App() {
        <Route path="/veiwcollection" element={<VeiwCollection />} />
        <Route path="/viewallseller" element={<ViewAllSeller />} />
        <Route path="/auctionpage" element={<AuctionPage />} />
+       <Route path="/mntnft" element={<Mntnft />} />
+       <Route path="/nftform" element={<Nftform />} />
+       <Route path="/choosecollection" element={<Chosecollection />} />
      </Routes>
    </Router>
   );
