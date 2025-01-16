@@ -7,8 +7,24 @@ import image5 from "../Images/images5.png";
 import image6 from "../Images/images6.png";
 import image7 from "../Images/images7.png";
 import icon from "../Images/icon.png"
-import { Link } from 'react-router-dom';
+import fry from "../Images/fry.png";
+import { Link, useNavigate } from 'react-router-dom';
+
 function Profilecards() {
+    const navigate = useNavigate();
+
+    const handleBoostClick = () => {
+        navigate('/boostpage'); // Replace with the actual route for the boost page
+    };
+
+    const handlePriceClick = () => {
+        navigate('/boostpage'); // Navigate to boost page when price is clicked
+    };
+
+    const handleSoldClick = () => {
+        navigate('/boostpage'); // Navigate to boost page when sold button is clicked
+    };
+
     const nfts = [
         {
           id: 1,
@@ -54,6 +70,34 @@ function Profilecards() {
         },
         {
           id: 7,
+          title: "Stella Nova",
+          username: "@stellanova",
+          image: image7,
+          price: "42.02",
+        },
+        {
+          id: 8,
+          title: "Stella Nova",
+          username: "@stellanova",
+          image: image7,
+          price: "42.02",
+        },
+        {
+          id: 8,
+          title: "Stella Nova",
+          username: "@stellanova",
+          image: image7,
+          price: "42.02",
+        },
+        {
+          id: 8,
+          title: "Stella Nova",
+          username: "@stellanova",
+          image: image7,
+          price: "42.02",
+        },
+        {
+          id: 8,
           title: "Stella Nova",
           username: "@stellanova",
           image: image7,
@@ -112,9 +156,70 @@ function Profilecards() {
                       Not Minted
                     </button>
                     </Link>
+                  ) : index === 1 || index === 2 ? (
+                    <> 
+                    
+                      <button
+                        className="bg-red-500 font-apex text-white text-sm px-4 py-2 rounded-full hover:bg-red-600 transition"
+                        onClick={handleBoostClick}
+                      >
+                        Boost
+                      </button>
+                      <div
+                        className="flex items-center bg-black/50 px-3 py-1 rounded-full cursor-pointer"
+                        onClick={handlePriceClick}
+                      >
+                        <img src={fry} alt="Fry Icon" className="w-4 h-4 mr-1" />
+                        <p className="text-sm text-white font-apex">
+                          ${nft.price}
+                        </p>
+                      </div>
+                    </>
+                  ) : index === 3 ? (
+                    <>
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <button
+                          className="bg-red-500 font-apex text-white text-sm px-4 py-2 rounded-full hover:bg-red-600 transition"
+                          onClick={handleSoldClick}
+                        >
+                          Sold
+                        </button>
+                      </div>
+                      <div className="absolute bottom-4 left-4">
+                        <button
+                          className="bg-red-500 font-apex text-white text-sm px-4 py-2 rounded-full hover:bg-red-600 transition"
+                          onClick={handleBoostClick}
+                        >
+                          Boost
+                        </button>
+                      </div>
+                      <div className="absolute bottom-4 right-4">
+                        <div
+                          className="flex items-center bg-black/50 px-3 py-1 rounded-full cursor-pointer"
+                          onClick={handlePriceClick}
+                        >
+                          <img src={fry} alt="Fry Icon" className="w-4 h-4 mr-1" />
+                          <p className="text-sm text-white font-apex">
+                            ${nft.price}
+                          </p>
+                        </div>
+                      </div>
+                    </>
+                  ) : index === 4 ? (
+                    <div className="flex justify-center w-full">
+                      <button
+                        className="bg-red-500 font-apex text-white text-sm px-4 py-2 rounded-full hover:bg-red-600 transition"
+                        onClick={handleSoldClick}
+                      >
+                        Sold
+                      </button>
+                    </div>
                   ) : (
                     <>
-                      <button className="bg-red-500 font-apex text-white text-sm px-4 py-2 rounded-full hover:bg-red-600 transition">
+                      <button
+                        className="bg-red-500 font-apex text-white text-sm px-4 py-2 rounded-full hover:bg-red-600 transition"
+                        onClick={handleBoostClick}
+                      >
                         Boost
                       </button>
                       <p className="text-sm text-white font-apex bg-black/50 px-3 py-1 rounded-full">

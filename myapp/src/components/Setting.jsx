@@ -1,9 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import { FaSignInAlt, FaUserPlus } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import logo from "../Images/logo.png";
 
 function Setting() {
+  const [showUploadModal, setShowUploadModal] = useState(false);
+
+  const handleUploadClick = () => {
+    setShowUploadModal(true);
+  };
+
+  const handleCloseModal = () => {
+    setShowUploadModal(false);
+  };
+
   return (
     <div className="flex flex-col items-center">
       {/* Navbar */}
@@ -40,9 +50,9 @@ function Setting() {
       >
         <Link to="/profile">
           <button
-            className="bg-red-600 text-white font-apex px-4 py-2 rounded-lg hover:bg-red-700"
+            className="bg-gray-100 text-black font-apex px-4 py-2 rounded-lg"
             style={{
-              width: "236px",
+              width: "100px",
               height: "50px",
               padding: "5px 10px",
               borderRadius: "8px 0px 0px 0px",
@@ -53,9 +63,9 @@ function Setting() {
         </Link>
         <Link to="/setting">
           <button
-            className="bg-gray-200 text-black font-apex px-4 py-2 rounded-lg hover:bg-red-700"
+            className="bg-gray-100 text-black font-apex px-4 py-2 rounded-lg"
             style={{
-              width: "236px",
+              width: "100px",
               height: "50px",
               padding: "5px 10px",
               borderRadius: "8px 0px 0px 0px",
@@ -94,7 +104,10 @@ function Setting() {
           </div>
         </div>
         <div className="text-center mt-2">
-          <button className="bg-white text-black px-4 py-2 rounded-lg">
+          <button
+            className="bg-white text-black px-4 py-2 rounded-lg"
+            onClick={handleUploadClick}
+          >
             Upload Profile
           </button>
         </div>
@@ -158,6 +171,47 @@ function Setting() {
           </Link>
         </div>
       </div>
+
+      {/* Upload Profile Modal */}
+      {showUploadModal && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+          <div
+            className="bg-white p-8 rounded-lg shadow-lg relative"
+            style={{
+              width: '455px',
+              height: '285px',
+              top: '98px',
+              left: '28px',
+              gap: '0px',
+              opacity: '1',
+            }}
+          >
+            <button
+              className="absolute top-2 right-2 text-gray-700 hover:text-red-600"
+              onClick={handleCloseModal}
+            >
+              &times;
+            </button>
+            <h2 className="text-2xl text-center font-apex mb-4">Upload Image</h2>
+            <div className="flex flex-col items-center justify-center h-full">
+              <div
+                className="w-[179px] h-[129px] bg-gray-200 border-2 border-dashed border-gray-400 flex flex-col items-center justify-center mb-4"
+                style={{
+                  top: '176px',
+                  left: '166px',
+                  gap: '0px',
+                  opacity: '1',
+                }}
+              >
+                <span className="text-gray-500 mb-2">Drag and Drop</span>
+                <button className="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700">
+                  Upload Image
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

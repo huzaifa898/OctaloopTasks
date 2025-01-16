@@ -1,24 +1,13 @@
-import React, { useState } from "react";
+import React from 'react'
 import { FaSignInAlt, FaUserPlus } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import logo from "../Images/logo.png";
 import banner from '../Images/banner.png';
 import ba from '../Images/ba.png';
-import new11 from '../Images/new11.png';
-import link1 from '../Images/link1.png';
-import link2 from '../Images/link2.png';
-import link3 from '../Images/link3.png';
-import link4 from '../Images/link4.png';
-import Profilecards from "./Profilecards";
-
-function Profile() {
-  
-
-  
+function Userprofile() {
   return (
-    <div className="flex flex-col items-center">
-      {/* Navbar Section */}
-      <nav className="flex items-center justify-between py-3 w-[1320px] h-[100px] mt-[25px] gap-0 opacity-100">
+    <div  className="flex flex-col items-center">
+          <nav className="flex items-center justify-between py-3 w-[1320px] h-[100px] mt-[25px] gap-0 opacity-100">
         <div className="text-xl font-bold text-red-600">
           <img src={logo} alt="Logo" className="h-10 w-auto md:h-24 md:w-24" />
         </div>
@@ -110,43 +99,8 @@ function Profile() {
         </div>
       </div>
 
-      {/* New Section */}
-      <div className="flex gap-4 mt-10">
-        <div className="w-[482px] h-[461px]">
-          <img
-            src={new11}
-            alt="New Section"
-            className="w-full h-full object-cover rounded-lg"
-          />
-        </div>
-        <div className="w-[691px] h-[491px] bg-gray-100 p-8 rounded-lg shadow-lg">
-          <h2 className="text-xl font-apex mb-4">WONDERFUL ARTWORK</h2>
-          <div className="bg-gray-200 p-4 rounded-lg shadow-md">
-            items
-          </div>
-          <br />
-          <div className="bg-gray-200 p-4 rounded-lg shadow-md">
-            VOL FRY
-          </div>
-          <div className="flex gap-4 mt-4">
-            <img src={link1} alt="Link 1" className="w-full h-24 object-cover rounded-lg" />
-            <img src={link2} alt="Link 2" className="w-full h-24 object-cover rounded-lg" />
-            <img src={link3} alt="Link 3" className="w-full h-24 object-cover rounded-lg" />
-            <img src={link4} alt="Link 4" className="w-full h-24 object-cover rounded-lg" />
-          </div>
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis culpa perspiciatis sint ipsum exercitationem, tenetur reprehenderit esse quo, qui possimus odio,
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae laborum facere quae? Labore repellendus perferendis iste ad vel nesciunt consequatur totam 
-              odit incidunt velit est aliquid magnam pariatur, iusto eum.
-               officia facilis ullam. Est in odit iste asperiores deleniti.</p>
-        </div>
-      </div>
-
-      {/* Profile Cards Section */}
-      <div className="mt-10">
-        <Profilecards />
-      </div>
     </div>
-  );
+  )
 }
 
-export default Profile;
+export default Userprofile

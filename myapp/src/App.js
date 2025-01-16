@@ -11,6 +11,8 @@ import Chosecollection from './components/Chosecollection';
 import Profile from './components/Porfile'
 import Setting from './components/Setting'
 import Sellmethod from './components/Sellmethod';
+import Boostpage from './components/Boostpage'
+import Userprofile from './components/Userprofile';
 function App() {
   return (
    <Router>
@@ -26,6 +28,8 @@ function App() {
        <Route path="/profile" element={<Profile />} />
        <Route path="/setting" element={<Setting />} />
        <Route path="/sellmethod" element={<Sellmethod />} />
+       <Route path="/boostpage" element={<Boostpage />} />
+       <Route path="/userprofile" element={<Userprofile />} />
      </Routes>
    </Router>
   );

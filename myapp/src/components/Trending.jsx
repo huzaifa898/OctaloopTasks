@@ -8,7 +8,7 @@ import card6 from '../Images/card6.png'
 import card7 from '../Images/card7.png'
 import card8 from '../Images/card8.png'
 import icon from "../Images/icon.png"
-const TrendingNFTs = () => {
+const TrendingNFTs = ({ heading = "Trending NFTs" }) => {
   const nfts = [
     {
       id: 1,
@@ -73,7 +73,7 @@ const TrendingNFTs = () => {
       <div className="container max-w-7xl mx-auto">
         {/* Heading */}
         <h1 style={{ marginLeft: "0px" }} className="font-apex text-[64px] font-normal leading-[76.8px] tracking-[0.04em] text-left decoration-skip-ink" >
-          Trending NFTs
+          {heading}
         </h1>
         {/* Cards Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2">

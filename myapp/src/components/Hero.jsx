@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
-import { FaSignInAlt, FaUserPlus } from 'react-icons/fa';
 import { FaPlus } from 'react-icons/fa';
 import Logo from '../Images/logo.png';
 import Hero from '../Images/Hero.png';
-import { Link } from 'react-router-dom';
+import ppl from '../Images/ppl.png';
+import wallet from '../Images/wallet.png';
+import { Link, useNavigate } from 'react-router-dom';
 
 function App() {
   const [showForm, setShowForm] = useState(false);
+  const navigate = useNavigate();
 
   const handleGenerateClick = () => {
     setShowForm(true);
@@ -14,6 +16,10 @@ function App() {
 
   const handleCloseClick = () => {
     setShowForm(false);
+  };
+
+  const handlePplClick = () => {
+    navigate('/userprofile');
   };
 
   return (
@@ -32,8 +38,9 @@ function App() {
             <li className="text-red-700 text-bold text-xl font-apex cursor-pointer">AI NFT Generation</li>
           </ul>
           <div className="flex space-x-2">
-            <FaSignInAlt className="text-gray-700 hover:text-red-600 text-xl cursor-pointer" />
-            <FaUserPlus className="text-gray-700 hover:text-red-600 text-xl cursor-pointer" />
+           
+            <img src={wallet} alt="Wallet Icon" className="h-10 w-10 cursor-pointer" />
+            <img src={ppl} alt="People Icon" className="h-10 w-10 cursor-pointer" onClick={handlePplClick} />
           </div>
         </nav>
 
