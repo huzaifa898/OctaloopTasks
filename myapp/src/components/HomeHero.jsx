@@ -98,9 +98,8 @@ const HeroSection = () => {
 
         {/* Mobile Menu */}
         <div
-          className={`fixed top-0 left-0 h-full w-64 bg-white shadow-lg transform ${
-            isMenuOpen ? 'translate-x-0' : '-translate-x-full'
-          } transition-transform duration-300 ease-in-out z-30`}
+          className={`fixed top-0 left-0 h-full w-64 bg-white shadow-lg transform ${isMenuOpen ? 'translate-x-0' : '-translate-x-full'
+            } transition-transform duration-300 ease-in-out z-30`}
         >
           {/* Close Button */}
           <button
@@ -244,25 +243,26 @@ const HeroSection = () => {
             >
               ✖
             </button>
-            <h1 className="text-lg font-bold mb-4 text-center">
+            <h1 className="text-lg font-apex mb-4 text-center flex flex-col items-center">
               CONNECT YOUR WALLET
-              <img src={logo} alt="Pera Logo" className="h-12 mr-2" />
+              <img src={logo} alt="Pera Logo" className="h-16 mt-2" />
             </h1>
+
             <div className="space-y-3">
               <button className="w-full flex items-center border-2 border-red-500 rounded-lg py-2 px-4 hover:bg-red-50">
-                <img src={icon1} alt="Pera Logo" className="h-6 mr-2" />
+                <img src={icon3} alt="Pera Logo" className="h-6 mr-2" />
                 <span className="ml-2">Pera</span>
               </button>
               <button className="w-full flex items-center border-2 border-red-500 rounded-lg py-2 px-4 hover:bg-red-50">
-                <img src={icon2} alt="Pera Logo" className="h-6 mr-2" />
+                <img src={icon4} alt="Pera Logo" className="h-6 mr-2" />
                 <span className="ml-2">Defly</span>
               </button>
               <button className="w-full flex items-center border-2 border-red-500 rounded-lg py-2 px-4 hover:bg-red-50">
-                <img src={icon3} alt="Pera Logo" className="h-6 mr-2" />
+                <img src={icon2} alt="Pera Logo" className="h-6 mr-2" />
                 <span className="ml-2">Daffi</span>
               </button>
               <button className="w-full flex items-center border-2 border-red-500 rounded-lg py-2 px-4 hover:bg-red-50">
-                <img src={icon4} alt="Pera Logo" className="h-6 mr-2" />
+                <img src={icon1} alt="Pera Logo" className="h-6 mr-2" />
                 <span className="ml-2">WalletConnect</span>
               </button>
             </div>
