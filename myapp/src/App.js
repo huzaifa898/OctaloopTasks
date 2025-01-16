@@ -9,6 +9,8 @@ import Mntnft from './components/Mntnft';
 import Nftform from './components/Nftform';
 import Chosecollection from './components/Chosecollection';
 import Profile from './components/Porfile'
+import Setting from './components/Setting'
+import Sellmethod from './components/Sellmethod';
 function App() {
   return (
    <Router>
@@ -22,6 +24,8 @@ function App() {
        <Route path="/nftform" element={<Nftform />} />
        <Route path="/choosecollection" element={<Chosecollection />} />
        <Route path="/profile" element={<Profile />} />
+       <Route path="/setting" element={<Setting />} />
+       <Route path="/sellmethod" element={<Sellmethod />} />
      </Routes>
    </Router>
   );

@@ -7,6 +7,7 @@ import image5 from "../Images/images5.png";
 import image6 from "../Images/images6.png";
 import image7 from "../Images/images7.png";
 import icon from "../Images/icon.png"
+import { Link } from 'react-router-dom';
 function Profilecards() {
     const nfts = [
         {
@@ -70,12 +71,10 @@ function Profilecards() {
     <div className="py-10  px-5">
       <div className="container max-w-7xl mx-auto">
         {/* Heading */}
-        <h1 style={{ marginLeft: "16px" }} className="font-apex text-[64px] font-normal leading-[76.8px] tracking-[0.04em] text-left  decoration-skip-ink" >
-          Recently Sold
-        </h1>
+        
         {/* Cards Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2">
-          {nfts.map((nft) => (
+          {nfts.map((nft, index) => (
             <div
               key={nft.id}
               className="bg-white rounded-lg shadow-lg overflow-hidden hover:scale-105 transform transition duration-300 relative border border-gray-200"
@@ -107,12 +106,22 @@ function Profilecards() {
                 />
                 {/* Buttons on the Image */}
                 <div className="absolute inset-0 flex items-end justify-between p-4 bg-gradient-to-t from-black/50 to-transparent">
-                  <button className="bg-red-500 font-apex text-white text-sm px-4 py-2 rounded-full hover:bg-red-600 transition">
-                    Buy
-                  </button>
-                  <p className="text-sm text-white font-apex bg-black/50 px-3 py-1 rounded-full">
-                    ${nft.price}
-                  </p>
+                  {index === 0 ? (
+                    <Link to='/sellmethod'>
+                    <button className="bg-red-500 font-apex text-white text-sm px-4 py-2 rounded-full hover:bg-red-600 transition">
+                      Not Minted
+                    </button>
+                    </Link>
+                  ) : (
+                    <>
+                      <button className="bg-red-500 font-apex text-white text-sm px-4 py-2 rounded-full hover:bg-red-600 transition">
+                        Boost
+                      </button>
+                      <p className="text-sm text-white font-apex bg-black/50 px-3 py-1 rounded-full">
+                        ${nft.price}
+                      </p>
+                    </>
+                  )}
                 </div>
               </div>
             </div>
