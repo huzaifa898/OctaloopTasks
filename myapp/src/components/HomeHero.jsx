@@ -14,6 +14,7 @@ import icon4 from "../Images/icon4.png";
 import './HomeHero.css'; // Import the CSS file
 import { getPeraWalletInstance } from '../utils/peraWallet';
 import { connectToWalletConnect } from '../utils/walletConnect';
+import { connectToDaffiWallet } from '../utils/daffiWallet';
 
 const HeroSection = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -68,6 +69,17 @@ const HeroSection = () => {
       }
     } catch (error) {
       console.error('Failed to connect to WalletConnect:', error);
+      // Handle connection error
+    }
+  };
+
+  const connectDaffiWallet = async () => {
+    try {
+      const accounts = await connectToDaffiWallet();
+      setSuccessMessage('Daffi Wallet connected successfully!');
+      closeModal();
+    } catch (error) {
+      console.error('Failed to connect to Daffi Wallet:', error);
       // Handle connection error
     }
   };
@@ -199,14 +211,33 @@ const HeroSection = () => {
       )}
 
       {/* Heading and Tagline */}
-      <div className="absolute text-center" style={{ top: "20%", left: "50%", transform: "translateX(-50%)" }}>
-        <h1 className="font-apex text-[96px] font-normal leading-[102px] tracking-[0.04em] text-center  decoration-skip-ink" style={{ marginBottom: '20px' }}>
-          DISCOVER, CREATE & <br /> SELL ARTWORKS.
-        </h1>
-        <p className="font-apex text-[18px] font-light leading-[21.09px] tracking-[0.03em] text-center decoration-skip-ink" style={{ marginBottom: '40px' }}>
-          Discover and trade unique digital art pieces on our NFT website, where creativity meets blockchain technology.
-        </p>
-      </div>
+      <div
+  className="absolute text-center"
+  style={{ top: "20%", left: "50%", transform: "translateX(-50%)" }}
+>
+  <h1
+    className="font-apex font-normal tracking-[0.04em] text-center decoration-skip-ink"
+    style={{
+      fontSize: "clamp(32px, 5vw, 96px)", // Dynamically adjusts between 32px (mobile) and 96px (desktop)
+      lineHeight: "clamp(40px, 6vw, 102px)", // Dynamically adjusts between 40px and 102px
+      marginBottom: "20px",
+    }}
+  >
+    DISCOVER, CREATE & <br /> SELL ARTWORKS.
+  </h1>
+  <p
+    className="font-apex font-light tracking-[0.03em] text-center decoration-skip-ink"
+    style={{
+      fontSize: "clamp(14px, 3vw, 18px)", // Adjusts between 14px (mobile) and 18px (desktop)
+      lineHeight: "clamp(18px, 4vw, 21.09px)", // Adjusts between 18px and 21.09px
+      marginBottom: "40px",
+    }}
+  >
+    Discover and trade unique digital art pieces on our NFT website, where
+    creativity meets blockchain technology.
+  </p>
+</div>
+
 
       {/* Hero Section */}
       <div
@@ -221,15 +252,30 @@ const HeroSection = () => {
           opacity: "0px",
         }}
       >
-        <div className="absolute w-[800px] h-[400px] bg-red-500 opacity-30 shadow-lg" style={{ top: "50%", left: "50%", transform: "translate(-50%, -50%)", filter: "blur(100px)", marginTop: '20px' }}></div>
-        <div className="absolute transform -rotate-4 left-[-60px] top-[42px] w-[225.69px] h-[300.71px] animate-left-right" style={{ marginTop: '20px' }}>
+        <div
+          className="absolute w-[800px] h-[400px] bg-red-500 opacity-30 shadow-lg sm:block hidden"
+          style={{
+            top: "50%",
+            left: "50%",
+            transform: "translate(-50%, -50%)",
+            filter: "blur(100px)",
+            marginTop: "20px",
+          }}
+        ></div>
+        <div
+          className="absolute transform -rotate-4 left-[-60px] top-[42px] w-[225.69px] h-[300.71px] animate-left-right sm:block hidden"
+          style={{ marginTop: "20px" }}
+        >
           <img
             src={heroimg3}
             alt="Hero Image 3"
             className="relative z-10 rounded-lg w-full h-full"
           />
         </div>
-        <div className="absolute transform -rotate-4 left-[80px] top-[19.04px] w-[266.67px] h-[355.31px] animate-left-right" style={{ marginTop: '20px' }}>
+        <div
+          className="absolute transform -rotate-4 left-[80px] top-[19.04px] w-[266.67px] h-[355.31px] animate-left-right sm:block hidden"
+          style={{ marginTop: "20px" }}
+        >
           <img
             src={heroimg4}
             alt="Hero Image 4"
@@ -239,24 +285,30 @@ const HeroSection = () => {
         <img
           src={hero1}
           alt="Hero Image 1"
-          className="relative z-20 rounded-lg w-[308.36px] h-[410.96px] animate-up-down"
+          className="relative z-20 rounded-lg w-[308.36px] h-[410.96px] animate-up-down sm:block hidden"
           style={{
             left: "0px",
             gap: "0px",
             opacity: "0px",
             marginLeft: "-40px",
             marginRight: "-40px",
-            marginTop: '20px',
+            marginTop: "20px",
           }}
         />
-        <div className="absolute transform rotate-4 right-[70px] top-[19.04px] w-[266.67px] h-[355.31px] z-10 animate-right-left" style={{ marginTop: '20px' }}>
+        <div
+          className="absolute transform rotate-4 right-[70px] top-[19.04px] w-[266.67px] h-[355.31px] z-10 animate-right-left sm:block hidden"
+          style={{ marginTop: "20px" }}
+        >
           <img
             src={heroimg2}
             alt="Hero Image 2"
             className="relative z-10 rounded-lg w-full h-full"
           />
         </div>
-        <div className="absolute transform rotate-4 right-[-90px] top-[42px] w-[225.69px] h-[300.71px] z-0 animate-right-left" style={{ marginTop: '20px' }}>
+        <div
+          className="absolute transform rotate-4 right-[-90px] top-[42px] w-[225.69px] h-[300.71px] z-0 animate-right-left sm:block hidden"
+          style={{ marginTop: "20px" }}
+        >
           <img
             src={heroimg5}
             alt="Hero Image 5"
@@ -278,6 +330,7 @@ const HeroSection = () => {
           bottom: "-170px", // Adjust this value to move the image down
         }}
       />
+
 
       {/* Modal */}
       {isModalOpen && (
@@ -302,21 +355,23 @@ const HeroSection = () => {
                 <img src={icon3} alt="Pera Logo" className="h-6 mr-2" />
                 <span className="ml-2">Pera</span>
               </button>
-             
-              <button className="w-full flex items-center border-2 border-red-500 rounded-lg py-2 px-4 hover:bg-red-50">
-                <img src={icon4} alt="Defly Logo" className="h-6 mr-2" />
-                <span className="ml-2">Defly</span>
-              </button>
-              <button className="w-full flex items-center border-2 border-red-500 rounded-lg py-2 px-4 hover:bg-red-50">
-                <img src={icon2} alt="Daffi Logo" className="h-6 mr-2" />
-                <span className="ml-2">Daffi</span>
-              </button>
               <button
                 className="w-full flex items-center border-2 border-red-500 rounded-lg py-2 px-4 hover:bg-red-50"
                 onClick={connectWalletConnect}
               >
                 <img src={icon1} alt="WalletConnect Logo" className="h-6 mr-2" />
                 <span className="ml-2">WalletConnect</span>
+              </button>
+              <button className="w-full flex items-center border-2 border-red-500 rounded-lg py-2 px-4 hover:bg-red-50">
+                <img src={icon4} alt="Defly Logo" className="h-6 mr-2" />
+                <span className="ml-2">Defly</span>
+              </button>
+              <button
+                className="w-full flex items-center border-2 border-red-500 rounded-lg py-2 px-4 hover:bg-red-50"
+                onClick={connectDaffiWallet}
+              >
+                <img src={icon2} alt="Daffi Logo" className="h-6 mr-2" />
+                <span className="ml-2">Daffi</span>
               </button>
             </div>
           </div>

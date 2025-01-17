@@ -6,7 +6,7 @@ let connector;
 export const connectToWalletConnect = async () => {
   try {
     connector = new WalletConnect({
-      bridge: "https://bridge.walletconnect.org", // Required
+      bridge: "https://bridge.walletconnect.org",
     });
 
     // Check if connection is already established
@@ -25,6 +25,7 @@ export const connectToWalletConnect = async () => {
       const { accounts, chainId } = payload.params[0];
       console.log("Connected Accounts:", accounts);
       console.log("Connected ChainId:", chainId);
+      QRCodeModal.close(); // Close the QR code modal on successful connection
     });
 
     connector.on("session_update", (error, payload) => {
