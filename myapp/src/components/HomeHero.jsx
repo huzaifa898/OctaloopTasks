@@ -12,10 +12,12 @@ import icon2 from "../Images/icon2.png";
 import icon3 from "../Images/icon3.png";
 import icon4 from "../Images/icon4.png";
 import './HomeHero.css'; // Import the CSS file
+import { getPeraWalletInstance } from '../utils/peraWallet';
 
 const HeroSection = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const peraWallet = getPeraWalletInstance();
 
   const openModal = () => {
     setIsModalOpen(true);
@@ -31,6 +33,18 @@ const HeroSection = () => {
 
   const closeMenu = () => {
     setIsMenuOpen(false);
+  };
+
+  const connectPeraWallet = async () => {
+    try {
+      const accounts = await peraWallet.connect();
+      console.log('Connected accounts:', accounts);
+      // Handle successful connection
+      closeModal();
+    } catch (error) {
+      console.error('Failed to connect to Pera Wallet:', error);
+      // Handle connection error
+    }
   };
 
   return (
@@ -249,7 +263,10 @@ const HeroSection = () => {
             </h1>
 
             <div className="space-y-3">
-              <button className="w-full flex items-center border-2 border-red-500 rounded-lg py-2 px-4 hover:bg-red-50">
+              <button
+                className="w-full flex items-center border-2 border-red-500 rounded-lg py-2 px-4 hover:bg-red-50"
+                onClick={connectPeraWallet}
+              >
                 <img src={icon3} alt="Pera Logo" className="h-6 mr-2" />
                 <span className="ml-2">Pera</span>
               </button>
