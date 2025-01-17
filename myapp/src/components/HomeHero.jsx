@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import hero1 from '../Images/hero1.png';
 import heroimg2 from '../Images/heroimg2.png';
 import heroimg3 from '../Images/heroimg3.png';
@@ -13,11 +13,22 @@ import icon3 from "../Images/icon3.png";
 import icon4 from "../Images/icon4.png";
 import './HomeHero.css'; // Import the CSS file
 import { getPeraWalletInstance } from '../utils/peraWallet';
+import { connectToWalletConnect } from '../utils/walletConnect';
 
 const HeroSection = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [successMessage, setSuccessMessage] = useState(''); // Add this line
   const peraWallet = getPeraWalletInstance();
+
+  useEffect(() => {
+    if (successMessage) {
+      const timer = setTimeout(() => {
+        setSuccessMessage('');
+      }, 3000); // Hide after 3 seconds
+      return () => clearTimeout(timer);
+    }
+  }, [successMessage]);
 
   const openModal = () => {
     setIsModalOpen(true);
@@ -40,9 +51,23 @@ const HeroSection = () => {
       const accounts = await peraWallet.connect();
       console.log('Connected accounts:', accounts);
       // Handle successful connection
+      setSuccessMessage('Wallet connected successfully!');
       closeModal();
     } catch (error) {
       console.error('Failed to connect to Pera Wallet:', error);
+      // Handle connection error
+    }
+  };
+
+  const connectWalletConnect = async () => {
+    try {
+      const connector = await connectToWalletConnect();
+      if (connector.connected) {
+        setSuccessMessage('WalletConnect connected successfully!');
+        closeModal();
+      }
+    } catch (error) {
+      console.error('Failed to connect to WalletConnect:', error);
       // Handle connection error
     }
   };
@@ -166,6 +191,13 @@ const HeroSection = () => {
         </div>
       </div>
 
+      {/* Success Message */}
+      {successMessage && (
+        <div className="fixed top-0 left-0 w-full bg-green-500 text-white text-center py-2 z-50">
+          {successMessage}
+        </div>
+      )}
+
       {/* Heading and Tagline */}
       <div className="absolute text-center" style={{ top: "20%", left: "50%", transform: "translateX(-50%)" }}>
         <h1 className="font-apex text-[96px] font-normal leading-[102px] tracking-[0.04em] text-center  decoration-skip-ink" style={{ marginBottom: '20px' }}>
@@ -270,16 +302,20 @@ const HeroSection = () => {
                 <img src={icon3} alt="Pera Logo" className="h-6 mr-2" />
                 <span className="ml-2">Pera</span>
               </button>
+             
               <button className="w-full flex items-center border-2 border-red-500 rounded-lg py-2 px-4 hover:bg-red-50">
-                <img src={icon4} alt="Pera Logo" className="h-6 mr-2" />
+                <img src={icon4} alt="Defly Logo" className="h-6 mr-2" />
                 <span className="ml-2">Defly</span>
               </button>
               <button className="w-full flex items-center border-2 border-red-500 rounded-lg py-2 px-4 hover:bg-red-50">
-                <img src={icon2} alt="Pera Logo" className="h-6 mr-2" />
+                <img src={icon2} alt="Daffi Logo" className="h-6 mr-2" />
                 <span className="ml-2">Daffi</span>
               </button>
-              <button className="w-full flex items-center border-2 border-red-500 rounded-lg py-2 px-4 hover:bg-red-50">
-                <img src={icon1} alt="Pera Logo" className="h-6 mr-2" />
+              <button
+                className="w-full flex items-center border-2 border-red-500 rounded-lg py-2 px-4 hover:bg-red-50"
+                onClick={connectWalletConnect}
+              >
+                <img src={icon1} alt="WalletConnect Logo" className="h-6 mr-2" />
                 <span className="ml-2">WalletConnect</span>
               </button>
             </div>
