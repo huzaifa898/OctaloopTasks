@@ -94,9 +94,8 @@ const HeroSection = () => {
 
         {/* Mobile Menu */}
         <div
-          className={`fixed top-0 left-0 h-full w-64 bg-white shadow-lg transform ${
-            isMenuOpen ? 'translate-x-0' : '-translate-x-full'
-          } transition-transform duration-300 ease-in-out z-30`}
+          className={`fixed top-0 left-0 h-full w-64 bg-white shadow-lg transform ${isMenuOpen ? 'translate-x-0' : '-translate-x-full'
+            } transition-transform duration-300 ease-in-out z-30`}
         >
           {/* Close Button */}
           <button
@@ -165,10 +164,35 @@ const HeroSection = () => {
             marginTop: "20px", // Added margin to tagline
           }}
         >
-          <h1 className="text-3xl md:text-6xl font-apex  text-red-600 mb-4">
-            NFT <br />
-            <span className="text-4xl md:text-5xl">COLLECTIONS</span>
+          <h1
+            className="font-apex text-red-600 mb-4"
+            style={{
+              fontFamily: "Apex Mk2",
+              fontSize: "220px",
+              fontWeight: "700",
+              lineHeight: "264px",
+              letterSpacing: "0.04em",
+              textAlign: "left",
+              textUnderlinePosition: "from-font",
+              textDecorationSkipInk: "none",
+            }}
+          >
+            NFT
           </h1>
+          <span
+            style={{
+              fontFamily: "Apex Mk2",
+              fontSize: "64px",
+              fontWeight: "700",
+              lineHeight: "76.8px",
+              letterSpacing: "0.04em",
+              textAlign: "left",
+              textUnderlinePosition: "from-font",
+              textDecorationSkipInk: "none",
+            }}
+          >
+            COLLECTIONS
+          </span>
         </div>
 
         {/* Image */}

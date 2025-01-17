@@ -1,10 +1,11 @@
 import React from "react";
 import IconImage from "../Images/icon.png";
-import col from '../Images/col.png'
-import col1 from '../Images/col1.png'
-import col2 from '../Images/col2.png'
-import col4 from '../Images/col4.png'
-import col5 from '../Images/col5.png'
+import col from '../Images/col.png';
+import col1 from '../Images/col1.png';
+import col2 from '../Images/col2.png';
+import col4 from '../Images/col4.png';
+import col5 from '../Images/col5.png';
+
 const ExploreCollections = () => {
   const categories = ["Popular", "Trending", "Sports", "Art", "Fantasy", "Photography", "Space"];
   const cards = [
@@ -12,7 +13,7 @@ const ExploreCollections = () => {
       title: "WONDERFUL ARTWORK",
       creator: "Jacob Jones",
       items: "1.5k",
-      image: col, // Replace with actual unique images
+      image: col,
     },
     {
       title: "AMAZING CREATION",
@@ -33,45 +34,44 @@ const ExploreCollections = () => {
       image: col2,
     },
     {
-        title: "FANTASTIC DESIGN",
-        creator: "Emma Davis",
-        items: "1.2k",
-        image: col4,
-      },
-      {
-        title: "FANTASTIC DESIGN",
-        creator: "Emma Davis",
-        items: "1.2k",
-        image: col5,
-      },
-      {
-        title: "FANTASTIC DESIGN",
-        creator: "Emma Davis",
-        items: "1.2k",
-        image: col2,
-      },
-      {
-        title: "FANTASTIC DESIGN",
-        creator: "Emma Davis",
-        items: "1.2k",
-        image: col2,
-      },
+      title: "FANTASTIC DESIGN",
+      creator: "Emma Davis",
+      items: "1.2k",
+      image: col4,
+    },
+    {
+      title: "FANTASTIC DESIGN",
+      creator: "Emma Davis",
+      items: "1.2k",
+      image: col5,
+    },
+    {
+      title: "FANTASTIC DESIGN",
+      creator: "Emma Davis",
+      items: "1.2k",
+      image: col2,
+    },
+    {
+      title: "FANTASTIC DESIGN",
+      creator: "Emma Davis",
+      items: "1.2k",
+      image: col2,
+    },
   ];
 
   return (
     <div className="min-h-screen px-6 lg:px-20 py-10">
       {/* Section Heading */}
-      <h2
-        className="text-4xl md:text-5xl font-apex  text-gray-800 mb-10"
-        style={{ marginLeft: "2%" }}
-      >
-        EXPLORE OUR COLLECTIONS
-      </h2>
+      <div className="mx-auto" style={{ width: "1320px" }}>
+        <h2 className="text-4xl md:text-5xl font-apex text-gray-800 mb-10" style={{ textAlign: "left" }}>
+          EXPLORE OUR COLLECTIONS
+        </h2>
+      </div>
 
       {/* Subcategories */}
       <div
-        className="flex justify-start space-x-6 overflow-x-auto mb-12"
-        style={{ marginLeft: "2%" }}
+        className="flex justify-start space-x-6 overflow-x-auto mb-12 mx-auto"
+        style={{ width: "1320px" }}
       >
         {categories.map((category, index) => (
           <button
@@ -89,8 +89,8 @@ const ExploreCollections = () => {
 
       {/* Card Grid */}
       <div
-        className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-8"
-        style={{ marginLeft: "2%" }}
+        className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-8 mx-auto"
+        style={{ width: "1320px" }}
       >
         {cards.map((card, index) => (
           <div
@@ -106,7 +106,7 @@ const ExploreCollections = () => {
               />
               <div>
                 <h3 className="text-lg font-semibold">{card.title}</h3>
-                <p className="text-sm font-apex  text-gray-500">Created by {card.creator}</p>
+                <p className="text-sm font-apex text-gray-500">Created by {card.creator}</p>
               </div>
             </div>
 
@@ -117,7 +117,7 @@ const ExploreCollections = () => {
                 alt={card.title}
                 className="w-full h-64 object-cover"
               />
-              <div className="absolute bottom-0 left-0 w-full text-black  bg-opacity-60 text-center text-sm font-semibold py-2 rounded-t-lg">
+              <div className="absolute bottom-0 left-0 w-full text-black bg-opacity-60 text-center text-sm font-semibold py-2 rounded-t-lg">
                 Items: {card.items}
               </div>
             </div>
