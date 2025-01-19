@@ -13,6 +13,7 @@ import Setting from './components/Setting'
 import Sellmethod from './components/Sellmethod';
 import Boostpage from './components/Boostpage'
 import Userprofile from './components/Userprofile';
+import Jocab from './components/Jocab';
 function App() {
   return (
    <Router>
@@ -30,6 +31,7 @@ function App() {
        <Route path="/sellmethod" element={<Sellmethod />} />
        <Route path="/boostpage" element={<Boostpage />} />
        <Route path="/userprofile" element={<Userprofile />} />
+       <Route path="/jocab" element={<Jocab />} />
      </Routes>
    </Router>
   );

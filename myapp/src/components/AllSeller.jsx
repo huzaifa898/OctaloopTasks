@@ -1,7 +1,7 @@
 import React from "react";
 import { FaEthereum } from "react-icons/fa";
 import icon from '../Images/icon.png';
-
+import {Link} from 'react-router-dom';
 const TopSellers = () => {
   const sellers = [
     {
@@ -318,6 +318,7 @@ const TopSellers = () => {
                 className="w-full bg-white shadow-md rounded-lg p-4 flex flex-wrap sm:flex-nowrap items-center justify-between text-xs sm:text-sm md:text-base"
               >
                 {/* ID and Name */}
+                <Link to='/jocab'>
                 <div className="flex items-center mb-2 sm:mb-0 w-full sm:w-auto">
                   <span className="font-medium pr-2">{seller.id}</span>
                   <img
@@ -327,6 +328,7 @@ const TopSellers = () => {
                   />
                   <span className="font-semibold">{seller.name}</span>
                 </div>
+                </Link>
 
                 {/* Volume */}
                 <div className="text-center w-1/3 sm:w-auto">{seller.volume}</div>
