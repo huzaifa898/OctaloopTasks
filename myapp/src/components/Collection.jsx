@@ -96,7 +96,7 @@ const FeaturedCollection = () => {
                   <button className="bg-red-500 text-white px-3 py-1 text-xs rounded hover:bg-red-600">
                     Buy
                   </button>
-                  <p className="bg-white bg-opacity-75 text-gray-800 text-xs px-2 py-1 rounded font-semibold">
+                  <p className="bg-white  bg-opacity-75 text-gray-800 text-xs px-2 py-1 rounded font-semibold">
                     Price: {card.price}
                   </p>
                 </div>

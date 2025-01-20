@@ -6,7 +6,8 @@ import image4 from "../Images/images4.png";
 import image5 from "../Images/images5.png";
 import image6 from "../Images/images6.png";
 import image7 from "../Images/images7.png";
-import icon from "../Images/icon.png"
+import icon from "../Images/icon.png";
+
 const TrendingNFTs = () => {
   const nfts = [
     {
@@ -18,64 +19,67 @@ const TrendingNFTs = () => {
     },
     {
       id: 2,
-      title: "Stella Nova",
-      username: "@stellanova",
+      title: "Cosmic Dream",
+      username: "@cosmicdream",
       image: image2,
-      price: "42.02",
+      price: "58.15",
     },
     {
       id: 3,
-      title: "Stella Nova",
-      username: "@stellanova",
+      title: "Galaxy Quest",
+      username: "@galaxyquest",
       image: image3,
-      price: "42.02",
+      price: "63.10",
     },
     {
       id: 4,
-      title: "Stella Nova",
-      username: "@stellanova",
+      title: "Nebula Art",
+      username: "@nebulaart",
       image: image4,
-      price: "42.02",
+      price: "48.90",
     },
     {
       id: 5,
-      title: "Stella Nova",
-      username: "@stellanova",
+      title: "Astro Vision",
+      username: "@astrovision",
       image: image5,
-      price: "42.02",
+      price: "72.34",
     },
     {
       id: 6,
-      title: "Stella Nova",
-      username: "@stellanova",
+      title: "Eclipse NFT",
+      username: "@eclipsenft",
       image: image6,
-      price: "42.02",
+      price: "54.27",
     },
     {
       id: 7,
-      title: "Stella Nova",
-      username: "@stellanova",
+      title: "Supernova",
+      username: "@supernova",
       image: image7,
-      price: "42.02",
+      price: "69.99",
     },
     {
-      id: 8,
-      title: "Stella Nova",
-      username: "@stellanova",
-      image: image7,
-      price: "42.02",
+      id: 6,
+      title: "Eclipse NFT",
+      username: "@eclipsenft",
+      image: image6,
+      price: "54.27",
     },
   ];
 
   return (
-    <div className="py-10  px-5">
+    <div className="py-10 px-5">
       <div className="container max-w-7xl mx-auto">
         {/* Heading */}
-        <h1 style={{ marginLeft: "16px" }} className="font-apex text-[64px] font-normal leading-[76.8px] tracking-[0.04em] text-left  decoration-skip-ink" >
+        <h1
+          className="font-apex text-[48px] font-bold leading-[1.2] tracking-wide text-left mb-8"
+          style={{ marginLeft: "16px" }}
+        >
           Recently Sold
         </h1>
         {/* Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {nfts.map((nft) => (
             <div
               key={nft.id}
@@ -107,7 +111,7 @@ const TrendingNFTs = () => {
                   className="w-full h-56 object-cover"
                 />
                 {/* Buttons on the Image */}
-                <div className="absolute inset-0 flex items-end justify-between p-4 bg-gradient-to-t from-black/50 to-transparent">
+                <div className="absolute inset-0 flex items-end justify-between p-4 bg-gradient-to-t from-black/70 to-transparent">
                   <button className="bg-red-500 font-apex text-white text-sm px-4 py-2 rounded-full hover:bg-red-600 transition">
                     Buy
                   </button>

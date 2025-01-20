@@ -5,7 +5,7 @@ import col1 from '../Images/col1.png';
 import col2 from '../Images/col2.png';
 import col4 from '../Images/col4.png';
 import col5 from '../Images/col5.png';
-
+import {Link} from 'react-router-dom';
 const ExploreCollections = () => {
   const categories = ["Popular", "Trending", "Sports", "Art", "Fantasy", "Photography", "Space"];
   const cards = [
@@ -111,12 +111,15 @@ const ExploreCollections = () => {
             </div>
 
             {/* Card Image with Overlay */}
+            
             <div className="relative">
+              <Link to='/pxocards'>
               <img
                 src={card.image}
                 alt={card.title}
                 className="w-full h-64 object-cover"
               />
+              </Link>
               <div className="absolute bottom-0 left-0 w-full text-black bg-opacity-60 text-center text-sm font-semibold py-2 rounded-t-lg">
                 Items: {card.items}
               </div>

@@ -15,6 +15,7 @@ import Boostpage from './components/Boostpage'
 import Userprofile from './components/Userprofile';
 import Jocab from './components/Jocab';
 import ScrollToTop from './components/ScrollToTop';
+import PxoCards from './components/PxoCards';
 function App() {
   return (
    <Router>
@@ -34,6 +35,7 @@ function App() {
        <Route path="/boostpage" element={<Boostpage />} />
        <Route path="/userprofile" element={<Userprofile />} />
        <Route path="/jocab" element={<Jocab />} />
+       <Route path="/pxocards" element={<PxoCards />} />
      </Routes>
    </Router>
   );
