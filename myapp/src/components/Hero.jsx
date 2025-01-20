@@ -7,7 +7,7 @@ import wallet from '../Images/wallet.png';
 import imgee from '../Images/imgee.png';
 import imgee2 from '../Images/imgee2.png';
 import imgee3 from '../Images/imgee3.png';
- import imgee4 from '../Images/imgee4.png';
+import imgee4 from '../Images/imgee4.png';
 import imgee5 from '../Images/imgee5.png';
 //import imgee6 from '../Images/imgee6.png';
 import { Link, useNavigate } from 'react-router-dom';
@@ -16,6 +16,7 @@ function App() {
   const [showForm, setShowForm] = useState(false);
   const [showStyles, setShowStyles] = useState(false);
   const [selectedStyles, setSelectedStyles] = useState([]);
+  const [nftType, setNftType] = useState('Single NFT');
   const navigate = useNavigate();
 
   const handleGenerateClick = () => {
@@ -53,6 +54,14 @@ function App() {
         return [...prevSelectedStyles, style];
       }
     });
+  };
+
+  const handleConfirmClick = () => {
+    if (nftType === 'Collection') {
+      navigate('/collection');
+    } else {
+      navigate('/mntnft');
+    }
   };
 
   return (
@@ -118,9 +127,13 @@ function App() {
       <div className="flex flex-col md:flex-row justify-evenly items-center space-y-4 md:space-y-0 md:space-x-4 mx-auto max-w-full mt-8">
         {/* Single NFT Dropdown */}
         <div className="bg-gray-100 rounded-lg p-2 shadow-md w-full max-w-xs">
-          <select className="bg-transparent outline-none text-gray-700 font-apex cursor-pointer w-full">
+          <select
+            className="bg-transparent outline-none text-gray-700 font-apex cursor-pointer w-full"
+            value={nftType}
+            onChange={(e) => setNftType(e.target.value)}
+          >
             <option>Single NFT</option>
-            <option>Batch NFT</option>
+            <option>Collection</option>
           </select>
         </div>
 
@@ -180,14 +193,13 @@ function App() {
                 </div>
               </div>
               <div className="flex justify-end mt-4">
-                <Link to='/mntnft'>
                 <button
-                  type="submit"
+                  type="button"
                   className="bg-red-600 text-white font-apex px-4 py-2 rounded-lg hover:bg-red-700"
+                  onClick={handleConfirmClick}
                 >
                   Confirm
                 </button>
-                </Link>
               </div>
             </form>
           </div>
