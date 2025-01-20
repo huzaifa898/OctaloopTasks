@@ -14,9 +14,11 @@ import Sellmethod from './components/Sellmethod';
 import Boostpage from './components/Boostpage'
 import Userprofile from './components/Userprofile';
 import Jocab from './components/Jocab';
+import ScrollToTop from './components/ScrollToTop';
 function App() {
   return (
    <Router>
+    <ScrollToTop />
      <Routes>
        <Route path="/" element={<Home />} />
        <Route path="/nft" element={<Nft />} />
