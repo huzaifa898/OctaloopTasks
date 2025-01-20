@@ -4,10 +4,18 @@ import Logo from '../Images/logo.png';
 import Hero from '../Images/Hero.png';
 import ppl from '../Images/ppl.png';
 import wallet from '../Images/wallet.png';
+import imgee from '../Images/imgee.png';
+import imgee2 from '../Images/imgee2.png';
+import imgee3 from '../Images/imgee3.png';
+ import imgee4 from '../Images/imgee4.png';
+import imgee5 from '../Images/imgee5.png';
+//import imgee6 from '../Images/imgee6.png';
 import { Link, useNavigate } from 'react-router-dom';
 
 function App() {
   const [showForm, setShowForm] = useState(false);
+  const [showStyles, setShowStyles] = useState(false);
+  const [selectedStyles, setSelectedStyles] = useState([]);
   const navigate = useNavigate();
 
   const handleGenerateClick = () => {
@@ -20,6 +28,31 @@ function App() {
 
   const handlePplClick = () => {
     navigate('/userprofile');
+  };
+
+  const handleAddStylesClick = () => {
+    setShowStyles(true);
+  };
+
+  const handleCloseStylesClick = () => {
+    setShowStyles(false);
+  };
+
+  const handleOutsideClick = (e) => {
+    if (e.target.classList.contains('modal-overlay')) {
+      setShowForm(false);
+      setShowStyles(false);
+    }
+  };
+
+  const handleStyleSelect = (style) => {
+    setSelectedStyles((prevSelectedStyles) => {
+      if (prevSelectedStyles.includes(style)) {
+        return prevSelectedStyles.filter((s) => s !== style);
+      } else {
+        return [...prevSelectedStyles, style];
+      }
+    });
   };
 
   return (
@@ -82,7 +115,7 @@ function App() {
 
       {/* Dropdowns and Add Styles Button */}
       <br />
-      <div className="flex flex-col md:flex-row justify-evenly items-center space-y-4 md:space-y-0 md:space-x-4 mx-auto max-w-full">
+      <div className="flex flex-col md:flex-row justify-evenly items-center space-y-4 md:space-y-0 md:space-x-4 mx-auto max-w-full mt-8">
         {/* Single NFT Dropdown */}
         <div className="bg-gray-100 rounded-lg p-2 shadow-md w-full max-w-xs">
           <select className="bg-transparent outline-none text-gray-700 font-apex cursor-pointer w-full">
@@ -102,7 +135,10 @@ function App() {
         </div>
 
         {/* Add Styles Button */}
-        <button className="flex items-center bg-gray-100 rounded-lg p-2 shadow-md space-x-2">
+        <button
+          className="flex items-center bg-gray-100 rounded-lg p-2 shadow-md space-x-2"
+          onClick={handleAddStylesClick}
+        >
           <span className="text-gray-700 font-apex">Add Styles</span>
           <FaPlus className="text-gray-700" />
         </button>
@@ -110,7 +146,7 @@ function App() {
 
       {/* Form Modal */}
       {showForm && (
-        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50 modal-overlay" onClick={handleOutsideClick}>
           <div className="bg-white p-8 rounded-lg shadow-lg relative" style={{ width: '353px', gap: '0px', borderRadius: '8px', opacity: '1' }}>
             <button
               className="absolute top-2 right-2 text-gray-700 hover:text-red-600"
@@ -154,6 +190,117 @@ function App() {
                 </Link>
               </div>
             </form>
+          </div>
+        </div>
+      )}
+
+      {/* Styles Modal */}
+      {showStyles && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50 overflow-y-auto modal-overlay" onClick={handleOutsideClick}>
+          <div className="bg-white p-8 rounded-lg shadow-lg relative" style={{ width: '504px', height: '1400px', gap: '0px', opacity: '1' }}>
+            <h2 className="text-2xl text-center text-black mt-52 font-apex mb-4">Select Styles</h2>
+            
+            <button
+              className="absolute top-2 right-2 text-gray-700 hover:text-red-600"
+              onClick={handleCloseStylesClick}
+            >
+              &times;
+            </button>
+            <div className="grid grid-cols-2 gap-4 ">
+              {/* Square for None Style */}
+              <div className={`w-[211px] h-[238px] bg-gray-200 rounded-lg flex items-center justify-center mt-8 ${selectedStyles.includes('None') ? 'border-4 border-red-500' : ''}`} onClick={() => handleStyleSelect('None')}>
+                <span className="text-gray-700 font-apex">None</span>
+                {selectedStyles.includes('None') && <span className="absolute text-red-500 font-apex">Selected</span>}
+              </div>
+              {/* Square for Cartoon Style */}
+              <div className={`w-[211px] h-[238px] bg-gray-200 rounded-lg flex flex-col items-center justify-center mt-8 ${selectedStyles.includes('Cartoon') ? 'border-4 border-red-500' : ''}`} onClick={() => handleStyleSelect('Cartoon')}>
+                <img
+                  src={imgee}
+                  alt="Cartoon Style"
+                  className="w-[201px] h-[179px] rounded-[15px_0px_0px_0px]"
+                />
+                <button
+                  className="w-[201px] h-[44px] bg-white text-black font-apex rounded-[8px_0px_0px_0px] mt-2"
+                >
+                  Cartoon
+                </button>
+                {selectedStyles.includes('Cartoon') && <span className="absolute text-red-500 font-apex">Selected</span>}
+              </div>
+              {/* Additional Boxes */}
+               <div className={`w-[211px] h-[238px] bg-gray-200 rounded-lg flex flex-col items-center justify-center ${selectedStyles.includes('Style 2') ? 'border-4 border-red-500' : ''}`} onClick={() => handleStyleSelect('Style 2')}>
+                <img
+                  src={imgee2}
+                  alt="Style 2"
+                  className="w-[201px] h-[179px] rounded-[15px_0px_0px_0px]"
+                />
+                <button
+                  className="w-[201px] h-[44px] bg-white text-black font-apex rounded-[8px_0px_0px_0px] mt-2"
+                >
+                  Style 2
+                </button>
+                {selectedStyles.includes('Style 2') && <span className="absolute text-red-500 font-apex">Selected</span>}
+              </div>
+              <div className={`w-[211px] h-[238px] bg-gray-200 rounded-lg flex flex-col items-center justify-center ${selectedStyles.includes('Style 3') ? 'border-4 border-red-500' : ''}`} onClick={() => handleStyleSelect('Style 3')}>
+                <img
+                  src={imgee3}
+                  alt="Style 3"
+                  className="w-[201px] h-[179px] rounded-[15px_0px_0px_0px]"
+                />
+                <button
+                  className="w-[201px] h-[44px] bg-white text-black font-apex rounded-[8px_0px_0px_0px] mt-2"
+                >
+                  Style 3
+                </button>
+                {selectedStyles.includes('Style 3') && <span className="absolute text-red-500 font-apex">Selected</span>}
+              </div>
+              <div className={`w-[211px] h-[238px] bg-gray-200 rounded-lg flex flex-col items-center justify-center ${selectedStyles.includes('Style 4') ? 'border-4 border-red-500' : ''}`} onClick={() => handleStyleSelect('Style 4')}>
+                <img
+                  src={imgee4}
+                  alt="Style 4"
+                  className="w-[201px] h-[179px] rounded-[15px_0px_0px_0px]"
+                />
+                <button
+                  className="w-[201px] h-[44px] bg-white text-black font-apex rounded-[8px_0px_0px_0px] mt-2"
+                >
+                  Style 4
+                </button>
+                {selectedStyles.includes('Style 4') && <span className="absolute text-red-500 font-apex">Selected</span>}
+              </div>
+              <div className={`w-[211px] h-[238px] bg-gray-200 rounded-lg flex flex-col items-center justify-center ${selectedStyles.includes('Style 5') ? 'border-4 border-red-500' : ''}`} onClick={() => handleStyleSelect('Style 5')}>
+                <img
+                  src={imgee5}
+                  alt="Style 5"
+                  className="w-[201px] h-[179px] rounded-[15px_0px_0px_0px]"
+                />
+                <button
+                  className="w-[201px] h-[44px] bg-white text-black font-apex rounded-[8px_0px_0px_0px] mt-2"
+                >
+                  Style 5
+                </button>
+                {selectedStyles.includes('Style 5') && <span className="absolute text-red-500 font-apex">Selected</span>}
+              </div>
+              <div className={`w-[211px] h-[238px] bg-gray-200 rounded-lg flex flex-col items-center justify-center ${selectedStyles.includes('Style 6') ? 'border-4 border-red-500' : ''}`} onClick={() => handleStyleSelect('Style 6')}>
+                <img
+                  src={imgee}
+                  alt="Style 6"
+                  className="w-[201px] h-[179px] rounded-[15px_0px_0px_0px]"
+                />
+                <button
+                  className="w-[201px] h-[44px] bg-white text-black font-apex rounded-[8px_0px_0px_0px] mt-2"
+                >
+                  Style 6
+                </button>
+                {selectedStyles.includes('Style 6') && <span className="absolute text-red-500 font-apex">Selected</span>}
+              </div> 
+            </div>
+            <div className="flex justify-end mt-8">
+              <button
+                className="bg-red-600 text-white  font-apex px-4 py-2 rounded-lg hover:bg-red-700"
+                onClick={handleCloseStylesClick}
+              >
+                Submit
+              </button>
+            </div>
           </div>
         </div>
       )}
