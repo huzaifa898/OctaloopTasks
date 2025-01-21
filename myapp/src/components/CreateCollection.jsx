@@ -125,7 +125,7 @@ function Nftform() {
             </div>
 
             {/* Description Field */}
-            <div className="mb-4">
+            <div className="mb-4" >
               <label className="block text-gray-700 font-apex mb-2">Description</label>
               <p className="text-sm text-gray-500 mb-2">
                 The description will be included on the item's detail page underneath its image.

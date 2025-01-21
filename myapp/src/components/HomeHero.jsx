@@ -21,6 +21,7 @@ const HeroSection = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [successMessage, setSuccessMessage] = useState(''); // Add this line
   const peraWallet = getPeraWalletInstance();
+  const [accountAddress, setAccountAddress] = useState(null);
 
   useEffect(() => {
     if (successMessage) {
@@ -46,6 +47,8 @@ const HeroSection = () => {
   const closeMenu = () => {
     setIsMenuOpen(false);
   };
+
+  
 
   const connectPeraWallet = async () => {
     try {
@@ -73,17 +76,17 @@ const HeroSection = () => {
     }
   };
 
-  const connectDaffiWallet = async () => {
+  const connectDaffiWallet = () => {
     try {
-      const accounts = await connectToDaffiWallet();
-      setSuccessMessage('Daffi Wallet connected successfully!');
-      closeModal();
+      window.open('https://web.daffiwallet.app/', '_blank');
     } catch (error) {
-      console.error('Failed to connect to Daffi Wallet:', error);
-      // Handle connection error
+      console.error('Error opening Daffi Wallet:', error);
     }
   };
+    
 
+  
+  
   return (
     <div className="relative overflow-hidden h-screen">
       {/* Navbar */}
