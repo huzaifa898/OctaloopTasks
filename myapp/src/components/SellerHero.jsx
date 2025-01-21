@@ -122,13 +122,10 @@ const HeroSection = () => {
         {/* Tagline */}
         <div className="text-center lg:text-left lg:w-1/2 mb-8 lg:mb-0 px-4">
           <h1 className="text-4xl md:text-5xl ml-80 font-bold text-red-600 mb-4">
-            TOP <br />
-            <span className="text-6xl">SELLER</span>
+          <span className="text-black  font-[Apex_Mk2] text-[64px] font-bold leading-[76.8px] tracking-[0.04em] text-left  underline-offset-[from-font] decoration-skip-ink"> TOP </span>  <br />
+            <span className="font-[Apex_Mk2] text-[128px] font-bold leading-[153.6px] tracking-[0.04em] text-left  underline-offset-[from-font] decoration-skip-ink">SELLER</span>
           </h1>
-          <p className="text-gray-700 text-lg md:text-xl ml-80 mt-4">
-            Explore the best NFT collections with seamless wallet integration
-            and creative options for creating your own digital assets.
-          </p>
+        
         </div>
 
         {/* Image */}

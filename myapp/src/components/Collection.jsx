@@ -4,6 +4,7 @@ import Mask2 from '../Images/Mask2.png';
 import Mask3 from '../Images/Mask3.png';
 import Mask4 from '../Images/Mask4.png';
 import image7 from '../Images/images7.png';
+import linesbg from '../Images/linesbg.png'; // Ensure correct import
 
 const FeaturedCollection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -35,7 +36,7 @@ const FeaturedCollection = () => {
 
   return (
     <div className="py-10 px-4 sm:px-6 lg:px-8">
-      <div className="container mx-auto max-w-7xl">
+      <div className="container mx-auto max-w-7xl relative">
         {/* Title and Subtext */}
         <div className="flex flex-col md:flex-row justify-between items-center mb-5 px-4">
           <div className="text-left w-full md:w-auto">
@@ -65,8 +66,8 @@ const FeaturedCollection = () => {
         </div>
 
         {/* Slider */}
-        <div className="flex flex-wrap justify-center gap-x-12 gap-y-8 px-4">
-          {cards.slice(currentIndex, currentIndex + cardsPerSlide).map((card) => (
+        <div className="flex flex-wrap justify-center gap-x-12 gap-y-8 px-4 relative">
+          {cards.slice(currentIndex, currentIndex + cardsPerSlide).map((card, index) => (
             <div
               key={card.id}
               className="relative w-full sm:w-[48%] md:w-[22%] bg-white rounded-lg shadow-lg p-4 transition-transform duration-500 ease-in-out"
@@ -77,9 +78,7 @@ const FeaturedCollection = () => {
                   {card.name.charAt(0)}
                 </div>
                 <div>
-                  <p className="text-gray-800 font-semibold text-sm">
-                    {card.name}
-                  </p>
+                  <p className="text-gray-800 font-semibold text-sm">{card.name}</p>
                   <p className="text-gray-500 text-xs">{card.description}</p>
                 </div>
               </div>
@@ -96,13 +95,22 @@ const FeaturedCollection = () => {
                   <button className="bg-red-500 text-white px-3 py-1 text-xs rounded hover:bg-red-600">
                     Buy
                   </button>
-                  <p className="bg-white  bg-opacity-75 text-gray-800 text-xs px-2 py-1 rounded font-semibold">
+                  <p className="bg-white bg-opacity-75 text-gray-800 text-xs px-2 py-1 rounded font-semibold">
                     Price: {card.price}
                   </p>
                 </div>
               </div>
             </div>
           ))}
+
+          {/* Add background image to the right side of the last card */}
+          {cards.slice(currentIndex, currentIndex + cardsPerSlide).length === cardsPerSlide && (
+            <img
+              className="absolute top-0 right-0 w-[883.94px] h-[715px] opacity-10 object-cover z-10"
+              src={linesbg}
+              alt="Background"
+            />
+          )}
         </div>
       </div>
     </div>

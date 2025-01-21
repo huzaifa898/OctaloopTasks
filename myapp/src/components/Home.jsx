@@ -11,7 +11,7 @@ import Sold from './Sold'
 import Footer from './Footer'
 function Home() {
   return (
-    <div className='bg-gradient-to-b from-white to-pink-100'>
+    <div className=''>
          <HomeHero/>
          <Collection/>
          <Trending/>
