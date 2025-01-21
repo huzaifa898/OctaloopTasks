@@ -16,6 +16,7 @@ function Nftform() {
   const [newTraitKey, setNewTraitKey] = useState("");
   const [newTraitValue, setNewTraitValue] = useState("");
   const [showTraitForm, setShowTraitForm] = useState(false);
+  const [selectedFile, setSelectedFile] = useState(null);
 
   const addTrait = () => {
     if (newTraitKey && newTraitValue) {
@@ -32,6 +33,10 @@ function Nftform() {
 
   const handleCreateNewCollectionClick = () => {
     navigate('/newcollection');
+  };
+
+  const handleFileChange = (event) => {
+    setSelectedFile(event.target.files[0]);
   };
 
   return (
@@ -86,20 +91,26 @@ function Nftform() {
           Selected
         </div>
 
+        {/* Choose File Button */}
+        <div className="mt-4">
+          <input type="file" onChange={handleFileChange} />
+          {selectedFile && <p className="mt-2 font-apex text-gray-700">{selectedFile.name}</p>}
+        </div>
+
         {/* Form Section */}
         <div
           className="absolute bg-white p-8 rounded-lg shadow-lg"
           style={{ width: "900px", top: "0px", left: "426px" }}
         >
-          <h1 className="text-center font-bold text-2xl mb-6">MINT YOUR NFT</h1>
+          <h1 className="text-center font-apex text-2xl mb-6">Create Collection</h1>
           <form>
             {/* Item Name Field */}
             <div className="mb-4">
-              <label className="block text-gray-700 font-apex mb-2">Item Name*</label>
+              <label className="block text-gray-700 font-apex mb-2">Collection Name*</label>
               <input
                 type="text"
                 className="w-full p-2 border border-gray-300 rounded-lg"
-                placeholder="Name your NFT"
+                placeholder="Name your Collection"
               />
             </div>
 
@@ -126,64 +137,7 @@ function Nftform() {
               ></textarea>
             </div>
 
-            {/* Choose Collection */}
-            <div className="mb-4 flex justify-between items-center">
-              <label className="block text-gray-700 font-apex mb-2">Choose Collection</label>
-              <Link to='/choosecollection'>
-              <p className="text-sm text-gray-500 mb-2">Choose from Existing</p>
-              </Link>
-            </div>
-            <p className="text-sm text-gray-500 mb-2">
-              (This is the collection where your item will appear)
-            </p>
-            <div className="flex gap-4">
-              <button
-                type="button"
-                className="p-2 border border-gray-300 rounded-lg w-full text-center"
-                onClick={handleCreateNewCollectionClick}
-              >
-                + Create new collection
-              </button>
-              <div className="p-2 border border-gray-300 rounded-lg w-full flex items-center">
-                <img
-                  src={icon1}
-                  alt="Wonderful Artwork"
-                  className="w-10 h-10 mr-2 rounded-full"
-                />
-                <span>Wonderful Artwork</span>
-              </div>
-            </div>
-
-            {/* Add Traits Section */}
-            <div className="mb-4">
-              <label className="block text-gray-700 font-apex mb-2">Add Traits</label>
-              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum, laudantium.</p>
-              {traits.map((trait, index) => (
-                <div
-                  key={index}
-                  className="flex items-center justify-between border p-2 rounded-lg mb-2"
-                >
-                  <span>{trait.key} : {trait.value}</span>
-                  <button
-                    type="button"
-                    onClick={() => removeTrait(index)}
-                    className="text-red-500"
-                  >
-                    X
-                  </button>
-                </div>
-              ))}
-              <div className="flex items-center gap-2">
-                <button
-                  type="button"
-                  onClick={() => setShowTraitForm(true)}
-                  className="p-2 bg-white text-black border border-gray-300 rounded-lg flex items-center gap-2"
-                >
-                  <FaPlus /> Add Traits
-                </button>
-              </div>
-              <div className="mt-4 border-t-2 border-transparent border-gradient-to-r from-transparent via-red-600 to-transparent"></div>
-            </div>
+            
 
             {/* Submit Button */}
             <div className="mt-6 flex justify-end">
@@ -192,7 +146,7 @@ function Nftform() {
                 type="submit"
                 className="bg-red-600 text-white font-apex px-4 py-2 rounded-lg hover:bg-red-700"
               >
-                Mint NFT
+                Continue
               </button>
               </Link>
             </div>
@@ -201,52 +155,7 @@ function Nftform() {
       </div>
 
       {/* Add Traits Form Modal */}
-      {showTraitForm && (
-        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-          <div className="bg-white p-8 rounded-lg shadow-lg relative w-[618px] h-[342px] top-0 gap-0 border-t-8 border-t-gray-300">
-            <button
-              className="absolute top-2 right-2 text-gray-700 hover:text-red-600"
-              onClick={() => setShowTraitForm(false)}
-            >
-              &times;
-            </button>
-            <h2 className="text-2xl text-center font-apex mb-4">Add Trait</h2>
-            <form>
-              <div className="mb-4 mt-16 flex gap-4 justify-center">
-                <div className="w-1/2">
-                  <label className="block text-gray-700 font-apex mb-2">Trait Type</label>
-                  <input
-                    type="text"
-                    className="w-full p-2 border border-gray-300 rounded-lg"
-                    value={newTraitKey}
-                    onChange={(e) => setNewTraitKey(e.target.value)}
-                    placeholder="Type"
-                  />
-                </div>
-                <div className="w-1/2">
-                  <label className="block text-gray-700 font-apex mb-2">Trait Name</label>
-                  <input
-                    type="text"
-                    className="w-full p-2 border border-gray-300 rounded-lg"
-                    value={newTraitValue}
-                    onChange={(e) => setNewTraitValue(e.target.value)}
-                    placeholder="Name"
-                  />
-                </div>
-              </div>
-              <div className="flex justify-end mt-4">
-                <button
-                  type="button"
-                  className="bg-red-600 text-white font-apex px-4 py-2 rounded-lg hover:bg-red-700"
-                  onClick={addTrait}
-                >
-                  Add
-                </button>
-              </div>
-            </form>
-          </div>
-        </div>
-      )}
+     
     </div>
   );
 }

@@ -17,6 +17,7 @@ import Jocab from './components/Jocab';
 import ScrollToTop from './components/ScrollToTop';
 import PxoCards from './components/PxoCards';
 import BatchCollection from './components/BatchCollection';
+import CreateCollection from './components/CreateCollection';
 function App() {
   return (
    <Router>
@@ -38,6 +39,7 @@ function App() {
        <Route path="/jocab" element={<Jocab />} />
        <Route path="/pxocards" element={<PxoCards />} />
        <Route path="/collection" element={<BatchCollection />} />
+       <Route path="/newcollection" element={<CreateCollection/>} />
      </Routes>
    </Router>
   );
