@@ -10,3 +10,5 @@ NFT Marketplace: A marketplace to list, buy, and sell NFTs.
 Frontend: A responsive React-based user interface for seamless interaction.
 
 Wallet Integration: Supports MetaMask and other Ethereum wallets.
+#HOME PAGE#
+<!-- Uploading "screencapture-octaloop-tasks-vercel-app-2025-01-21-09_28_51.png"... -->
