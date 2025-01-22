@@ -5,7 +5,8 @@ import Mask3 from '../Images/Mask3.png';
 import Mask4 from '../Images/Mask4.png';
 import image7 from '../Images/images7.png';
 import linesbg from '../Images/linesbg.png'; // Ensure correct import
-
+import prvbtn from '../Images/prvbtn.png';
+import nextbtn from '../Images/nextbtn.png';
 const FeaturedCollection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -50,19 +51,25 @@ const FeaturedCollection = () => {
 
           {/* Navigation Buttons */}
           <div className="flex space-x-4 mt-4 md:mt-0">
-            <button
-              onClick={handlePrev}
-              className="bg-gray-700 text-white px-4 py-2 rounded-full hover:bg-red-500 shadow-lg"
-            >
-              &#9664; {/* Previous */}
+            {/* Previous Button */}
+            <button onClick={handlePrev} className="focus:outline-none">
+              <img
+                src={prvbtn}
+                alt="Previous"
+                className="w-16 h-16 hover:scale-110 transition-transform"
+              />
             </button>
-            <button
-              onClick={handleNext}
-              className="bg-gray-700 text-white px-4 py-2 rounded-full hover:bg-red-500 shadow-lg"
-            >
-              &#9654; {/* Next */}
+
+            {/* Next Button */}
+            <button onClick={handleNext} className="focus:outline-none">
+              <img
+                src={nextbtn}
+                alt="Next"
+                className="w-16 h-16 hover:scale-110 transition-transform"
+              />
             </button>
           </div>
+
         </div>
 
         {/* Slider */}
@@ -103,15 +110,9 @@ const FeaturedCollection = () => {
             </div>
           ))}
 
-          {/* Add background image to the right side of the last card */}
-          {cards.slice(currentIndex, currentIndex + cardsPerSlide).length === cardsPerSlide && (
-            <img
-              className="absolute top-0 right-0 w-[883.94px] h-[715px] opacity-10 object-cover z-10"
-              src={linesbg}
-              alt="Background"
-            />
-          )}
+         
         </div>
+
       </div>
     </div>
   );

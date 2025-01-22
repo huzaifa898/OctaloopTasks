@@ -1,4 +1,5 @@
 import React from 'react'
+import Navbar from './Navbar'
 import HomeHero from './HomeHero'
 import Collection from './Collection'
 import Trending from './Trending'
@@ -12,7 +13,8 @@ import Footer from './Footer'
 function Home() {
   return (
     <div className=''>
-         <HomeHero/>
+          <Navbar/>
+          <HomeHero/>
          <Collection/>
          <Trending/>
          <Seller/>

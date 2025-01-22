@@ -3,7 +3,7 @@
     transform: translateX(0);
   }
   50% {
-    transform: translateX(20px);
+    transform: translateX(80px);
   }
 }
 
@@ -12,7 +12,7 @@
     transform: translateX(0);
   }
   50% {
-    transform: translateX(-20px);
+    transform: translateX(-80px);
   }
 }
 
@@ -21,19 +21,19 @@
     transform: translateY(0);
   }
   50% {
-    transform: translateY(-20px);
+    transform: translateY(-30px);
   }
 }
 
 .animate-left-right {
-  animation: leftRight 2s infinite;
+  animation: leftRight 3s infinite;
 }
 
 .animate-right-left {
-  animation: rightLeft 2s infinite;
+  animation: rightLeft 3s infinite;
 }
 
 .animate-up-down {
-  animation: upDown 2s infinite;
+  animation: upDown 3s infinite;
 }
 
