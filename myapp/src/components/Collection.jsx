@@ -1,22 +1,23 @@
 import React, { useState } from "react";
-import Mask1 from '../Images/mask1.png';
-import Mask2 from '../Images/Mask2.png';
-import Mask3 from '../Images/Mask3.png';
-import Mask4 from '../Images/Mask4.png';
-import image7 from '../Images/images7.png';
-import linesbg from '../Images/linesbg.png'; // Ensure correct import
-import prvbtn from '../Images/prvbtn.png';
-import nextbtn from '../Images/nextbtn.png';
+import Mask1 from "../Images/mask1.png";
+import Mask2 from "../Images/Mask2.png";
+import Mask3 from "../Images/Mask3.png";
+import Mask4 from "../Images/Mask4.png";
+import image7 from "../Images/images7.png";
+import bg from "../Images/bg.png"; // Background image
+import prvbtn from "../Images/prvbtn.png";
+import nextbtn from "../Images/nextbtn.png";
+import fry from  '../Images/fry.png';
 const FeaturedCollection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const cards = [
-    { id: 1, image: Mask1, price: "142.02", title: "Card 1", name: "John Doe", description: "Creative Designer" },
-    { id: 2, image: Mask2, price: "142.02", title: "Card 2", name: "Jane Smith", description: "Web Developer" },
-    { id: 3, image: Mask3, price: "142.02", title: "Card 3", name: "Alex Taylor", description: "Digital Marketer" },
-    { id: 4, image: Mask4, price: "142.02", title: "Card 4", name: "Chris Brown", description: "Product Manager" },
-    { id: 5, image: image7, price: "142.02", title: "Card 5", name: "Sara Wilson", description: "UI/UX Designer" },
-    { id: 6, image: image7, price: "142.02", title: "Card 6", name: "David Lee", description: "Data Scientist" },
+    { id: 1, image: Mask1, price: "142.02", name: "Stella Nova" },
+    { id: 2, image: Mask2, price: "142.02", name: "Jane Smith" },
+    { id: 3, image: Mask3, price: "142.02", name: "Alex Taylor" },
+    { id: 4, image: Mask4, price: "142.02", name: "Chris Brown" },
+    { id: 5, image: image7, price: "142.02", name: "Sara Wilson" },
+    { id: 6, image: image7, price: "142.02", name: "David Lee" },
   ];
 
   const cardsPerSlide = 4;
@@ -36,22 +37,22 @@ const FeaturedCollection = () => {
   };
 
   return (
-    <div className="py-10 px-4 sm:px-6 mt-[200px] lg:px-8">
+    <div className="py-10 px-4 sm:px-6 mt-[100px] lg:px-8">
       <div className="container mx-auto max-w-7xl relative">
         {/* Title and Subtext */}
         <div className="flex flex-col md:flex-row justify-between items-center mb-5 px-4">
           <div className="text-left w-full md:w-auto">
-            <h2 className="font-apex text-[64px] font-normal leading-[76.8px] tracking-[0.04em] text-left decoration-skip-ink">
+            <h2 className="font-apex text-[64px] font-normal leading-[76.8px] tracking-[0.04em] text-left">
               Featured Collection
             </h2>
-            <p className="font-apex text-[18px] font-light leading-[21.09px] tracking-[0.03em] text-left decoration-skip-ink">
-              Explore our exclusive featured collection, showcasing innovative designs.
+            <p className="font-apex text-[18px] font-light leading-[21.09px] tracking-[0.03em] text-left">
+              Explore our exclusive featured collection, showcasing innovative
+              designs.
             </p>
           </div>
 
           {/* Navigation Buttons */}
           <div className="flex space-x-4 mt-4 md:mt-0">
-            {/* Previous Button */}
             <button onClick={handlePrev} className="focus:outline-none">
               <img
                 src={prvbtn}
@@ -60,7 +61,6 @@ const FeaturedCollection = () => {
               />
             </button>
 
-            {/* Next Button */}
             <button onClick={handleNext} className="focus:outline-none">
               <img
                 src={nextbtn}
@@ -69,50 +69,63 @@ const FeaturedCollection = () => {
               />
             </button>
           </div>
-
         </div>
 
-        {/* Slider */}
-        <div className="flex flex-wrap justify-center gap-x-12 gap-y-8 px-4 relative">
-          {cards.slice(currentIndex, currentIndex + cardsPerSlide).map((card, index) => (
+        {/* Grid Layout */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          {cards.slice(currentIndex, currentIndex + cardsPerSlide).map((card) => (
             <div
               key={card.id}
-              className="relative w-full sm:w-[48%] md:w-[22%] bg-white rounded-lg shadow-lg p-4 transition-transform duration-500 ease-in-out"
+              className="relative w-full xl:w-[290px] rounded-lg py-8 px-4 flex flex-col items-center  text-center  bg-center bg-no-repeat"
+              style={{
+                backgroundImage: `url(${require('../Images/bg.png')})`,
+                backgroundSize: '100% 80%',
+              }}
             >
               {/* Profile Section */}
-              <div className="flex items-center space-x-3 mb-3">
-                <div className="w-10 h-10 bg-gray-300 rounded-full flex items-center justify-center text-gray-700 font-bold">
-                  {card.name.charAt(0)}
+              <div className="flex items-center mb-4 w-full relative top-7 lg:top-9">
+                <div className="h-10 w-10 rounded-full flex items-center justify-center text-white font-bold text-sm">
+                  <img
+                    src={card.image}
+                    alt={card.name}
+                    className="rounded-full w-full h-full object-cover"
+                  />
                 </div>
-                <div>
-                  <p className="text-gray-800 font-semibold text-sm">{card.name}</p>
-                  <p className="text-gray-500 text-xs">{card.description}</p>
+                <div className="ml-2">
+                  <h3 className="font-semibold text-left uppercase">
+                    {card.name}
+                  </h3>
+                  <p className="text-gray-500 text-sm text-left">@{card.name}</p>
                 </div>
               </div>
 
-              {/* Card Image */}
-              <div className="relative overflow-hidden object-cover rounded-lg">
+              {/* Main Image */}
+              <div className="w-full mb-4 relative top-7 lg:top-6">
                 <img
                   src={card.image}
-                  alt={card.title}
-                  className="rounded-lg object-cover w-full h-[180px] sm:h-[200px]"
+                  alt={card.name}
+                  className="w-full h-auto rounded object-cover"
                 />
-                {/* Buttons at Bottom */}
-                <div className="absolute inset-x-0 bottom-0 flex justify-between p-2 bg-gradient-to-t from-black/70 to-transparent">
-                  <button className="bg-red-500 text-white px-3 py-1 text-xs rounded hover:bg-red-600">
-                    Buy
-                  </button>
-                  <p className="bg-white bg-opacity-75 text-gray-800 text-xs px-2 py-1 rounded font-semibold">
-                    Price: {card.price}
-                  </p>
-                </div>
+              </div>
+
+              {/* Footer Section */}
+              <div className="flex justify-between items-center w-full relative top-6">
+                <button className="bg-red-500 text-white py-1 px-3 sm:py-1 xl:px-6 rounded relative bottom-14 left-2">
+                  Buy
+                </button>
+                <p className="text-gray-700 px-2 lg:px-1 lg:py-1 rounded bg-white flex items-center gap-1 relative bottom-14 right-2">
+                  Price:{" "}
+                  <img
+                    className="w-5 h-5 bg-black rounded-full"
+                    src={fry} // Replace with your logo path
+                    alt="logo"
+                  />{" "}
+                  ${card.price}
+                </p>
               </div>
             </div>
           ))}
-
-         
         </div>
-
       </div>
     </div>
   );

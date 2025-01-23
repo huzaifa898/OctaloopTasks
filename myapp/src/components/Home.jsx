@@ -12,7 +12,7 @@ import Sold from './Sold'
 import Footer from './Footer'
 function Home() {
   return (
-    <div className=''>
+    <div className='bg-gradient-to-b from-white to-pink-200'>
           <Navbar/>
           <HomeHero/>
          <Collection/>
