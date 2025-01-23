@@ -17,10 +17,10 @@ function Home() {
           <HomeHero/>
           <Collection/>
           <Trending/>
-         <Seller/>
-         <Aucations/>
-         <TopCollection/>
-        <Sold/>
+          <Seller/>
+          <Aucations/>
+          <TopCollection/>
+          <Sold/>
         
         <Bost/> 
         <Faq/>
