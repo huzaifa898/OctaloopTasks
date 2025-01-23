@@ -37,3 +37,33 @@
   animation: upDown 3s infinite;
 }
 
+/* Initial styles for images */
+/* Initial styles for images */
+.left-image,
+.right-image {
+  opacity: 0;
+  position: absolute;
+  transition: transform 2s ease-in-out, opacity 2s ease-in-out; /* Slow animation (2s duration) */
+}
+
+/* Left image starting position (off-screen to the left of the viewport) */
+.left-image {
+  transform: translateX(-100vw); /* Start completely off-screen to the left */
+}
+
+/* Right image starting position (off-screen to the right of the viewport) */
+.right-image {
+  transform: translateX(100vw); /* Start completely off-screen to the right */
+}
+
+/* Animation for the left image */
+.animate-left {
+  opacity: 1;
+  transform: translateX(0); /* Slide into its final position */
+}
+
+/* Animation for the right image */
+.animate-right {
+  opacity: 1;
+  transform: translateX(0); /* Slide into its final position */
+}

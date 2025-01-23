@@ -36,7 +36,7 @@ const FeaturedCollection = () => {
   };
 
   return (
-    <div className="py-10 px-4 sm:px-6 lg:px-8">
+    <div className="py-10 px-4 sm:px-6 mt-[200px] lg:px-8">
       <div className="container mx-auto max-w-7xl relative">
         {/* Title and Subtext */}
         <div className="flex flex-col md:flex-row justify-between items-center mb-5 px-4">
@@ -91,7 +91,7 @@ const FeaturedCollection = () => {
               </div>
 
               {/* Card Image */}
-              <div className="relative overflow-hidden rounded-lg">
+              <div className="relative overflow-hidden object-cover rounded-lg">
                 <img
                   src={card.image}
                   alt={card.title}
