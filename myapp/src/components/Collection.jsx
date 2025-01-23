@@ -16,8 +16,8 @@ const FeaturedCollection = () => {
     { id: 2, image: Mask2, price: "142.02", name: "Jane Smith" },
     { id: 3, image: Mask3, price: "142.02", name: "Alex Taylor" },
     { id: 4, image: Mask4, price: "142.02", name: "Chris Brown" },
-    { id: 5, image: image7, price: "142.02", name: "Sara Wilson" },
-    { id: 6, image: image7, price: "142.02", name: "David Lee" },
+    { id: 5, image: Mask4, price: "142.02", name: "Sara Wilson" },
+    { id: 6, image: Mask4, price: "142.02", name: "David Lee" },
   ];
 
   const cardsPerSlide = 4;
