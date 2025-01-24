@@ -81,13 +81,13 @@ const TrendingNFTs = () => {
               className="relative w-full xl:w-[290px] rounded-lg py-8 px-4 flex flex-col items-center text-center"
               style={{
                 backgroundImage: `url(${bg})`,
-                backgroundSize: '100% 90%',
+                backgroundSize: '100% 92%',
                 backgroundPosition: 'center',
                 backgroundRepeat: 'no-repeat',
               }}
             >
               {/* Top Section with Icon and Name */}
-              <div className="flex items-center mb-4 w-full relative top-7 lg:top-9">
+              <div className="flex items-center mb-4 w-full relative top-4 lg:top-9">
                 <div className="h-10 w-10 rounded-full flex items-center justify-center text-white font-bold text-sm">
                   <img
                     src={icon}

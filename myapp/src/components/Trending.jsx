@@ -178,11 +178,11 @@ const FeaturedCollection = () => {
               className="relative w-full xl:w-[290px] rounded-lg py-8 px-4 flex flex-col items-center  text-center  bg-center bg-no-repeat"
               style={{
                 backgroundImage: `url(${require('../Images/bg.png')})`,
-                backgroundSize: '100% 80%',
+                backgroundSize: '100% 82%',
               }}
             >
               {/* Profile Section */}
-              <div className="flex items-center mb-4 w-full relative top-7 lg:top-9">
+              <div className="flex items-center mb-4 w-full relative top-10 lg:top-6 sm:mt-9">
                 <div className="h-10 w-10 rounded-full flex items-center justify-center text-white font-bold text-sm">
                   <img
                     src={card.image}
@@ -197,6 +197,7 @@ const FeaturedCollection = () => {
                   <p className="text-gray-500 text-sm text-left">@{card.name}</p>
                 </div>
               </div>
+
 
               {/* Main Image */}
               <div className="w-full mb-4 relative top-7 lg:top-6">

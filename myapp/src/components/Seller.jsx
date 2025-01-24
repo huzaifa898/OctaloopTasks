@@ -62,12 +62,17 @@ const TopSeller = () => {
   return (
     <div className="container max-w-7xl mx-auto px-4">
       {/* Header Section */}
-      <div className="flex justify-between items-center mb-4">
-        <h2 className="font-apex text-[64px] font-normal leading-[76.8px] tracking-[0.04em] text-left  decoration-skip-ink">TOP SELLER</h2>
-        <Link to='/viewallseller'>
-        <h3 className="text-red-500 font-apex font-medium">View All</h3>
-        </Link>
-      </div>
+      <div className="flex justify-between items-center mb-4 px-4 sm:px-0">
+  <h2 className="font-apex text-[64px] font-normal leading-[76.8px] tracking-[0.04em] text-left decoration-skip-ink text-[48px] sm:text-[64px]">
+    TOP SELLER
+  </h2>
+  <Link to='/viewallseller'>
+    <h3 className="text-red-500 font-apex font-medium text-[14px] sm:text-[18px]">
+      View All
+    </h3>
+  </Link>
+</div>
+
       {/* Sellers Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {sellers.map((seller) => (

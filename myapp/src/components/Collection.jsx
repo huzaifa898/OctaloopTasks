@@ -7,7 +7,7 @@ import image7 from "../Images/images7.png";
 import bg from "../Images/bg.png"; // Background image
 import prvbtn from "../Images/prvbtn.png";
 import nextbtn from "../Images/nextbtn.png";
-import fry from  '../Images/fry.png';
+import fry from '../Images/fry.png';
 const FeaturedCollection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -42,17 +42,17 @@ const FeaturedCollection = () => {
         {/* Title and Subtext */}
         <div className="flex flex-col md:flex-row justify-between items-center mb-5 px-4">
           <div className="text-left w-full md:w-auto">
-            <h2 className="font-apex text-[64px] font-normal leading-[76.8px] tracking-[0.04em] text-left">
+            <h2 className="font-apex text-[48px] sm:text-[64px] font-normal leading-[76.8px] tracking-[0.04em] text-left">
               Featured Collection
             </h2>
-            <p className="font-apex text-[18px] font-light leading-[21.09px] tracking-[0.03em] text-left">
+            <p className="font-apex text-[14px] sm:text-[18px] font-light leading-[21.09px] tracking-[0.03em] text-left">
               Explore our exclusive featured collection, showcasing innovative
               designs.
             </p>
           </div>
 
           {/* Navigation Buttons */}
-          <div className="flex space-x-4 mt-4 md:mt-0">
+          <div className="flex space-x-4 mt-4 md:mt-0 hidden sm:flex">
             <button onClick={handlePrev} className="focus:outline-none">
               <img
                 src={prvbtn}
@@ -71,6 +71,7 @@ const FeaturedCollection = () => {
           </div>
         </div>
 
+
         {/* Grid Layout */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {cards.slice(currentIndex, currentIndex + cardsPerSlide).map((card) => (
@@ -83,7 +84,7 @@ const FeaturedCollection = () => {
               }}
             >
               {/* Profile Section */}
-              <div className="flex items-center mb-4 w-full relative top-7 lg:top-9">
+              <div className="flex items-center mb-4 w-full relative top-10 lg:top-6 sm:mt-9">
                 <div className="h-10 w-10 rounded-full flex items-center justify-center text-white font-bold text-sm">
                   <img
                     src={card.image}
@@ -98,6 +99,7 @@ const FeaturedCollection = () => {
                   <p className="text-gray-500 text-sm text-left">@{card.name}</p>
                 </div>
               </div>
+
 
               {/* Main Image */}
               <div className="w-full mb-4 relative top-7 lg:top-6">
