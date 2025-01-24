@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 
 const CollectionCard = ({ title, creator, creatorImage, images }) => {
   return (
-    <div className="border rounded-lg shadow-lg p-4 w-full max-w-sm mx-auto transition-transform hover:scale-105">
+    <div className="border rounded-lg shadow-lg p-4 w-full max-w-[85%] sm:max-w-sm mx-auto transition-transform hover:scale-105">
       {/* Large Images Grid */}
       <div className="grid grid-cols-2 gap-2 mb-4">
         {images.slice(0, 2).map((image, index) => (
@@ -70,21 +70,21 @@ const TopCollections = () => {
   ];
 
   return (
-    <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10">
+    <div className="container mx-auto max-w-[1320px] px-4 sm:px-6 lg:px-8 py-10">
       {/* Header Section */}
       <div className="flex flex-col sm:flex-row justify-between items-center mb-8 text-center sm:text-left px-4 sm:px-0">
-  <h2 className="font-apex text-[48px] sm:text-[64px] font-normal leading-[76.8px] tracking-[0.04em] decoration-skip-ink">
-    Top Collections
-  </h2>
-  <Link to="/veiwcollection" className="mt-4 sm:mt-0">
-    <h2 className="text-blue-600 font-medium hover:underline text-[16px] sm:text-lg">
-      View More Collection
-    </h2>
-  </Link>
-</div>
+        <h2 className="font-apex text-[36px] sm:text-[64px] font-normal leading-[76.8px] tracking-[0.04em] decoration-skip-ink">
+          Top Collections
+        </h2>
+        <Link to="/veiwcollection" className="mt-4 sm:mt-0">
+          <h2 className="text-blue-600 font-medium hover:underline text-[16px] sm:text-lg">
+            View More Collection
+          </h2>
+        </Link>
+      </div>
 
       {/* Collection Cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-16">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {collections.map((collection, index) => (
           <CollectionCard
             key={index}
