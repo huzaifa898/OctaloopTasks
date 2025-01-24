@@ -71,7 +71,7 @@ function Navbar() {
   };
 
   return (
-    <div className='container'>
+    <div className='container '>
   <div className={`flex items-center ${isMenuOpen ? 'fixed top-0 left-0 w-full z-20' : ''} md:fixed top-0 left-0 w-full z-20`}>
     <nav className="flex justify-between background: linear-gradient(to right, rgba(256, 255, 255, 0), rgba(255, 182, 193, 0.5) items-center px-4 py-2 mx-auto w-full max-w-screen-xl lg:px-8">
       {/* Logo */}

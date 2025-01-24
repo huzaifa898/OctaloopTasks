@@ -76,7 +76,7 @@ const TrendingNFTs = () => {
 
   return (
     <div className="py-10 px-5">
-      <div className="container max-w-6xl mx-auto">
+      <div className="container max-w-6xl mx-auto mt-32">
         {/* Heading */}
         <h1 style={{ marginLeft: "16px" }} className="text-4xl font-apex text-gray-800 mb-8">
           Top Listed Auctions
