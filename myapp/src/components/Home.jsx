@@ -22,9 +22,9 @@ function Home() {
           <TopCollection/>
           <Sold/>
         
-        <Bost/> 
-        <Faq/>
-        <Footer/>
+          <Bost/> 
+          <Faq/>
+          <Footer/>
     </div>
   )
 }
