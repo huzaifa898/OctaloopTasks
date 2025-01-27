@@ -1,44 +1,27 @@
+import WalletConnect from "@walletconnect/client";
+import QRCodeModal from "@walletconnect/qrcode-modal";
+
 let daffiWalletInstance;
 
 // Function to connect to Daffi Wallet
 export const connectToDaffiWallet = async () => {
-  try {
-    // Mock implementation of Daffi wallet connection
-    daffiWalletInstance = {
-      connect: async () => {
-        return new Promise((resolve) => {
-          setTimeout(() => {
-            resolve(['daffi-account-1']);
-          }, 1000);
-        });
-      },
-      reconnectSession: async () => {
-        // Simulate reconnecting to the session (e.g., on page refresh)
-        return ['daffi-account-1']; // Assuming the wallet is still connected
-      },
-      connector: {
-        on: (event, callback) => {
-          if (event === 'disconnect') {
-            // Mock disconnect listener
-            callback();
-          }
-        }
-      },
-      accounts: ['daffi-account-1'],
-    };
+  const connector = new WalletConnect({
+    bridge: "https://bridge.walletconnect.org", // Required
+    qrcodeModal: QRCodeModal,
+  });
 
-    // Connect to Daffi wallet and get the account information
-    const accounts = await daffiWalletInstance.connect();
-    console.log("Connected Accounts:", accounts);
-
-    // Setup disconnect event listener
-    daffiWalletInstance.connector?.on('disconnect', handleDisconnectWalletClick);
-
-    return accounts;
-  } catch (error) {
-    console.error("Error connecting to Daffi Wallet:", error);
-    throw error;
+  // Check if connection is already established
+  if (!connector.connected) {
+    // Create a new session
+    await connector.createSession();
   }
+
+  daffiWalletInstance = connector;
+
+  // Setup disconnect event listener
+  connector.on("disconnect", handleDisconnectWalletClick);
+
+  return connector.accounts || [];
 };
 
 // Function to handle disconnect event (for cleanup)
@@ -49,18 +32,10 @@ const handleDisconnectWalletClick = () => {
 
 // Function to reconnect session when the page is refreshed
 export const reconnectSession = async () => {
-  try {
-    const accounts = await daffiWalletInstance.reconnectSession();
-    console.log("Reconnected Accounts:", accounts);
-
-    // Setup disconnect event listener after reconnecting
-    daffiWalletInstance.connector?.on('disconnect', handleDisconnectWalletClick);
-
-    return accounts;
-  } catch (error) {
-    console.error("Error reconnecting session:", error);
-    throw error;
+  if (daffiWalletInstance && daffiWalletInstance.connected) {
+    return daffiWalletInstance.accounts || [];
   }
+  return [];
 };
 
 // Function to sign a transaction (single transaction example)
@@ -77,8 +52,3 @@ export const signTransaction = async (txnGroups) => {
 
 // Get the Daffi Wallet instance (if needed elsewhere)
 export const getDaffiWalletInstance = () => daffiWalletInstance;
-
-// Simulate QR code generation (assuming it's a URL for now)
-export const getDaffiQRCode = () => {
-  return 'https://web.daffiwallet.app/';
-};

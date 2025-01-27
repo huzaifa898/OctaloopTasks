@@ -1,13 +1,13 @@
-import { DeflyWallet } from "@deflywallet/connect"; // Replace with actual import if library differs
+import { DeflyWalletConnect } from "@blockshake/defly-connect";
 
-let walletInstance;
+let deflyWalletInstance;
 
-export const connectToDefly = async () => {
+export const connectToDeflyWallet = async () => {
   try {
-    walletInstance = new DeflyWallet();
-    const connected = await walletInstance.connect();
+    deflyWalletInstance = new DeflyWalletConnect();
+    const connected = await deflyWalletInstance.connect();
     if (connected) {
-      const accounts = walletInstance.accounts;
+      const accounts = deflyWalletInstance.accounts;
       console.log("Connected Accounts:", accounts);
       return accounts;
     }
@@ -17,7 +17,7 @@ export const connectToDefly = async () => {
   }
 };
 
-export const getWalletInstance = () => walletInstance;
+export const getDeflyWalletInstance = () => deflyWalletInstance;
 
 export const getDeflyQRCode = () => {
   // Simulate QR code generation
