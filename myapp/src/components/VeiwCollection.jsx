@@ -8,7 +8,7 @@ function VeiwCollection() {
     <div className='bg-gradient-to-b from-gray-100 to-pink-200'>
          <Navbar/>
          <CollectionHero/> 
-         {/* <TopCollections/> */}
+          <TopCollections/>
         <Footer/>
     </div>
   )

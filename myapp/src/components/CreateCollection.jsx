@@ -40,9 +40,9 @@ function Nftform() {
   };
 
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center px-4 md:px-0">
       {/* Navbar */}
-      <nav className="flex items-center justify-between py-3" style={{ width: '1320px', height: '100px' }}>
+      <nav className="flex items-center justify-between py-3 w-full max-w-screen-xl">
         <div className="text-xl font-bold text-red-600">
           <img src={logo} alt="Logo" className="h-10 w-auto md:h-24 md:w-24" />
         </div>
@@ -59,7 +59,7 @@ function Nftform() {
       </nav>
 
       {/* Navigation Buttons */}
-      <div className="flex justify-start mt-10" style={{ width: '1320px' }}>
+      <div className="flex justify-start mt-10 w-full max-w-screen-xl">
         <button
           onClick={handleBackClick}
           className="bg-gray-200 text-gray-700 font-apex px-4 py-2 rounded-lg hover:bg-gray-300"
@@ -80,27 +80,28 @@ function Nftform() {
       </div>
 
       {/* Main Content */}
-      <div className="mt-8 relative" style={{ width: '1320px' }}>
+      <div className="mt-8 relative w-full max-w-screen-xl">
         {/* Image and Selection Tag */}
-        <img
-          src={mnt}
-          alt="NFT"
-          style={{ width: '296px', height: '309px', borderRadius: '20px 0px 0px 0px' }}
-        />
-        <div className="absolute top-40 left-28 bg-gray-200 text-black font-apex px-2 py-1 rounded-br-lg">
-          Selected
+        <div className="relative md:block hidden">
+          <img
+            src={mnt}
+            alt="NFT"
+            className="w-[296px] h-[309px] rounded-[20px_0_0_0]"
+          />
+          <div className="absolute top-40 left-28 bg-gray-200 text-black font-apex px-2 py-1 rounded-br-lg">
+            Selected
+          </div>
         </div>
 
         {/* Choose File Button */}
         <div className="mt-4">
-          <input type="file" onChange={handleFileChange} />
+          <input type="file" onChange={handleFileChange} className="w-full" />
           {selectedFile && <p className="mt-2 font-apex text-gray-700">{selectedFile.name}</p>}
         </div>
 
         {/* Form Section */}
         <div
-          className="absolute bg-white p-8 rounded-lg shadow-lg"
-          style={{ width: "900px", top: "0px", left: "426px" }}
+          className="absolute bg-white p-8 rounded-lg shadow-lg w-full md:w-[900px] top-20 md:left-[426px] left-0 mx-4 md:mx-0"
         >
           <h1 className="text-center font-apex text-2xl mb-6">Create Collection</h1>
           <form>
@@ -125,7 +126,7 @@ function Nftform() {
             </div>
 
             {/* Description Field */}
-            <div className="mb-4" >
+            <div className="mb-4">
               <label className="block text-gray-700 font-apex mb-2">Description</label>
               <p className="text-sm text-gray-500 mb-2">
                 The description will be included on the item's detail page underneath its image.
@@ -137,17 +138,15 @@ function Nftform() {
               ></textarea>
             </div>
 
-            
-
             {/* Submit Button */}
             <div className="mt-6 flex justify-end">
               <Link to='/profile'>
-              <button
-                type="submit"
-                className="bg-red-600 text-white font-apex px-4 py-2 rounded-lg hover:bg-red-700"
-              >
-                Continue
-              </button>
+                <button
+                  type="submit"
+                  className="bg-red-600 text-white font-apex px-4 py-2 rounded-lg hover:bg-red-700"
+                >
+                  Continue
+                </button>
               </Link>
             </div>
           </form>
@@ -155,7 +154,6 @@ function Nftform() {
       </div>
 
       {/* Add Traits Form Modal */}
-     
     </div>
   );
 }
