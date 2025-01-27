@@ -6,7 +6,7 @@ import auchero1 from "../Images/auchero1.png";
 
 const HeroSection = () => {
   return (
-    <div className="flex flex-col items-center justify-center w-full bg-gradient-to-b from-red-100 to-white">
+    <div className="flex flex-col items-center justify-center w-full">
       {/* Hero Content */}
       <div className="flex flex-col items-center justify-center text-center px-4 md:px-6 py-4 sm:h-screen h-auto">
         {/* Title Section */}

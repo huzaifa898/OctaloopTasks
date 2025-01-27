@@ -10,6 +10,7 @@ import Sold from './Sold'
  import Bost from './Bost'
  import Faq from './Faq'
 import Footer from './Footer'
+import Assets from './Assets'
 function Home() {
   return (
     <div className='bg-gradient-to-b from-white to-pink-200'>
@@ -21,8 +22,8 @@ function Home() {
           <Aucations/>
           <TopCollection/>
           <Sold/>
-        
-          <Bost/> 
+          <Bost/>
+          {/* <Assets/> */}
           <Faq/>
           <Footer/>
     </div>

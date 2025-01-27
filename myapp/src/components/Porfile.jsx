@@ -137,17 +137,17 @@ function Profile() {
     <img
       src={link1}
       alt="Link 1"
-      className="w-50 sm:w-[20%] md:w-[23%] h-24 object-cover rounded-lg shadow-md"
+      className="w-50 sm:w-[20%] md:w-[23%] h-24  rounded-lg shadow-md"
     />
     <img
       src={link2}
       alt="Link 2"
-      className="w-50 sm:w-[20%] md:w-[23%] h-24 object-cover rounded-lg shadow-md"
+      className="w-50 sm:w-[20%] md:w-[23%] h-24  rounded-lg shadow-md"
     />
     <img
       src={link3}
       alt="Link 3"
-      className="w-50 sm:w-[20%] md:w-[23%] h-24 object-cover rounded-lg shadow-md"
+      className="w-50 sm:w-[20%] md:w-[23%] h-24  rounded-lg shadow-md"
     />
     <img
       src={link4}

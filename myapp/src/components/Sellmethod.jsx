@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import { FaSignInAlt, FaUserPlus } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import logo from "../Images/logo.png";
@@ -12,44 +12,51 @@ function Sellmethod() {
   };
 
   return (
-    <div className="flex flex-col items-center">
-      <nav className="flex items-center justify-between py-3 w-[1320px] h-[100px] mt-[25px] gap-0 opacity-100">
-        <div className="text-xl font-bold text-red-600 relative">
-          <img src={logo} alt="Logo" className="h-10 w-auto md:h-24 md:w-24" />
-          {/* Back Button */}
+    <div className="flex flex-col items-center px-4">
+      {/* Navbar */}
+      <nav className="flex items-center justify-between w-full max-w-[1320px] h-auto md:h-[100px] mt-6">
+        {/* Logo and Back Button */}
+        <div className="relative">
+          <img
+            src={logo}
+            alt="Logo"
+            className="h-10 w-auto md:h-20 md:w-auto"
+          />
           <button
             onClick={handleBackClick}
-            className="bg-gray-200 text-black font-apex px-4 py-2 rounded-lg  mt-8 absolute"
+            className="absolute top-full left-0 bg-gray-200 text-black font-apex px-4 py-2 rounded-lg mt-2 text-sm md:text-base hover:bg-gray-300 transition"
             style={{
-              width: '126px',
-              height: '64px',
-              top: '100%',
-              left: '0',
-              gap: '0px',
-              opacity: '1',
+              width: "126px",
+              height: "40px",
             }}
           >
             Back
           </button>
         </div>
-        <ul className="flex space-x-4 md:space-x-6">
+
+        {/* Navigation Links */}
+        <ul className="flex items-center space-x-4 md:space-x-8">
           <Link to="/">
-            <li className="text-gray-700 hover:text-red-600 font-apex font-bold cursor-pointer">
+            <li className="text-gray-700 hover:text-red-600 font-apex font-bold text-sm md:text-lg cursor-pointer">
               Home
             </li>
           </Link>
-          <li className="text-red-700 font-bold text-xl font-apex cursor-pointer">
+          <li className="text-red-700 font-bold font-apex text-sm md:text-xl cursor-pointer">
             AI NFT Generation
           </li>
         </ul>
-        <div className="flex space-x-2">
-          <FaSignInAlt className="text-gray-700 hover:text-red-600 text-xl cursor-pointer" />
-          <FaUserPlus className="text-gray-700 hover:text-red-600 text-xl cursor-pointer" />
+
+        {/* Icons */}
+        <div className="flex items-center space-x-4">
+          <FaSignInAlt className="text-gray-700 hover:text-red-600 text-lg md:text-xl cursor-pointer" />
+          <FaUserPlus className="text-gray-700 hover:text-red-600 text-lg md:text-xl cursor-pointer" />
         </div>
       </nav>
 
-      {/* Render Sellmethodform */}
-      <Sellmethodform />
+      {/* Sell Method Form */}
+      <div className="w-full max-w-[1320px] mt-8">
+        <Sellmethodform />
+      </div>
     </div>
   );
 }

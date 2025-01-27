@@ -15,19 +15,22 @@ function Setting() {
   };
 
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center px-4">
       {/* Navbar */}
-      <nav className="flex items-center justify-between py-3 w-[1320px] h-[100px] mt-[25px] gap-0 opacity-100">
-        <div className="text-xl font-bold text-red-600">
+      <nav className="flex items-center justify-between w-full max-w-screen-xl py-3 mt-6">
+        <div className="flex items-center">
           <img src={logo} alt="Logo" className="h-10 w-auto md:h-24 md:w-24" />
         </div>
         <ul className="flex space-x-4 md:space-x-6">
-          <Link to="/">
-            <li className="text-gray-700 hover:text-red-600 font-apex font-bold cursor-pointer">
+          <li>
+            <Link
+              to="/"
+              className="text-gray-700 hover:text-red-600 font-apex font-bold"
+            >
               Home
-            </li>
-          </Link>
-          <li className="text-red-700 font-bold text-xl font-apex cursor-pointer">
+            </Link>
+          </li>
+          <li className="text-red-700 font-bold text-xl font-apex">
             AI NFT Generation
           </li>
         </ul>
@@ -38,68 +41,31 @@ function Setting() {
       </nav>
 
       {/* Buttons Section */}
-      <div
-        className="flex space-x-4 mt-8"
-        style={{
-          position: "absolute",
-          top: "140px",
-          left: "300px",
-          gap: "0px",
-          opacity: "1",
-        }}
-      >
+      <div className="flex space-x-4 mt-8">
         <Link to="/profile">
-          <button
-            className="bg-gray-100 text-black font-apex px-4 py-2 rounded-lg"
-            style={{
-              width: "100px",
-              height: "50px",
-              padding: "5px 10px",
-              borderRadius: "8px 0px 0px 0px",
-            }}
-          >
+          <button className="bg-gray-100 text-black font-apex px-4 py-2 rounded-lg">
             Profile
           </button>
         </Link>
         <Link to="/setting">
-          <button
-            className="bg-gray-100 text-black font-apex px-4 py-2 rounded-lg"
-            style={{
-              width: "100px",
-              height: "50px",
-              padding: "5px 10px",
-              borderRadius: "8px 0px 0px 0px",
-            }}
-          >
+          <button className="bg-gray-100 text-black font-apex px-4 py-2 rounded-lg">
             Setting
           </button>
         </Link>
       </div>
 
       {/* Profile Form Section */}
-      <div
-        className="w-1320px mx-auto text-white p-8 rounded-lg mt-[200px]"
-        style={{ height: "1794px", opacity: 1 }}
-      >
+      <div className="w-full max-w-screen-xl bg-white p-8 rounded-lg mt-10">
         {/* Banner Upload */}
-        <div
-          className="relative bg-gray-300 rounded-lg mx-auto"
-          style={{
-            width: '1320px',
-            height: '409px',
-            top: '55px',
-            gap: '0px',
-            opacity: '1',
-          }}
-        >
-          <button className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white text-black px-4 py-2 rounded-lg">
+        <div className="relative bg-gray-300 rounded-lg w-full h-64 flex items-center justify-center">
+          <button className="bg-white text-black px-4 py-2 rounded-lg">
             Upload Banner
           </button>
         </div>
 
         {/* Profile Upload */}
-        <div className="relative -mt-0 flex justify-center">
-          <div className="w-[100px] h-[100px] bg-gray-300 rounded-full flex items-center justify-center border-2 border-dashed border-gray-500">
+        <div className="relative -mt-12 flex justify-center">
+          <div className="w-24 h-24 bg-gray-300 rounded-full flex items-center justify-center border-2 border-dashed border-gray-500">
             <span className="text-2xl font-bold text-gray-500">+</span>
           </div>
         </div>
@@ -115,7 +81,9 @@ function Setting() {
         {/* Form */}
         <form className="mt-8 space-y-6">
           <div>
-            <label className="block text-black font-apex mb-2">Display Name</label>
+            <label className="block text-black font-apex mb-2">
+              Display Name
+            </label>
             <input
               type="text"
               placeholder="Enter your Name"
@@ -127,7 +95,7 @@ function Setting() {
             <label className="block text-black font-apex mb-2">Bio</label>
             <textarea
               placeholder="Enter Bio"
-              className="w-full border border-gray-300 text-black px-4 py-2 rounded-lg h-[100px]"
+              className="w-full border border-gray-300 text-black px-4 py-2 rounded-lg h-24"
             ></textarea>
           </div>
 
@@ -164,10 +132,10 @@ function Setting() {
 
         {/* Save Changes */}
         <div className="mt-8 text-left">
-            <Link to='/profile'>
-          <button className="bg-red-500 text-white px-6 py-3 rounded-lg">
-            Save Changes
-          </button>
+          <Link to="/profile">
+            <button className="bg-red-500 text-white px-6 py-3 rounded-lg">
+              Save Changes
+            </button>
           </Link>
         </div>
       </div>
@@ -175,34 +143,18 @@ function Setting() {
       {/* Upload Profile Modal */}
       {showUploadModal && (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-          <div
-            className="bg-white p-8 rounded-lg shadow-lg relative"
-            style={{
-              width: '455px',
-              height: '285px',
-              top: '98px',
-              left: '28px',
-              gap: '0px',
-              opacity: '1',
-            }}
-          >
+          <div className="bg-white p-8 rounded-lg shadow-lg relative w-96">
             <button
               className="absolute top-2 right-2 text-gray-700 hover:text-red-600"
               onClick={handleCloseModal}
             >
               &times;
             </button>
-            <h2 className="text-2xl text-center font-apex mb-4">Upload Image</h2>
+            <h2 className="text-2xl text-center font-apex mb-4">
+              Upload Image
+            </h2>
             <div className="flex flex-col items-center justify-center h-full">
-              <div
-                className="w-[179px] h-[129px] bg-gray-200 border-2 border-dashed border-gray-400 flex flex-col items-center justify-center mb-4"
-                style={{
-                  top: '176px',
-                  left: '166px',
-                  gap: '0px',
-                  opacity: '1',
-                }}
-              >
+              <div className="w-44 h-32 bg-gray-200 border-2 border-dashed border-gray-400 flex flex-col items-center justify-center mb-4">
                 <span className="text-gray-500 mb-2">Drag and Drop</span>
                 <button className="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700">
                   Upload Image
