@@ -88,7 +88,7 @@ function Nftform() {
 
         {/* Form Section */}
         <div
-          className="absolute bg-white p-8 rounded-lg shadow-lg w-full max-w-full lg:max-w-[900px] top-0 md:left-[426px] left-0 mx-4 md:mx-0"
+          className="absolute bg-white p-4 rounded-lg shadow-lg w-full max-w-full lg:max-w-[900px] top-0 md:left-[426px] left-0 mx-4 md:mx-0"
         >
           <h1 className="text-center font-bold text-2xl mb-6">MINT YOUR NFT</h1>
           <form>

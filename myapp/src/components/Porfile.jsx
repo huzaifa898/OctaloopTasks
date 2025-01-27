@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { FaSignInAlt, FaUserPlus } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import logo from "../Images/logo.png";
@@ -12,13 +12,11 @@ import link4 from '../Images/link4.png';
 import Profilecards from "./Profilecards";
 
 function Profile() {
-  
-
-  
   return (
     <div className="flex flex-col items-center">
+
       {/* Navbar Section */}
-      <nav className="flex items-center justify-between py-3 w-[1320px] h-[100px] mt-[25px] gap-0 opacity-100">
+      <nav className="flex items-center justify-between py-3 w-full max-w-[1320px] mt-[25px] gap-0 opacity-100 px-4 mx-auto">
         <div className="text-xl font-bold text-red-600">
           <img src={logo} alt="Logo" className="h-10 w-auto md:h-24 md:w-24" />
         </div>
@@ -39,20 +37,12 @@ function Profile() {
       </nav>
 
       {/* Buttons Section */}
-      <div
-        className="flex space-x-4 mt-8"
-        style={{
-          position: "absolute",
-          top: "140px",
-          left: "300px",
-          gap: "0px",
-          opacity: "1",
-        }}
-      >
+      <div className="flex flex-col space-y-4 mt-4 w-full max-w-screen-xl px-4">
         <button
           className="bg-gray-100 text-black font-apex px-4 py-2 rounded-lg"
           style={{
-            width: "100px",
+            width: "100%",
+            maxWidth: "120px",
             height: "50px",
             padding: "5px 10px",
             borderRadius: "8px 0px 0px 0px",
@@ -61,24 +51,25 @@ function Profile() {
           Profile
         </button>
         <Link to='/setting'>
-        <button
-          className="bg-gray-100 text-black font-apex px-4 py-2 rounded-lg"
-          style={{
-            width: "100px",
-            height: "50px",
-            padding: "5px 10px",
-            borderRadius: "8px 0px 0px 0px",
-          }}
-        >
-          Setting
-        </button>
+          <button
+            className="bg-gray-100 text-black font-apex px-4 py-2 rounded-lg"
+            style={{
+              width: "100%",
+              maxWidth: "120px",
+              height: "50px",
+              padding: "5px 10px",
+              borderRadius: "8px 0px 0px 0px",
+            }}
+          >
+            Setting
+          </button>
         </Link>
       </div>
 
       {/* Profile Section */}
-      <div className="flex flex-col items-center gap-4 mt-10">
+      <div className="flex flex-col items-center gap-4 mt-10 w-full px-4">
         {/* Profile Banner Section */}
-        <div className="relative w-[1320px] h-[344px] mt-[110px] gap-0 border-radius-[20px 0px 0px 0px] opacity-100 mx-auto">
+        <div className="relative w-[1320] h-[200px] sm:h-[344px] mt-[10px] gap-0 border-radius-[20px 0px 0px 0px] opacity-100 mx-auto">
           <img
             src={banner}
             alt="Profile Banner"
@@ -90,17 +81,17 @@ function Profile() {
         </div>
 
         {/* Profile Info Section */}
-        <div className="flex flex-col items-center text-center">
+        <div className="flex flex-col items-center text-center w-full">
           <img
             src={ba}
             alt="Profile Icon"
-            className="w-[100px] h-[100px] rounded-full mt-[-50px] border-4 border-white"
+            className="w-[80px] h-[80px] rounded-full mt-[-40px] border-4 border-white"
           />
-          <h1 className="text-2xl font-bold mt-4">WILLIAM AHARANA</h1>
-          <div className="flex gap-6 mt-2">
-            <span className="text-lg">99 Followers</span>
-            <span className="text-lg">26 Following</span>
-            <span className="text-lg">12 Items</span>
+          <h1 className="text-xl md:text-2xl font-bold mt-4">WILLIAM AHARANA</h1>
+          <div className="flex flex-wrap justify-center gap-4 mt-2">
+            <span className="text-sm sm:text-lg">99 Followers</span>
+            <span className="text-sm sm:text-lg">26 Following</span>
+            <span className="text-sm sm:text-lg">12 Items</span>
           </div>
           <div className="mt-4">
             <button className="bg-white text-black py-2 px-6 rounded-[15px] border-2 border-black">
@@ -111,35 +102,70 @@ function Profile() {
       </div>
 
       {/* New Section */}
-      <div className="flex gap-4 mt-10">
-        <div className="w-[482px] h-[461px]">
-          <img
-            src={new11}
-            alt="New Section"
-            className="w-full h-full object-cover rounded-lg"
-          />
-        </div>
-        <div className="w-[691px] h-[491px] bg-gray-100 p-8 rounded-lg shadow-lg">
-          <h2 className="text-xl font-apex mb-4">WONDERFUL ARTWORK</h2>
-          <div className="bg-gray-200 p-4 rounded-lg shadow-md">
-            items
-          </div>
-          <br />
-          <div className="bg-gray-200 p-4 rounded-lg shadow-md">
-            VOL FRY
-          </div>
-          <div className="flex gap-4 mt-4">
-            <img src={link1} alt="Link 1" className="w-full h-24 object-cover rounded-lg" />
-            <img src={link2} alt="Link 2" className="w-full h-24 object-cover rounded-lg" />
-            <img src={link3} alt="Link 3" className="w-full h-24 object-cover rounded-lg" />
-            <img src={link4} alt="Link 4" className="w-full h-24 object-cover rounded-lg" />
-          </div>
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis culpa perspiciatis sint ipsum exercitationem, tenetur reprehenderit esse quo, qui possimus odio,
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae laborum facere quae? Labore repellendus perferendis iste ad vel nesciunt consequatur totam 
-              odit incidunt velit est aliquid magnam pariatur, iusto eum.
-               officia facilis ullam. Est in odit iste asperiores deleniti.</p>
-        </div>
-      </div>
+     {/* New Section */}
+<div className="flex flex-col sm:flex-row gap-8 mt-10 w-full max-w-screen-xl px-4">
+
+{/* Image Section */}
+<div className="w-full sm:w-[482px] h-[300px] sm:h-[461px] flex items-center justify-center">
+  <img
+    src={new11}
+    alt="New Section"
+    className="w-full h-full object-cover rounded-lg shadow-lg"
+  />
+</div>
+
+{/* Text Content Section */}
+<div className="w-full sm:w-[691px] h-auto bg-gray-100 p-6 sm:p-8 rounded-lg shadow-lg flex flex-col justify-between">
+
+  {/* Title */}
+  <h2 className="text-xl sm:text-2xl font-apex mb-4 text-center sm:text-left">
+    WONDERFUL ARTWORK
+  </h2>
+
+  {/* Items Section */}
+  <div className="bg-gray-200 p-4 rounded-lg shadow-md mb-4">
+    items
+  </div>
+
+  {/* VOL FRY Section */}
+  <div className="bg-gray-200 p-4 rounded-lg shadow-md mb-4">
+    VOL FRY
+  </div>
+
+  {/* Images Links Section */}
+  <div className="flex flex-wrap gap-6 justify-center sm:justify-start">
+    <img
+      src={link1}
+      alt="Link 1"
+      className="w-50 sm:w-[20%] md:w-[23%] h-24 object-cover rounded-lg shadow-md"
+    />
+    <img
+      src={link2}
+      alt="Link 2"
+      className="w-50 sm:w-[20%] md:w-[23%] h-24 object-cover rounded-lg shadow-md"
+    />
+    <img
+      src={link3}
+      alt="Link 3"
+      className="w-50 sm:w-[20%] md:w-[23%] h-24 object-cover rounded-lg shadow-md"
+    />
+    <img
+      src={link4}
+      alt="Link 4"
+      className="w-50 sm:w-[20%] md:w-[23%] h-24 object-cover rounded-lg shadow-md"
+    />
+  </div>
+
+  {/* Text Section */}
+  <p className="mt-4 text-sm sm:text-base text-justify">
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis culpa perspiciatis sint ipsum exercitationem, tenetur reprehenderit esse quo, qui possimus odio,
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae laborum facere quae? Labore repellendus perferendis iste ad vel nesciunt consequatur totam 
+    odit incidunt velit est aliquid magnam pariatur, iusto eum. 
+    officia facilis ullam. Est in odit iste asperiores deleniti.
+  </p>
+</div>
+</div>
+
 
       {/* Profile Cards Section */}
       <div className="mt-10">

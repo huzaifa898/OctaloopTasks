@@ -101,7 +101,7 @@ function Nftform() {
 
         {/* Form Section */}
         <div
-          className="absolute bg-white p-8 rounded-lg shadow-lg w-full md:w-[900px] top-20 md:left-[426px] left-0 mx-4 md:mx-0"
+          className="absolute bg-white p-4 rounded-lg shadow-lg w-full md:w-[900px] top-20 md:left-[426px] left-0 mx-4 md:mx-0"
         >
           <h1 className="text-center font-apex text-2xl mb-6">Create Collection</h1>
           <form>
