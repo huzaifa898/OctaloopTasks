@@ -160,7 +160,8 @@ const HeroSection = () => {
             src={hero1}
             alt="Hero Image 1"
             className="w-[308.36px] h-[410.96px] rounded-lg"
-          />
+          /> 
+          
 
         </div>
       </div>

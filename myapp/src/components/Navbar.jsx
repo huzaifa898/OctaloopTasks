@@ -3,7 +3,7 @@ import logo from '../Images/logo.png';
 import { Link } from 'react-router-dom';
 import { getPeraWalletInstance } from '../utils/peraWallet';
 import { connectToWalletConnect } from '../utils/walletConnect';
-import { connectToDaffiWallet, reconnectSession } from '../utils/daffiWallet';
+import { connectToDaffiWallet, reconnectSession, disconnectDaffiWallet } from '../utils/daffiWallet';
 import { connectToDeflyWallet } from '../utils/deflyWallet';
 import icon1 from "../Images/icon1.png";
 import icon2 from "../Images/icon2.png";
@@ -30,6 +30,7 @@ function Navbar() {
   const peraWallet = getPeraWalletInstance();
   const { activate, active, account } = useWeb3React();
   const { connectDaffiWallet } = useContext(DaffiWalletContext);
+  const [errorMessage, setErrorMessage] = useState('');
 
   useEffect(() => {
     if (successMessage) {
@@ -95,18 +96,26 @@ function Navbar() {
 
   const handleConnectDaffiWallet = async () => {
     try {
-      const accounts = await connectDaffiWallet();
+      const accounts = await connectToDaffiWallet(); // Updated to use the improved function
       if (accounts && accounts.length) {
-        setAccountAddress(accounts[0]);
+        setAccountAddress(accounts[0]); // Save the first connected account
         setSuccessMessage('Daffi Wallet connected successfully!');
-        closeModal();
+        closeModal(); // Close any connection modal if applicable
+        console.log('Connected to Daffi Wallet:', accounts);
       } else {
-        console.error('No accounts found');
+        console.error('No accounts found after connecting to Daffi Wallet');
       }
     } catch (error) {
-      console.error('Failed to connect to Daffi Wallet:', error);
+      // Handle errors properly
+      if (error?.message === "CONNECT_MODAL_CLOSED") {
+        setErrorMessage('Connection was canceled by the user.');
+      } else {
+        setErrorMessage('Failed to connect to Daffi Wallet. Please try again.');
+      }
+      console.error('Error while connecting to Daffi Wallet:', error);
     }
   };
+  
 
   const handleConnectDeflyWallet = async () => {
     try {
@@ -118,6 +127,16 @@ function Navbar() {
       }
     } catch (error) {
       console.error('Failed to connect to Defly Wallet:', error);
+    }
+  };
+
+  const handleDisconnect = async () => {
+    try {
+      await disconnectDaffiWallet();
+      setAccountAddress('');
+      setSuccessMessage('Wallet disconnected successfully!');
+    } catch (error) {
+      console.error('Failed to disconnect wallet:', error);
     }
   };
 
@@ -148,12 +167,21 @@ function Navbar() {
 
           {/* Desktop Buttons */}
           <div className="hidden md:flex space-x-3 lg:space-x-4">
-            <button
-              className="bg-red-500 text-white w-[150px] h-[45px] lg:w-[200px] lg:h-[50px] rounded-md font-apex hover:bg-red-600"
-              onClick={openModal}
-            >
-              Connect Wallet
-            </button>
+            {accountAddress ? (
+              <button
+                className="bg-red-500 text-white w-[150px] h-[45px] lg:w-[200px] lg:h-[50px] rounded-md font-apex hover:bg-red-600"
+                onClick={handleDisconnect}
+              >
+                Disconnect
+              </button>
+            ) : (
+              <button
+                className="bg-red-500 text-white w-[150px] h-[45px] lg:w-[200px] lg:h-[50px] rounded-md font-apex hover:bg-red-600"
+                onClick={openModal}
+              >
+                Connect Wallet
+              </button>
+            )}
             <Link to="/nft">
               <button className="border font-apex border-red-500 text-red-500 w-[150px] h-[45px] lg:w-[200px] lg:h-[50px] rounded-md hover:bg-red-500 hover:text-white">
                 Create NFT
@@ -220,15 +248,27 @@ function Navbar() {
                 AI NFT Generation
               </li>
             </Link>
-            <button
-              className="bg-red-500 text-white w-full h-[45px] rounded-md font-apex hover:bg-red-600"
-              onClick={() => {
-                closeMenu();
-                openModal();
-              }}
-            >
-              Connect Wallet
-            </button>
+            {accountAddress ? (
+              <button
+                className="bg-red-500 text-white w-full h-[45px] rounded-md font-apex hover:bg-red-600"
+                onClick={() => {
+                  closeMenu();
+                  handleDisconnect();
+                }}
+              >
+                Disconnect
+              </button>
+            ) : (
+              <button
+                className="bg-red-500 text-white w-full h-[45px] rounded-md font-apex hover:bg-red-600"
+                onClick={() => {
+                  closeMenu();
+                  openModal();
+                }}
+              >
+                Connect Wallet
+              </button>
+            )}
             <Link to="/nft" onClick={closeMenu}>
               <button className="border font-apex border-red-500 text-red-500 w-full h-[45px] rounded-md hover:bg-red-500 hover:text-white">
                 Create NFT
@@ -286,6 +326,8 @@ function Navbar() {
               >
                 <img src={icon2} alt="Daffi Logo" className="h-6 mr-2" />
                 <span className="ml-2">Daffi</span>
+                {successMessage && <p style={{ color: 'green' }}>{successMessage}</p>}
+                {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
               </button>
             </div>
           </div>

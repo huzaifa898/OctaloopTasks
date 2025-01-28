@@ -4,6 +4,7 @@ module.exports = {
     extend: {
       fontFamily: {
         apex: ['"Apex Mk2"', 'sans-serif'], // Add the font family
+        roboto: ['Roboto', 'sans-serif'],
       },
     },
   },

@@ -210,10 +210,10 @@ const FeaturedCollection = () => {
 
               {/* Footer Section */}
               <div className="flex justify-between items-center w-full relative top-6">
-                <button className="bg-red-500 text-white py-1 px-3 sm:py-1 xl:px-6 rounded relative bottom-14 left-2">
+                <button className="bg-red-500 w-56px h-36px font-roboto leading-4 tracking-tight text-white py-4 px-4 sm:py-3 xl:px-4 rounded relative bottom-16 left-2">
                   Buy
                 </button>
-                <p className="text-gray-700 px-2 lg:px-1 lg:py-1 rounded bg-white flex items-center gap-1 relative bottom-14 right-2">
+                <p className="text-gray-700  py-3 font-roboto w-123px  sm:py-2 px-4 lg:px-3 lg:py-2  rounded bg-white flex items-center gap-1 relative bottom-16 right-2">
                   Price:{" "}
                   <img
                     className="w-5 h-5 bg-black rounded-full"

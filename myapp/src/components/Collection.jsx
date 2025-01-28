@@ -37,12 +37,12 @@ const FeaturedCollection = () => {
   };
 
   return (
-    <div className="py-10 px-4 sm:px-6 mt-[100px] lg:px-8">
+    <div className="py-10 px-4 sm:px-6 mt-[100px]   lg:px-8">
       <div className="container mx-auto max-w-7xl relative">
         {/* Title and Subtext */}
-        <div className="flex flex-col md:flex-row justify-between items-center mb-5 px-4">
-          <div className="text-left w-full md:w-auto">
-            <h2 className="font-apex text-[48px] sm:text-[64px] font-normal leading-[76.8px] tracking-[0.04em] text-left">
+        <div className="flex flex-col md:flex-row justify-between  items-center mb-5 px-4">
+          <div className="text-left w-full  md:w-auto">
+            <h2 className="font-apex text-[48px]  sm:text-[64px] font-normal leading-[76.8px] tracking-[0.04em] text-left">
               Featured Collection
             </h2>
             <p className="font-apex text-[14px] sm:text-[18px] font-light leading-[21.09px] tracking-[0.03em] text-left">
@@ -77,10 +77,10 @@ const FeaturedCollection = () => {
           {cards.slice(currentIndex, currentIndex + cardsPerSlide).map((card) => (
             <div
               key={card.id}
-              className="relative w-full xl:w-[290px] rounded-lg py-8 px-4 flex flex-col items-center  text-center  bg-center bg-no-repeat"
+              className="relative w-full xl:w-[308px] rounded-lg py-8 px-4 flex flex-col items-center  text-center  bg-center bg-no-repeat"
               style={{
                 backgroundImage: `url(${require('../Images/bg.png')})`,
-                backgroundSize: '100% 80%',
+                backgroundSize: '97% 80%',
               }}
             >
               {/* Profile Section */}
@@ -112,10 +112,10 @@ const FeaturedCollection = () => {
 
               {/* Footer Section */}
               <div className="flex justify-between items-center w-full relative top-6">
-                <button className="bg-red-500 text-white py-1 px-3 sm:py-1 xl:px-6 rounded relative bottom-14 left-2">
+                <button className="bg-red-500 w-56px h-36px font-roboto leading-4 tracking-tight text-white py-4 px-4 sm:py-3 xl:px-4 rounded relative bottom-16 left-3">
                   Buy
                 </button>
-                <p className="text-gray-700 px-2 lg:px-1 lg:py-1 rounded bg-white flex items-center gap-1 relative bottom-14 right-2">
+                <p className="text-gray-700  py-3 font-roboto w-123px  sm:py-2 px-4 lg:px-3 lg:py-2  rounded bg-white flex items-center gap-1 relative bottom-16 right-2">
                   Price:{" "}
                   <img
                     className="w-5 h-5 bg-black rounded-full"
