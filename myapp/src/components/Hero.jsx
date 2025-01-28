@@ -69,24 +69,9 @@ function App() {
   {/* Hero Section */}
   <div className="px-4 py-4 md:px-6 md:py-4">
     {/* Navbar */}
-    <nav className="flex items-center justify-between py-3 md:justify-evenly md:space-x-80">
-      <div className="text-xl font-bold text-red-600">
-        <img src={Logo} alt="Logo" className="h-10 w-auto md:h-24 md:w-24" />
-      </div>
-      <ul className="flex space-x-4 md:space-x-6">
-        <Link to="/">
-          <li className="text-gray-700 hover:text-red-600 font-apex text-bold cursor-pointer">Home</li>
-        </Link>
-        <li className="text-red-700 text-bold text-xl font-apex cursor-pointer">AI NFT Generation</li>
-      </ul>
-      <div className="flex space-x-2">
-        <img src={wallet} alt="Wallet Icon" className="h-10 w-10 cursor-pointer" />
-        <img src={ppl} alt="People Icon" className="h-10 w-10 cursor-pointer" onClick={handlePplClick} />
-      </div>
-    </nav>
-
+    
     {/* Tagline */}
-    <div className="text-center mt-8">
+    <div className="text-center mt-20">
       <h1 className="text-2xl font-apex text-gray-800 md:text-4xl">
         CREATE YOUR OWN <span className="text-red-600">MASTERPIECE</span>
       </h1>
