@@ -155,9 +155,11 @@ function Navbar() {
 
           {/* Desktop Navigation Links */}
           <ul className="hidden md:flex space-x-6 lg:space-x-8 text-gray-800 font-medium">
+            <Link to='/'>
             <li className="hover:text-red-500 font-apex text-bold text-red-600 underline cursor-pointer">
               Home
             </li>
+            </Link>
             <Link to={'/nft'}>
               <li className="hover:text-red-500 font-apex cursor-pointer">
                 AI NFT Generation
@@ -237,12 +239,14 @@ function Navbar() {
           </button>
 
           <ul className="flex flex-col space-y-4 p-6 text-gray-800 font-medium">
+            <Link to={'/'}>
             <li
               className="hover:text-red-500 font-apex text-bold text-red-600 underline cursor-pointer"
               onClick={closeMenu}
             >
               Home
             </li>
+            </Link>
             <Link to="/nft" onClick={closeMenu}>
               <li className="hover:text-red-500 font-apex cursor-pointer">
                 AI NFT Generation

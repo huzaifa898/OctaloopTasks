@@ -9,14 +9,14 @@ import Ass6 from '../Images/Ass6.png';
 
 function App() {
   return (
-    <div className="relative w-full min-h-screen  flex justify-center items-center">
+    <div className=" w-full min-h-screen  flex justify-center items-center">
       <div className="relative max-w-[1920px] w-full">
         {/* Left Side Images */}
-        <div className="hidden lg:block absolute left-0 top-0">
+        <div className="absolute left-0 top-0 hidden lg:block">
           <img
             src={Ass5}
             alt="Left Image 1"
-            className="absolute w-[120px] h-[120px] top-[100px] left-[60px]"
+            className=" w-[320px] h-[120px] top-[100px] left-[100px]"
           />
           <img
             src={Ass6}
@@ -36,7 +36,7 @@ function App() {
         </div>
 
         {/* Right Side Images */}
-        <div className="hidden lg:block absolute right-0 top-0">
+        <div className="absolute right-0 top-0 hidden lg:block">
           <img
             src={Ass2}
             alt="Right Image 1"
@@ -60,7 +60,7 @@ function App() {
         </div>
 
         {/* Center Input Field */}
-        <div
+        {/* <div
           className="absolute flex flex-col items-center justify-center"
           style={{
             top: '400px',
@@ -81,7 +81,7 @@ function App() {
         </div>
 
         {/* Mobile Layout */}
-        <div className="lg:hidden flex flex-col items-center mt-8">
+        <div className=" flex flex-col items-center mt-8">
           <div className="grid grid-cols-2 gap-4">
             <img src={Ass5} alt="Left Image 1" className="w-20 h-20" />
             <img src={Ass6} alt="Left Image 2" className="w-32 h-32" />
@@ -96,7 +96,7 @@ function App() {
             <img src={Ass} alt="Right Image 4" className="w-32 h-32" />
           </div>
 
-          <div className="mt-8 w-full px-4">
+          <div className="mt-8 w-50 px-4">
             <input
               type="text"
               placeholder="Fantasy Creature holding a sword..."
