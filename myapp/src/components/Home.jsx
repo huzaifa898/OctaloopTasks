@@ -22,8 +22,8 @@ function Home() {
           <Aucations/>
           <TopCollection/>
           <Sold/>
-           <Bost/>
-          
+           {/* <Bost/> */}
+            <Assets/>
           <Faq/>
           <Footer/>
     </div>
