@@ -12,7 +12,7 @@ function App() {
     <div className="w-full min-h-screen flex justify-center items-center">
       <div className="relative w-full max-w-[1320px] h-[931px] flex justify-center items-center">
         {/* Heading */}
-        <h1 className="absolute top-0 left-1/2 transform -translate-x-1/2 text-2xl font-apex text-center mt-0">
+        <h1 className="absolute top-0 left-1/2 transform -translate-x-1/2 text-4xl font-apex text-center mt-0">
           Turn your imagination into <br /> digital Asset
         </h1>
 

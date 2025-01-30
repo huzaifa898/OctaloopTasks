@@ -29,12 +29,12 @@ const HeroSection = () => {
 
 
   return (
-    <div className="relative overflow-hidden min-h-screen">
+    <div className="relative   overflow-hidden min-h-screen">
       {/* Heading and Tagline */}
       <div
         className="absolute text-center"
         style={{
-          top: '20%',
+          top: '15%',
           left: '50%',
           transform: 'translateX(-50%)',
           width: '100%',
@@ -66,12 +66,12 @@ const HeroSection = () => {
 
       {/* Hero Section */}
       <div
-        className="absolute flex items-center justify-center mt-20 sm:flex-row flex-col"
+        className="absolute flex items-center justify-center mt-0 sm:flex-row flex-col"
         style={{
-          width: '921.14px',
+          width: '751.14px',
           height: '410.96px',
-          top: '60%',
-          left: '50%',
+          top: '63%',
+          left: '49%',
           transform: 'translate(-50%, -50%)',
           gap: '0px',
           opacity: '0px',
@@ -153,7 +153,7 @@ const HeroSection = () => {
         </div>
 
         {/* Mobile Layout */}
-        <div className="sm:hidden flex flex-col items-center justify-center w-full gap-4">
+        <div className="sm:hidden flex mt-10 flex-col items-center justify-center w-full gap-4">
 
 
           <img
@@ -170,32 +170,38 @@ const HeroSection = () => {
       {/* Left and Right Images Fully Aligned */}
      <div className="relative min-h-screen" ref={sectionRef}>
   {/* Left Image */}
-  <img
-    src={left1}
-    alt="Left Background"
-    className={`left-image ${animate ? 'animate-left' : ''} hidden sm:block`} // Hide on mobile
-    style={{
-      width: '548.8px',
-      height: '613.89px',
-      top: '75%',
-      left: '-5%',
-      transform: 'translateY(-50%)',
-    }}
-  />
+  {/* Left Image */}
+<img
+  src={left1}
+  alt="Left Background"
+  className={`left-image ${animate ? 'animate-left' : ''} hidden sm:block`} // Hide on mobile
+  style={{
+    width: '548.8px',
+    height: '613.89px',
+    top: '80%', // Lowered from 75% to 85%
+    left: '-6%',
+    transform: 'translateY(-50%)',
+    maxHeight: '100vh', // Prevents overflow
+    objectFit: 'contain', // Ensures full image is visible
+  }}
+/>
 
-  {/* Right Image */}
-  <img
-    src={right1}
-    alt="Right Background"
-    className={`right-image ${animate ? 'animate-right' : ''} hidden sm:block`} // Hide on mobile
-    style={{
-      width: '548.8px',
-      height: '613.89px',
-      top: '75%',
-      right: '-5%',
-      transform: 'translateY(-50%)',
-    }}
-  />
+{/* Right Image */}
+<img
+  src={right1}
+  alt="Right Background"
+  className={`right-image ${animate ? 'animate-right' : ''} hidden sm:block`} // Hide on mobile
+  style={{
+    width: '548.8px',
+    height: '613.89px',
+    top: '80%', // Lowered from 75% to 85%
+    right: '-6%',
+    transform: 'translateY(-50%)',
+    maxHeight: '100vh', // Prevents overflow
+    objectFit: 'contain', // Ensures full image is visible
+  }}
+/>
+
 </div>
 
 

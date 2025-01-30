@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react';
 import logo from '../Images/logo.png';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { getPeraWalletInstance } from '../utils/peraWallet';
 import { connectToWalletConnect } from '../utils/walletConnect';
 import { connectToDaffiWallet, reconnectSession, disconnectDaffiWallet } from '../utils/daffiWallet';
@@ -31,6 +31,12 @@ function Navbar() {
   const { activate, active, account } = useWeb3React();
   const { connectDaffiWallet } = useContext(DaffiWalletContext);
   const [errorMessage, setErrorMessage] = useState('');
+  const location = useLocation();
+  const [activeLink, setActiveLink] = useState(location.pathname);
+
+  useEffect(() => {
+    setActiveLink(location.pathname);
+  }, [location.pathname]);
 
   useEffect(() => {
     if (successMessage) {
@@ -142,7 +148,7 @@ function Navbar() {
 
   return (
     <div className='container '>
-      <div className={`flex items-center ${isMenuOpen ? 'fixed top-0 left-0 w-full z-20' : ''} md:fixed top-0 left-0 w-full z-20`}>
+      <div className={`flex items-center ${isMenuOpen ? 'fixed top-0 left-0 w-full z-20' : ''} md:fixed top-0 left-0 w-full z-20  bg-opacity-60 backdrop-filter backdrop-blur-lg`}>
         <nav className="flex justify-between background: linear-gradient(to right, rgba(256, 255, 255, 0), rgba(255, 182, 193, 0.5) items-center px-4 py-2 mx-auto w-full max-w-screen-xl lg:px-8">
           {/* Logo */}
           <div className="flex items-center">
@@ -155,13 +161,13 @@ function Navbar() {
 
           {/* Desktop Navigation Links */}
           <ul className="hidden md:flex space-x-6 lg:space-x-8 text-gray-800 font-medium">
-            <Link to='/'>
-            <li className="hover:text-red-500 font-apex text-bold text-red-600 underline cursor-pointer">
-              Home
-            </li>
+            <Link to='/' onClick={() => setActiveLink('/')}>
+              <li className={`hover:text-red-500 font-apex text-bold ${activeLink === '/' ? 'text-red-600 underline' : ''} cursor-pointer`}>
+                Home
+              </li>
             </Link>
-            <Link to={'/nft'}>
-              <li className="hover:text-red-500 font-apex cursor-pointer">
+            <Link to={'/nft'} onClick={() => setActiveLink('/nft')}>
+              <li className={`hover:text-red-500 font-apex cursor-pointer ${activeLink === '/nft' ? 'text-red-600 underline' : ''}`}>
                 AI NFT Generation
               </li>
             </Link>
