@@ -23,7 +23,7 @@ function Home() {
           <TopCollection/>
           <Sold/>
            {/* <Bost/> */}
-            <Assets/>
+            {/* <Assets/> */}
           <Faq/>
           <Footer/>
     </div>

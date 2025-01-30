@@ -27,14 +27,15 @@ const HeroSection = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const isTabletLayout = window.innerWidth < 1000 && window.innerHeight < 800;
 
   return (
-    <div className="relative   overflow-hidden min-h-screen">
+    <div className="relative overflow-hidden min-h-[110vh]">
       {/* Heading and Tagline */}
       <div
         className="absolute text-center"
         style={{
-          top: '15%',
+          top: '13%',
           left: '50%',
           transform: 'translateX(-50%)',
           width: '100%',
@@ -46,27 +47,28 @@ const HeroSection = () => {
           style={{
             fontSize: 'clamp(32px, 8vw, 96px)', // Dynamically adjusts between 32px (mobile) and 96px (desktop)
             lineHeight: 'clamp(40px, 10vw, 102px)', // Dynamically adjusts between 40px and 102px
-            marginBottom: '20px',
+            marginBottom: '0px',
           }}
         >
           DISCOVER, CREATE & <br /> SELL ARTWORKS.
         </h1>
         <p
-          className="font-apex font-light tracking-[0.03em] text-center decoration-skip-ink"
+          className="font-Roboto tracking-[0.03em] text-center decoration-skip-ink"
           style={{
             fontSize: 'clamp(14px, 4vw, 18px)', // Adjusts between 14px (mobile) and 18px (desktop)
             lineHeight: 'clamp(18px, 5vw, 21.09px)', // Adjusts between 18px and 21.09px
-            marginBottom: '40px',
+            marginBottom: '0px',
+
           }}
         >
-          Discover and trade unique digital art pieces on our NFT website, where
+          Discover and trade unique digital art pieces on our NFT website,<br /> where
           creativity meets blockchain technology.
         </p>
       </div>
 
       {/* Hero Section */}
       <div
-        className="absolute flex items-center justify-center mt-0 sm:flex-row flex-col"
+        className={`absolute flex items-center justify-center mt-0 ${isTabletLayout ? 'flex-col' : 'sm:flex-row'}`}
         style={{
           width: '751.14px',
           height: '410.96px',
@@ -75,6 +77,7 @@ const HeroSection = () => {
           transform: 'translate(-50%, -50%)',
           gap: '0px',
           opacity: '0px',
+          marginTop: window.innerHeight < 800 ? '80px' : '0px',
         }}
       >
         {/* Background Blur */}
@@ -85,14 +88,14 @@ const HeroSection = () => {
             left: '50%',
             transform: 'translate(-50%, -50%)',
             filter: 'blur(100px)',
-            marginTop: '20px',
+            marginTop: '30px',
           }}
         ></div>
 
         {/* Image 3 */}
         <div
-          className="absolute transform -rotate-4 sm:left-[-60px] sm:top-[42px] w-[225.69px] h-[300.71px] animate-left-right sm:block hidden"
-          style={{ marginTop: '20px' }}
+          className={`absolute transform ${isTabletLayout ? '' : '-rotate-4'} sm:left-[-60px] sm:top-[42px] w-[225.69px] h-[300.71px] ${isTabletLayout ? '' : 'animate-left-right'} sm:block hidden`}
+          style={{ marginTop: '25px' }}
         >
           <img
             src={heroimg3}
@@ -103,8 +106,8 @@ const HeroSection = () => {
 
         {/* Image 4 */}
         <div
-          className="absolute transform -rotate-4 sm:left-[80px] sm:top-[19.04px] w-[266.67px] h-[355.31px] animate-left-right sm:block hidden"
-          style={{ marginTop: '20px' }}
+          className={`absolute transform ${isTabletLayout ? '' : '-rotate-4'} sm:left-[80px] sm:top-[19.04px] w-[266.67px] h-[355.31px] ${isTabletLayout ? '' : 'animate-left-right'} sm:block hidden`}
+          style={{ marginTop: '25px' }}
         >
           <img
             src={heroimg4}
@@ -117,21 +120,21 @@ const HeroSection = () => {
         <img
           src={hero1}
           alt="Hero Image 1"
-          className="relative z-20 rounded-lg w-[308.36px] h-[410.96px] animate-up-down sm:block hidden"
+          className={`relative z-20 rounded-lg w-[308.36px] h-[410.96px] ${isTabletLayout ? '' : 'animate-up-down'} sm:block hidden`}
           style={{
             left: '0px',
             gap: '0px',
             opacity: '0px',
             marginLeft: '-40px',
             marginRight: '-40px',
-            marginTop: '20px',
+            marginTop: '25px',
           }}
         />
 
         {/* Image 2 */}
         <div
-          className="absolute transform rotate-4 sm:right-[70px] sm:top-[19.04px] w-[266.67px] h-[355.31px] z-10 animate-right-left sm:block hidden"
-          style={{ marginTop: '20px' }}
+          className={`absolute transform ${isTabletLayout ? '' : 'rotate-4'} sm:right-[70px] sm:top-[19.04px] w-[266.67px] h-[355.31px] z-10 ${isTabletLayout ? '' : 'animate-right-left'} sm:block hidden`}
+          style={{ marginTop: '25px' }}
         >
           <img
             src={heroimg2}
@@ -142,8 +145,8 @@ const HeroSection = () => {
 
         {/* Image 5 */}
         <div
-          className="absolute transform rotate-4 sm:right-[-90px] sm:top-[42px] w-[225.69px] h-[300.71px] z-0 animate-right-left sm:block hidden"
-          style={{ marginTop: '20px' }}
+          className={`absolute transform ${isTabletLayout ? '' : 'rotate-4'} sm:right-[-90px] sm:top-[42px] w-[225.69px] h-[300.71px] z-0 ${isTabletLayout ? '' : 'animate-right-left'} sm:block hidden`}
+          style={{ marginTop: '25px' }}
         >
           <img
             src={heroimg5}
@@ -154,58 +157,48 @@ const HeroSection = () => {
 
         {/* Mobile Layout */}
         <div className="sm:hidden flex mt-10 flex-col items-center justify-center w-full gap-4">
-
-
           <img
             src={hero1}
             alt="Hero Image 1"
             className="w-[308.36px] h-[410.96px] rounded-lg"
-          /> 
-          
-
+          />
         </div>
       </div>
 
-
       {/* Left and Right Images Fully Aligned */}
-     <div className="relative min-h-screen" ref={sectionRef}>
-  {/* Left Image */}
-  {/* Left Image */}
-<img
-  src={left1}
-  alt="Left Background"
-  className={`left-image ${animate ? 'animate-left' : ''} hidden sm:block`} // Hide on mobile
-  style={{
-    width: '548.8px',
-    height: '613.89px',
-    top: '80%', // Lowered from 75% to 85%
-    left: '-6%',
-    transform: 'translateY(-50%)',
-    maxHeight: '100vh', // Prevents overflow
-    objectFit: 'contain', // Ensures full image is visible
-  }}
-/>
+      <div className="relative min-h-screen" ref={sectionRef}>
+        {/* Left Image */}
+        <img
+          src={left1}
+          alt="Left Background"
+          className={`left-image ${animate ? 'animate-left' : ''} hidden sm:block`} // Hide on mobile
+          style={{
+            width: '548.8px',
+            height: '613.89px',
+            top: '80%', // Lowered from 75% to 85%
+            left: '-6%',
+            transform: 'translateY(-50%)',
+            maxHeight: '100vh', // Prevents overflow
+            objectFit: 'contain', // Ensures full image is visible
+          }}
+        />
 
-{/* Right Image */}
-<img
-  src={right1}
-  alt="Right Background"
-  className={`right-image ${animate ? 'animate-right' : ''} hidden sm:block`} // Hide on mobile
-  style={{
-    width: '548.8px',
-    height: '613.89px',
-    top: '80%', // Lowered from 75% to 85%
-    right: '-6%',
-    transform: 'translateY(-50%)',
-    maxHeight: '100vh', // Prevents overflow
-    objectFit: 'contain', // Ensures full image is visible
-  }}
-/>
-
-</div>
-
-
-
+        {/* Right Image */}
+        <img
+          src={right1}
+          alt="Right Background"
+          className={`right-image ${animate ? 'animate-right' : ''} hidden sm:block`} // Hide on mobile
+          style={{
+            width: '548.8px',
+            height: '613.89px',
+            top: '80%', // Lowered from 75% to 85%
+            right: '-6%',
+            transform: 'translateY(-50%)',
+            maxHeight: '100vh', // Prevents overflow
+            objectFit: 'contain', // Ensures full image is visible
+          }}
+        />
+      </div>
     </div>
   );
 };
