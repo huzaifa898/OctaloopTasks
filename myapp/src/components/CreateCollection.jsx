@@ -4,7 +4,7 @@ import mnt from '../Images/mnt.png';
 import { FaSignInAlt, FaUserPlus, FaPlus } from 'react-icons/fa';
 import { Link, useNavigate } from 'react-router-dom';
 import icon1 from '../Images/icon1.png';
-
+import Navbar from './Navbar';
 function Nftform() {
   const navigate = useNavigate();
 
@@ -42,24 +42,10 @@ function Nftform() {
   return (
     <div className="flex flex-col items-center px-4 md:px-0">
       {/* Navbar */}
-      <nav className="flex items-center justify-between py-3 w-full max-w-screen-xl">
-        <div className="text-xl font-bold text-red-600">
-          <img src={logo} alt="Logo" className="h-10 w-auto md:h-24 md:w-24" />
-        </div>
-        <ul className="flex space-x-4 md:space-x-6">
-          <Link to="/">
-            <li className="text-gray-700 hover:text-red-600 font-apex font-bold cursor-pointer">Home</li>
-          </Link>
-          <li className="text-red-700 font-bold text-xl font-apex cursor-pointer">AI NFT Generation</li>
-        </ul>
-        <div className="flex space-x-2">
-          <FaSignInAlt className="text-gray-700 hover:text-red-600 text-xl cursor-pointer" />
-          <FaUserPlus className="text-gray-700 hover:text-red-600 text-xl cursor-pointer" />
-        </div>
-      </nav>
+        <Navbar/>
 
       {/* Navigation Buttons */}
-      <div className="flex justify-start mt-10 w-full max-w-screen-xl">
+      <div className="flex justify-start mt-40 w-full max-w-screen-xl">
         <button
           onClick={handleBackClick}
           className="bg-gray-200 text-gray-700 font-apex px-4 py-2 rounded-lg hover:bg-gray-300"

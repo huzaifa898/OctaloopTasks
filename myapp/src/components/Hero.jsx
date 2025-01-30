@@ -71,7 +71,7 @@ function App() {
     {/* Navbar */}
     
     {/* Tagline */}
-    <div className="text-center mt-20">
+    <div className="text-center mt-32 ">
       <h1 className="text-2xl font-apex text-gray-800 md:text-4xl">
         CREATE YOUR OWN <span className="text-red-600">MASTERPIECE</span>
       </h1>
