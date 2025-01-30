@@ -9,7 +9,7 @@ import Ass6 from '../Images/Ass6.png';
 
 function App() {
   return (
-    <div className="w-full min-h-screen flex justify-center items-center">
+    <div className="w-full min-h-screen flex justify-center items-center mt-52">
       <div className="relative w-full max-w-[1320px] h-[931px] flex justify-center items-center">
         {/* Heading */}
         <h1 className="absolute top-0 left-1/2 transform -translate-x-1/2 text-4xl font-apex text-center mt-0">

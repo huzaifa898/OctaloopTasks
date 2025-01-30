@@ -1,10 +1,10 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from './components/Home'
-import Nft from './components/Nft';
-import VeiwCollection from './components/VeiwCollection';
-import ViewAllSeller from './components/ViewAllSeller';
-import AuctionPage from './components/AuctionPage';
+import Home from './pages/Home'
+import Nft from './pages/Nft';
+import VeiwCollection from './pages/VeiwCollection';
+import ViewAllSeller from './pages/VeiwAllSeller';
+import AuctionPage from './pages/Auction';
 import Mntnft from './components/Mntnft';
 import Nftform from './components/Nftform';
 import Chosecollection from './components/Chosecollection';
