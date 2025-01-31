@@ -16,8 +16,8 @@ function Home() {
     <div className='bg-gradient-to-b from-white to-pink-200'>
           <Navbar/>
           <HomeHero/>
-          {/* <Collection/>
-          <Trending/> */}
+           <Collection/>
+          <Trending/>
           <Seller/>
           <Aucations/>
           <TopCollection/>  
