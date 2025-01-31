@@ -1,22 +1,26 @@
-import React from "react";
+import React, { useMemo } from "react";
 import card1 from "../Images/card1.png";
 import card2 from "../Images/card2.png";
 import card3 from "../Images/card3.png";
 import card4 from "../Images/card4.png";
 import card5 from "../Images/card5.png";
-// import bg from "../Images/bg.png"; // Background image
+import bg from "../Images/bg.png"; // Background image
+import CustomButton from "./CustomButton"; // Import the CustomButton component
 
-const FeaturedCollection = () => {
-  const cards = [
-    { id: 1, image: card1, name: "Stella Nova" },
-    { id: 2, image: card2, name: "Jane Smith" },
-    { id: 3, image: card3, name: "Alex Taylor" },
-    { id: 4, image: card4, name: "Chris Brown" },
-    { id: 5, image: card5, name: "Sara Wilson" },
-    { id: 6, image: card5, name: "David Lee" },
-    { id: 7, image: card1, name: "David Lee" },
-    { id: 8, image: card2, name: "David Lee" },
-  ];
+const FeaturedCollection = React.memo(() => {
+  const cards = useMemo(
+    () => [
+      { id: 1, image: card1, name: "Stella Nova" },
+      { id: 2, image: card2, name: "Jane Smith" },
+      { id: 3, image: card3, name: "Alex Taylor" },
+      { id: 4, image: card4, name: "Chris Brown" },
+      { id: 5, image: card5, name: "Sara Wilson" },
+      { id: 6, image: card5, name: "David Lee" },
+      { id: 7, image: card1, name: "David Lee" },
+      { id: 8, image: card2, name: "David Lee" },
+    ],
+    []
+  );
 
   return (
     <div className="py-10 px-4 sm:px-6 mt-[100px] lg:px-8">
@@ -37,7 +41,7 @@ const FeaturedCollection = () => {
               key={card.id}
               className="relative w-full xl:w-[290px] rounded-lg py-8 px-4 flex flex-col items-center text-center bg-center bg-no-repeat"
               style={{
-                backgroundImage: `url(${require("../Images/bg.png")})`,
+                backgroundImage: `url(${bg})`,
                 backgroundSize: "100% 93.5%",
               }}
             >
@@ -48,6 +52,7 @@ const FeaturedCollection = () => {
                     src={card.image}
                     alt={card.name}
                     className="rounded-full w-full h-full object-cover"
+                    loading="lazy" // Lazy load image
                   />
                 </div>
                 <div className="ml-2">
@@ -64,13 +69,17 @@ const FeaturedCollection = () => {
                   src={card.image}
                   alt={card.name}
                   className="w-full h-auto rounded object-cover"
+                  loading="lazy" // Lazy load image
                 />
 
-                {/* Centered SOLD Button */}
+                {/* Centered Custom Button */}
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <button className="bg-red-700 text-white py-2 px-6 rounded opacity-90 hover:opacity-100 transition">
-                    SOLD
-                  </button>
+                  <CustomButton
+                    text="BUY NOW" // Button label
+                    bgColor="bg-blue-600" // Button background color
+                    textColor="text-white" // Button text color
+                    onClick={() => alert(`Buying ${card.name}`)} // Button click action
+                  />
                 </div>
               </div>
             </div>
@@ -79,6 +88,6 @@ const FeaturedCollection = () => {
       </div>
     </div>
   );
-};
+});
 
 export default FeaturedCollection;

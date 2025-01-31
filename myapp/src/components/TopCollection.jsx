@@ -6,9 +6,10 @@ import sell3 from '../Images/sell3.png';
 import sell4 from '../Images/sell4.png';
 import { Link } from "react-router-dom";
 
-const CollectionCard = ({ title, creator, creatorImage, images }) => {
+// Use React.memo to optimize performance and avoid unnecessary re-renders.
+const CollectionCard = React.memo(({ title, creator, creatorImage, images }) => {
   return (
-    <div className="border rounded-lg shadow-lg p-4 w-full max-w-[85%] sm:max-w-sm mx-auto transition-transform hover:scale-105">
+    <div className="border rounded-lg shadow-lg p-4 w-full max-w-[85%] sm:max-w-sm mx-auto">
       {/* Large Images Grid */}
       <div className="grid grid-cols-2 gap-2 mb-4">
         {images.slice(0, 2).map((image, index) => (
@@ -17,6 +18,7 @@ const CollectionCard = ({ title, creator, creatorImage, images }) => {
             src={image}
             alt="Artwork"
             className="rounded-lg w-full h-32 object-cover"
+            loading="lazy" // Lazy load images
           />
         ))}
       </div>
@@ -28,6 +30,7 @@ const CollectionCard = ({ title, creator, creatorImage, images }) => {
             src={image}
             alt="Artwork"
             className="rounded-lg w-full h-24 object-cover"
+            loading="lazy" // Lazy load images
           />
         ))}
       </div>
@@ -45,7 +48,7 @@ const CollectionCard = ({ title, creator, creatorImage, images }) => {
       </div>
     </div>
   );
-};
+});
 
 const TopCollections = () => {
   const collections = [

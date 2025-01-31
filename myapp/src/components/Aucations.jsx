@@ -70,7 +70,7 @@ const TrendingNFTs = () => {
     <div className="py-10 px-5">
       <div className="container max-w-7xl mx-auto">
         {/* Heading */}
-        <h1 style={{ marginLeft: "16px" }} className="font-apex text-[64px] font-normal leading-[76.8px] tracking-[0.04em] text-left decoration-skip-ink">
+        <h1 className="font-apex text-[64px] font-normal leading-[76.8px] tracking-[0.04em] text-left decoration-skip-ink mb-10">
           Auctions
         </h1>
         {/* Cards Grid */}
@@ -91,7 +91,7 @@ const TrendingNFTs = () => {
                 <div className="h-10 w-10 rounded-full flex items-center justify-center text-white font-bold text-sm">
                   <img
                     src={icon}
-                    alt={nft.username}
+                    alt={`Profile of ${nft.username}`}
                     className="rounded-full w-full h-full object-cover"
                   />
                 </div>
@@ -128,7 +128,7 @@ const TrendingNFTs = () => {
         {/* Explore Button */}
         <div className="flex justify-center items-center mt-10">
           <Link to="/auctionpage">
-            <button className="bg-red-500 font-apex text-white px-8 py-3 rounded-lg hover:bg-red-600 transition">
+            <button className="bg-red-500 font-apex text-white px-8 py-3 rounded-lg hover:bg-red-600 transition duration-300">
               Explore
             </button>
           </Link>

@@ -7,7 +7,7 @@ import Seller from '../components/Seller'
 import Aucations from '../components/Aucations'
 import TopCollection from '../components/TopCollection'
 import Sold from '../components/Sold'
- import Bost from '../components/Bost'
+//  import Bost from '../components/Bost'
  import Faq from '../components/Faq'
 import Footer from '../components/Footer'
 import Assets from '../components/Assets'
@@ -26,7 +26,7 @@ function Home() {
             <Assets/>
           <Faq/>
           <Footer/>
-    </div>
+    </div> 
   )
 }
 
